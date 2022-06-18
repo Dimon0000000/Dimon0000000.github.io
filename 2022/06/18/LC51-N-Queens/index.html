@@ -1,0 +1,655 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Haruko Hust">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="前言本题是Eight Queens的衍生题  八皇后问题（英文：Eight queens），是由国际象棋棋手马克斯·贝瑟尔于1848年提出的问题 问题表述为：在8×8格的国际象棋上摆放8个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。  本题将Eight Queens扩展为N Queens  朴素回溯法我们会优先想到朴素的回溯算法思路，对于N个皇后，我">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LC51.N-Queens">
+<meta property="og:url" content="http://example.com/2022/06/18/LC51-N-Queens/index.html">
+<meta property="og:site_name" content="Noiのblog">
+<meta property="og:description" content="前言本题是Eight Queens的衍生题  八皇后问题（英文：Eight queens），是由国际象棋棋手马克斯·贝瑟尔于1848年提出的问题 问题表述为：在8×8格的国际象棋上摆放8个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。  本题将Eight Queens扩展为N Queens  朴素回溯法我们会优先想到朴素的回溯算法思路，对于N个皇后，我">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://pic.leetcode-cn.com/1654311747-OOrzmN-image.png">
+<meta property="og:image" content="https://pic.leetcode-cn.com/1654311786-VJvGcB-image.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/18/nxTU38HkOl7qsAm.png">
+<meta property="og:image" content="https://s2.loli.net/2022/06/18/rAofaC5MK9wPh4O.png">
+<meta property="article:published_time" content="2022-06-18T05:56:14.000Z">
+<meta property="article:modified_time" content="2022-06-18T06:35:24.196Z">
+<meta property="article:author" content="Haruko Hust">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://pic.leetcode-cn.com/1654311747-OOrzmN-image.png">
+  
+  
+  
+  <title>LC51.N-Queens - Noiのblog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Noiのblog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="LC51.N-Queens"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-06-18 13:56" pubdate>
+          2022年6月18日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          4.4k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          37 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LC51.N-Queens</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本题是<code>Eight Queens</code>的衍生题</p>
+<blockquote>
+<p><strong>八皇后问题</strong>（<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%8B%B1%E6%96%87/3079091">英文</a>：<strong>Eight queens</strong>），是由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E8%B1%A1%E6%A3%8B/80888">国际象棋</a>棋手马克斯·贝瑟尔于1848年提出的问题</p>
+<p>问题表述为：在8×8格的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9B%BD%E9%99%85%E8%B1%A1%E6%A3%8B/80888">国际象棋</a>上摆放8个<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%9A%87%E5%90%8E/15860305">皇后</a>，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。</p>
+</blockquote>
+<p>本题将<code>Eight Queens</code>扩展为<code>N Queens</code></p>
+<hr>
+<h3 id="朴素回溯法"><a href="#朴素回溯法" class="headerlink" title="朴素回溯法"></a>朴素回溯法</h3><p>我们会优先想到朴素的回溯算法思路，对于<code>N</code>个皇后，我们可以在<code>N * N</code>的棋盘上摆出所有皇后可能出现的情况，再对每一种情况下皇后之间的关系进行判断。</p>
+<h5 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h5><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><br>    vector&lt;vector&lt;string&gt;&gt; ans;<br><br>    <span class="hljs-type">int</span> line;<br><br>    <span class="hljs-type">int</span> directions[<span class="hljs-number">8</span>][<span class="hljs-number">2</span>] = &#123;&#123;<span class="hljs-number">0</span>,  <span class="hljs-number">1</span>&#125;,<br>                            &#123;<span class="hljs-number">-1</span>, <span class="hljs-number">1</span>&#125;,<br>                            &#123;<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>&#125;,<br>                            &#123;<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>&#125;,<br>                            &#123;<span class="hljs-number">0</span>,  <span class="hljs-number">-1</span>&#125;,<br>                            &#123;<span class="hljs-number">1</span>,  <span class="hljs-number">-1</span>&#125;,<br>                            &#123;<span class="hljs-number">1</span>,  <span class="hljs-number">0</span>&#125;,<br>                            &#123;<span class="hljs-number">1</span>,  <span class="hljs-number">1</span>&#125;&#125;;<br><br><span class="hljs-keyword">private</span>:<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * @param queen 棋盘位置</span><br><span class="hljs-comment">     * @param i 皇后所在行</span><br><span class="hljs-comment">     * @param j 皇后所在列</span><br><span class="hljs-comment">     * @return 本方法用于检测在某一位置的皇后是否合法</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">canAttack</span><span class="hljs-params">(vector&lt;string&gt; queen, <span class="hljs-type">int</span> i, <span class="hljs-type">int</span> j)</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">8</span>; ++k) &#123;<br>            <span class="hljs-type">int</span> ni = i + directions[k][<span class="hljs-number">0</span>], nj = j + directions[k][<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">while</span> (ni &gt;= <span class="hljs-number">0</span> &amp;&amp; ni &lt; line &amp;&amp; nj &gt;= <span class="hljs-number">0</span> &amp;&amp; nj &lt; line) &#123;<br>                <span class="hljs-keyword">if</span> (queen[ni][nj] == <span class="hljs-string">&#x27;Q&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>                <span class="hljs-keyword">else</span> &#123;<br>                    ni += directions[k][<span class="hljs-number">0</span>];<br>                    nj += directions[k][<span class="hljs-number">1</span>];<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     *</span><br><span class="hljs-comment">     * @param solve 棋盘</span><br><span class="hljs-comment">     * @return 本方法用于检测整个棋盘上的皇后是否合法</span><br><span class="hljs-comment">     */</span><br><br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(vector&lt;string&gt; solve)</span> </span>&#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; line; ++i) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; line; ++j) &#123;<br>                <span class="hljs-keyword">if</span> (solve[i][j] == <span class="hljs-string">&#x27;Q&#x27;</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">canAttack</span>(solve, i, j)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 本方法用于摆盘</span><br><span class="hljs-comment">     * @param board 棋盘</span><br><span class="hljs-comment">     * @param lin 该摆第几行了</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">backTrack</span><span class="hljs-params">(vector&lt;string&gt;&amp; board, <span class="hljs-type">int</span> lin)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (lin == line) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(board)) ans.<span class="hljs-built_in">push_back</span>(board);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; line; ++i) &#123;<br>            board[lin][i] = <span class="hljs-string">&#x27;Q&#x27;</span>;<br>            <span class="hljs-built_in">backTrack</span>(board, lin + <span class="hljs-number">1</span>);<br>            board[lin][i] = <span class="hljs-string">&#x27;.&#x27;</span>;<br>        &#125;<br>    &#125;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 主方法</span><br><span class="hljs-comment">     * @param n 个皇后</span><br><span class="hljs-comment">     * @return 返回合法的方案</span><br><span class="hljs-comment">     */</span><br>    vector&lt;vector&lt;string&gt;&gt; <span class="hljs-built_in">solveNQueens</span>(<span class="hljs-type">int</span> n) &#123;<br>        line = n;<br>        vector&lt;string&gt; board;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            string l;<br>            l.<span class="hljs-built_in">append</span>(n, <span class="hljs-string">&#x27;.&#x27;</span>);<br>            board.<span class="hljs-built_in">push_back</span>(l);<br>        &#125;<br>        <span class="hljs-built_in">backTrack</span>(board, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<p>朴素回溯法可以得到当<code>N &lt; 8</code>时的答案</p>
+<p>当<code>N &gt;= 8</code>时，仅仅拿<code>N == 8</code>来说，此方法的计算量会达到8^8^ &#x3D; 16,777,216 ≈ 10 ^8^</p>
+<p>此数据量过大，会导致<code>Time Limit Exceeded</code></p>
+<h5 id="运行结果如下"><a href="#运行结果如下" class="headerlink" title="运行结果如下"></a>运行结果如下</h5><p><img src="https://pic.leetcode-cn.com/1654311747-OOrzmN-image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<hr>
+<h3 id="基于朴素回溯法的优化"><a href="#基于朴素回溯法的优化" class="headerlink" title="基于朴素回溯法的优化"></a>基于朴素回溯法的优化</h3><p>在上面的方案中，我们对任意一种摆法都进行了判断，甚至于最明显不可行的方案都进行了判断</p>
+<p>这里使用N &#x3D;&#x3D; 4举例</p>
+<blockquote>
+<p>Q &#x3D; Queen, B &#x3D; Board</p>
+<p>[Q,B,B,B]</p>
+<p>[Q,B,B,B]</p>
+<p>[Q,B,B,B]</p>
+<p>[Q,B,B,B]</p>
+</blockquote>
+<p>类似于这样明显错误的我们都进行了判断。</p>
+<p>基于此的优化方法，便是直接寻找可以放置皇后的地方</p>
+<p>我们知道：</p>
+<blockquote>
+<p>皇后可以攻击同一行，同一列，同一主对角线，同一副对角线上的任意一个棋子</p>
+</blockquote>
+<p>我们寻找皇后位置时，可以基于这个思路大大减少计算量(这里定义为“竖列横行”)</p>
+<ol>
+<li><p>由于我们是一行一行放置皇后，对于列，我们只需要一个<code>used</code>数组来判断同一列上是否有皇后</p>
+</li>
+<li><p>对于主对角线上的元素，任意两个在同一主对角线上的元素相减之差相等</p>
+<ul>
+<li>举个例子(1, 1),   (3, 3)位于同一主对角线上，二者相减之差均为0</li>
+</ul>
+</li>
+<li><p>对于副对角线上的元素，任意两个在同一副对角线上的元素相加之和相等</p>
+<ul>
+<li>举个例子(1, 5),   (3, 3)位于同一副对角线上，二者相加之和均为6</li>
+</ul>
+</li>
+<li><p>在回溯方法中，我们可以直接传入一个空棋盘，在上方放置皇后即可，这里利用了C++中字符串可变的性质</p>
+</li>
+</ol>
+<hr>
+<h5 id="运行结果如下-1"><a href="#运行结果如下-1" class="headerlink" title="运行结果如下"></a>运行结果如下</h5><p><img src="https://pic.leetcode-cn.com/1654311786-VJvGcB-image.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h5 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h5><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><br>    vector&lt;vector&lt;string&gt;&gt; ans;<br>    set&lt;<span class="hljs-type">int</span>&gt; diag1, diag2;<br><br>    vector&lt;<span class="hljs-type">bool</span>&gt; used;<br><br>    <span class="hljs-type">int</span> line;<br><br><span class="hljs-keyword">public</span>:<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 本方法用于摆盘</span><br><span class="hljs-comment">     * @param board 棋盘</span><br><span class="hljs-comment">     * @param lin 该摆第几行了</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">backTrack</span><span class="hljs-params">(vector&lt;string&gt; &amp;board, <span class="hljs-type">int</span> lin)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (lin == line) &#123;<br>            ans.<span class="hljs-built_in">push_back</span>(board);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; line; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (used[i]) <span class="hljs-keyword">continue</span>;<br>            used[i] = <span class="hljs-literal">true</span>;<br><br>            <span class="hljs-type">int</span> d1 = lin - i, d2 = lin + i;<br>            <span class="hljs-keyword">if</span> (diag1.<span class="hljs-built_in">count</span>(d1) == <span class="hljs-number">1</span> || diag2.<span class="hljs-built_in">count</span>(d2) == <span class="hljs-number">1</span>) &#123;<br>                used[i] = <span class="hljs-literal">false</span>;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            diag1.<span class="hljs-built_in">insert</span>(d1);<br>            diag2.<span class="hljs-built_in">insert</span>(d2);<br><br>            board[lin][i] = <span class="hljs-string">&#x27;Q&#x27;</span>;<br>            <span class="hljs-built_in">backTrack</span>(board, lin + <span class="hljs-number">1</span>);<br>            board[lin][i] = <span class="hljs-string">&#x27;.&#x27;</span>;<br><br>            diag2.<span class="hljs-built_in">erase</span>(d2);<br>            diag1.<span class="hljs-built_in">erase</span>(d1);<br><br>            used[i] = <span class="hljs-literal">false</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * 主方法</span><br><span class="hljs-comment">     * @param n 个皇后</span><br><span class="hljs-comment">     * @return 返回合法的方案</span><br><span class="hljs-comment">     */</span><br>    vector&lt;vector&lt;string&gt;&gt; <span class="hljs-built_in">solveNQueens</span>(<span class="hljs-type">int</span> n) &#123;<br>        line = n;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            used.<span class="hljs-built_in">push_back</span>(<span class="hljs-literal">false</span>);<br>        &#125;<br><br>        vector&lt;string&gt; board;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            string l;<br>            l.<span class="hljs-built_in">append</span>(n, <span class="hljs-string">&#x27;.&#x27;</span>);<br>            board.<span class="hljs-built_in">push_back</span>(l);<br>        &#125;<br>        <span class="hljs-built_in">backTrack</span>(board, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li><p>时间复杂度: <em>O</em>(<em>N</em>!)， 其中<em>N</em>为皇后数量</p>
+</li>
+<li><p>空间复杂度: <em>O</em>(<em>N</em>)，其中 <em>N</em> 是皇后数量。</p>
+</li>
+</ul>
+<hr>
+<h2 id="相关趣题"><a href="#相关趣题" class="headerlink" title="相关趣题"></a>相关趣题</h2><p>最后分享一道写这篇题解时联想到的趣题</p>
+<p>来自于<strong>CodeForces Round #799 (Div 4)</strong> <a target="_blank" rel="noopener" href="https://codeforces.com/contest/1692/problem/C">Problem - C</a></p>
+<p><a href="https://sm.ms/image/nxTU38HkOl7qsAm" target="_blank"><img src="https://s2.loli.net/2022/06/18/nxTU38HkOl7qsAm.png" srcset="/img/loading.gif" lazyload ></p>
+<hr>
+<p><a href="https://sm.ms/image/rAofaC5MK9wPh4O" target="_blank"><img src="https://s2.loli.net/2022/06/18/rAofaC5MK9wPh4O.png" srcset="/img/loading.gif" lazyload ></a></a></p>
+<h3 id="题意解读"><a href="#题意解读" class="headerlink" title="题意解读"></a>题意解读</h3><hr>
+<p>在棋盘上，我们用**#<strong>标注了</strong>教皇**可攻击的格子，请根据此，输出教皇所在的位置</p>
+<h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><hr>
+<p>由于棋盘大小固定为<em>8</em>，我们只需暴力搜索<br>$$<br>1 \leq i, j \leq 7<br>$$<br>当<code>grid[i][j]</code>的左上，右上，左下，右下均为**#<strong>时返回该位置</strong>[i, j]**</p>
+<h5 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h5><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&lt;bits/stdc++.h&gt;</span></span><br> <br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br> <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-type">int</span> t, n;<br>    cin &gt;&gt; t;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; t; ++i) &#123;<br>        <span class="hljs-function">vector&lt;string&gt; <span class="hljs-title">grid</span><span class="hljs-params">(<span class="hljs-number">8</span>)</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">8</span>; ++j) &#123;<br>            cin &gt;&gt; grid[j];<br>        &#125;<br> <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; <span class="hljs-number">8</span>; ++j) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> k = <span class="hljs-number">1</span>; k &lt; <span class="hljs-number">8</span>; ++k) &#123;<br>                <span class="hljs-keyword">if</span> (grid[j][k] == <span class="hljs-string">&#x27;#&#x27;</span> &amp;&amp; grid[j - <span class="hljs-number">1</span>][k - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;#&#x27;</span> &amp;&amp; grid[j - <span class="hljs-number">1</span>][k + <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;#&#x27;</span> &amp;&amp; grid[j + <span class="hljs-number">1</span>][k - <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;#&#x27;</span> &amp;&amp; grid[j + <span class="hljs-number">1</span>][k + <span class="hljs-number">1</span>] == <span class="hljs-string">&#x27;#&#x27;</span>) &#123;<br>                    cout &lt;&lt; j + <span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; k + <span class="hljs-number">1</span> &lt;&lt; endl;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125; <br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>LC51.N-Queens</div>
+      <div>http://example.com/2022/06/18/LC51-N-Queens/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Haruko Hust</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年6月18日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/06/18/%E8%8B%8F%E5%B7%9E%E6%91%84%E5%BD%B1%E9%9B%86-%E5%88%9D%E8%A7%81/" title="苏州摄影集(初见)">
+                        <span class="hidden-mobile">苏州摄影集(初见)</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
