@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>LC.37 Sudoku-Solver</title>
+    <link href="/2022/06/21/Sudoku-Solver/"/>
+    <url>/2022/06/21/Sudoku-Solver/</url>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><blockquote><p>数独是源自18世纪<a href="https://baike.baidu.com/item/%E7%91%9E%E5%A3%AB/131482">瑞士</a>的一种数学游戏。是一种运用纸、笔进行演算的<a href="https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E6%B8%B8%E6%88%8F/12814189">逻辑游戏</a>。玩家需要根据9×9盘面上的已知数字，推理出所有剩余空格的数字，并满足每一行、每一列、每一个粗线宫（3*3）内的数字均含1-9，不重复 [1] 。</p><p>数独盘面是个九宫，每一宫又分为九个小格。在这八十一格中给出一定的已知数字和解题条件，利用逻辑和推理，在其他的空格上填入1-9的数字。使1-9每个数字在每一行、每一列和每一宫中都只出现一次，所以又称“九宫格”。</p></blockquote><p>本题将通过<strong>回溯算法</strong>来解数独</p><h3 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h3><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>LeetCode</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Daily algorithm problem solving</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Tokio Marine &amp; Nichido Fire Insurance Programming Contest 2022（AtCoder Beginner Contest 256)</title>
     <link href="/2022/06/21/AtCoder-Beginner-Contest-256/"/>
     <url>/2022/06/21/AtCoder-Beginner-Contest-256/</url>
@@ -29,7 +54,7 @@
   
   
   <entry>
-    <title>LC715.Rang-Module</title>
+    <title>LC.715 Rang-Module</title>
     <link href="/2022/06/20/LC715-Rang-Module/"/>
     <url>/2022/06/20/LC715-Rang-Module/</url>
     
@@ -104,7 +129,7 @@
   
   
   <entry>
-    <title>LC51.N-Queens</title>
+    <title>LC.51 N-Queens</title>
     <link href="/2022/06/18/LC51-N-Queens/"/>
     <url>/2022/06/18/LC51-N-Queens/</url>
     
