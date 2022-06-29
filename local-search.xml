@@ -26,6 +26,8 @@
       
       <tag>红黑树</tag>
       
+      <tag>哈希表</tag>
+      
     </tags>
     
   </entry>
@@ -51,6 +53,8 @@
       
       <tag>AcWing Contest</tag>
       
+      <tag>数论</tag>
+      
     </tags>
     
   </entry>
@@ -74,7 +78,11 @@
     
     <tags>
       
-      <tag>Atcoder</tag>
+      <tag>数论</tag>
+      
+      <tag>Atcoder Contest</tag>
+      
+      <tag>模拟</tag>
       
     </tags>
     
@@ -101,6 +109,14 @@
       
       <tag>LeetCode Contest</tag>
       
+      <tag>滑动窗口</tag>
+      
+      <tag>枚举</tag>
+      
+      <tag>动态规划</tag>
+      
+      <tag>深度优先搜索(DFS)</tag>
+      
     </tags>
     
   </entry>
@@ -126,6 +142,12 @@
       
       <tag>LeetCode Contest</tag>
       
+      <tag>字符串分割</tag>
+      
+      <tag>并查集</tag>
+      
+      <tag>位运算</tag>
+      
     </tags>
     
   </entry>
@@ -150,6 +172,10 @@
     <tags>
       
       <tag>CodeForces Contest</tag>
+      
+      <tag>模拟</tag>
+      
+      <tag>贪心</tag>
       
     </tags>
     
@@ -195,6 +221,8 @@
       
       <tag>Daily algorithm problem solving</tag>
       
+      <tag>回溯算法</tag>
+      
     </tags>
     
   </entry>
@@ -218,7 +246,15 @@
     
     <tags>
       
-      <tag>Atcoder</tag>
+      <tag>Atcoder Contest</tag>
+      
+      <tag>快速幂</tag>
+      
+      <tag>模拟</tag>
+      
+      <tag>暴力</tag>
+      
+      <tag>线段树</tag>
       
     </tags>
     
@@ -245,6 +281,8 @@
       
       <tag>Daily algorithm problem solving</tag>
       
+      <tag>线段树</tag>
+      
     </tags>
     
   </entry>
@@ -269,6 +307,12 @@
     <tags>
       
       <tag>LeetCode Contest</tag>
+      
+      <tag>贪心</tag>
+      
+      <tag>哈希表</tag>
+      
+      <tag>枚举</tag>
       
     </tags>
     
@@ -295,6 +339,12 @@
       
       <tag>CodeForces Contest</tag>
       
+      <tag>模拟</tag>
+      
+      <tag>暴力</tag>
+      
+      <tag>滑动窗口</tag>
+      
     </tags>
     
   </entry>
@@ -319,6 +369,8 @@
     <tags>
       
       <tag>Daily algorithm problem solving</tag>
+      
+      <tag>回溯算法</tag>
       
     </tags>
     
