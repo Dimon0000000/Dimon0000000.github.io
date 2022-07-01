@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>Number theory</title>
+    <link href="/2022/07/01/Math/"/>
+    <url>/2022/07/01/Math/</url>
+    
+    <content type="html"><![CDATA[<h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p><strong>计算机科学</strong>是跑偏的<strong>数学</strong>；在计算机的世界，数理基础是很重要的一个部分</p><p>本篇是在刷题过程中遇到的数学知识一个总结(动态更新)</p><h3 id="题目及相关数学知识"><a href="#题目及相关数学知识" class="headerlink" title="题目及相关数学知识"></a>题目及相关数学知识</h3><hr><h4 id="质数问题"><a href="#质数问题" class="headerlink" title="质数问题"></a>质数问题</h4><p>[<a href="https://ac.nowcoder.com/acm/problem/16414">NOIP2017]小凯的疑惑</a></p><blockquote><p>如果<strong>a</strong>, <strong>b</strong>均为正整数且互质，则由$$ax + by, x \geq 0, y \geq 0$$ 不能凑出的最大数为$$ab - a - b$$</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Q&amp;A</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数论</tag>
+      
+      <tag>数学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LC.273 Integer to English Words</title>
     <link href="/2022/06/30/LC273-Integer-to-English-Words/"/>
     <url>/2022/06/30/LC273-Integer-to-English-Words/</url>
