@@ -16,29 +16,29 @@
   <meta name="author" content="Haruko Hust">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MY SUBMISSIONS:   Problems AC: 3Problems Try: 4Wrong Answer: 2   Problem A：统计星号题意分析 所谓竖线对指第1，2|；第3，4|之间 对于给定的字符串根据|字符分割，统计下标为偶数的单词中*的数量 参考代码 12345678910111213141516class Solution &amp;#123;    public int">
+    <meta name="description" content="MY SUBMISSIONS:  Problems AC: 3 Problems Try: 3 Wrong Answer: 1   Problem A：解密消息题意分析 给定新的字典序，按照新字典序返回解密后的字符串 哈希表模拟即可 参考代码 12345678910111213141516class Solution &amp;#123;public:    string decodeMessage(s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode Biweekly Contest 81">
-<meta property="og:url" content="http://example.com/2022/06/25/LeetCode-Biweekly-Bontest-81/index.html">
+<meta property="og:title" content="LeetCode">
+<meta property="og:url" content="http://example.com/2022/07/03/LeetCode-Weekly-Contest-300/index.html">
 <meta property="og:site_name" content="Noiのblog">
-<meta property="og:description" content="MY SUBMISSIONS:   Problems AC: 3Problems Try: 4Wrong Answer: 2   Problem A：统计星号题意分析 所谓竖线对指第1，2|；第3，4|之间 对于给定的字符串根据|字符分割，统计下标为偶数的单词中*的数量 参考代码 12345678910111213141516class Solution &amp;#123;    public int">
+<meta property="og:description" content="MY SUBMISSIONS:  Problems AC: 3 Problems Try: 3 Wrong Answer: 1   Problem A：解密消息题意分析 给定新的字典序，按照新字典序返回解密后的字符串 哈希表模拟即可 参考代码 12345678910111213141516class Solution &amp;#123;public:    string decodeMessage(s">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.328888.xyz/2022/06/25/62b6a8a1d5c1f.jpg">
-<meta property="article:published_time" content="2022-06-25T06:08:33.000Z">
-<meta property="article:modified_time" content="2022-06-29T02:36:10.544Z">
+<meta property="og:image" content="https://s1.328888.xyz/2022/07/03/Frj5.jpg">
+<meta property="article:published_time" content="2022-07-03T06:27:08.000Z">
+<meta property="article:modified_time" content="2022-07-03T07:43:56.810Z">
 <meta property="article:author" content="Haruko Hust">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="链表">
+<meta property="article:tag" content="哈希表">
 <meta property="article:tag" content="LeetCode Contest">
-<meta property="article:tag" content="字符串分割">
-<meta property="article:tag" content="并查集">
-<meta property="article:tag" content="位运算">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.328888.xyz/2022/06/25/62b6a8a1d5c1f.jpg">
+<meta name="twitter:image" content="https://s1.328888.xyz/2022/07/03/Frj5.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LeetCode Biweekly Contest 81 - Noiのblog</title>
+  <title>LeetCode - Noiのblog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -218,7 +218,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LeetCode Biweekly Contest 81"></span>
+            <span id="subtitle" data-typed-text="LeetCode"></span>
           
         </div>
 
@@ -229,8 +229,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-25 14:08" pubdate>
-          2022年6月25日 下午
+        <time datetime="2022-07-03 14:27" pubdate>
+          2022年7月3日 下午
         </time>
       </span>
     
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          1.8k 字
         
       </span>
     
@@ -252,7 +252,7 @@
         
         
         
-          18 分钟
+          16 分钟
         
       </span>
     
@@ -298,12 +298,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LeetCode Biweekly Contest 81</h1>
+            <h1 style="display: none">LeetCode</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年6月29日 上午
+                    本文最后更新于：2022年7月3日 下午
                   
                 
               </p>
@@ -312,31 +312,33 @@
               <div class="markdown-body">
                 
                 <blockquote>
-<p>MY SUBMISSIONS: </p>
+<p>MY SUBMISSIONS:</p>
 <blockquote>
-<p>Problems AC: 3<br>Problems Try: 4<br>Wrong Answer: 2</p>
+<p>Problems AC: 3</p>
+<p>Problems Try: 3</p>
+<p>Wrong Answer: 1</p>
 </blockquote>
 </blockquote>
-<h3 id="Problem-A：统计星号"><a href="#Problem-A：统计星号" class="headerlink" title="Problem A：统计星号"></a>Problem A：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-asterisks/">统计星号</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
-<p>所谓竖线对指第1，2<code>|</code>；第3，4<code>|</code>之间</p>
-<p>对于给定的字符串根据<code>|</code>字符分割，统计下标为偶数的单词中<code>*</code>的数量</p>
+<h3 id="Problem-A：解密消息"><a href="#Problem-A：解密消息" class="headerlink" title="Problem A：解密消息"></a>Problem A：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/decode-the-message/">解密消息</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定新的字典序，按照新字典序返回解密后的字符串</p>
+<p>哈希表模拟即可</p>
 <h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">countAsterisks</span><span class="hljs-params">(String s)</span> &#123;<br>        <span class="hljs-keyword">if</span> (s.indexOf(<span class="hljs-string">&#x27;*&#x27;</span>) &lt; <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">res</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <br>        String[] words = s.split(<span class="hljs-string">&quot;\\|&quot;</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; words.length; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : words[i].toCharArray()) &#123;<br>                    <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;*&#x27;</span>) res++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">decodeMessage</span><span class="hljs-params">(string key, string message)</span> </span>&#123;<br>        map&lt;<span class="hljs-type">char</span>, <span class="hljs-type">char</span>&gt; map;<br>        map[<span class="hljs-string">&#x27; &#x27;</span>] = <span class="hljs-string">&#x27; &#x27;</span>;<br><br>        <span class="hljs-type">char</span> d = <span class="hljs-string">&#x27;a&#x27;</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c: key) <br>            <span class="hljs-keyword">if</span> (!map.<span class="hljs-built_in">count</span>(c)) map[c] = d, d++;<br>        <br>        string ans;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c: message) ans += map[c];<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Problem-B：统计无向图中无法互相到达点对数"><a href="#Problem-B：统计无向图中无法互相到达点对数" class="headerlink" title="Problem B：统计无向图中无法互相到达点对数"></a>Problem B：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/count-unreachable-pairs-of-nodes-in-an-undirected-graph/">统计无向图中无法互相到达点对数</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
-<p>不联通的点对数 &#x3D; 总点对数 - 联通的点对数</p>
-<p>使用并查集将分量联通，统计每个联通分量与其他联通分量产生的联通点对数</p>
-<p>由于为无向图，最终结果要除以2</p>
+<h3 id="Problem-B：螺旋矩阵-IV"><a href="#Problem-B：螺旋矩阵-IV" class="headerlink" title="Problem B：螺旋矩阵 IV "></a>Problem B：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix-iv/">螺旋矩阵 IV </a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定链表，按照螺旋方式将链表赋值到数组中</p>
+<p>控制方向建议使用方向数组</p>
 <h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">countPairs</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span>[][] edges)</span> &#123;<br>        <span class="hljs-type">UnionFind</span> <span class="hljs-variable">uf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnionFind</span>(n);<br>        <span class="hljs-type">long</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span>[] edge : edges) &#123;<br>            uf.union(edge[<span class="hljs-number">0</span>], edge[<span class="hljs-number">1</span>]);<br>        &#125;<br>        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">father</span> <span class="hljs-operator">=</span> uf.find(i);<br>            map.put(father, map.getOrDefault(father, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;<br>            ans += (<span class="hljs-type">long</span>) (n - entry.getValue()) * entry.getValue();<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UnionFind</span> &#123;<br>    <span class="hljs-type">int</span>[] root;<br>    <span class="hljs-type">int</span>[] rank;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">UnionFind</span><span class="hljs-params">(<span class="hljs-type">int</span> size)</span> &#123;<br>        root = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[size];<br>        rank = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[size];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>            root[i] = i;<br>            rank[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> &#123;<br>        <span class="hljs-keyword">if</span> (x == root[x]) &#123;<br>            <span class="hljs-keyword">return</span> x;<br>        &#125;<br>        <span class="hljs-keyword">return</span> root[x] = find(root[x]);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">union</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootX</span> <span class="hljs-operator">=</span> find(x);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootY</span> <span class="hljs-operator">=</span> find(y);<br>        <span class="hljs-keyword">if</span> (rootX != rootY) &#123;<br>            <span class="hljs-keyword">if</span> (rank[rootX] &gt; rank[rootY]) &#123;<br>                root[rootY] = rootX;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (rank[rootX] &lt; rank[rootY]) &#123;<br>                root[rootX] = rootY;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                root[rootY] = rootX;<br>                rank[rootX] += <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">connected</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-keyword">return</span> find(x) == find(y);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">spiralMatrix</span>(<span class="hljs-type">int</span> m, <span class="hljs-type">int</span> n, ListNode *head) &#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">ans</span>(m, <span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(n, <span class="hljs-number">-1</span>));<br><br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>, j = <span class="hljs-number">0</span>, op = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-type">int</span> direction[<span class="hljs-number">4</span>][<span class="hljs-number">2</span>] = &#123;&#123;<span class="hljs-number">0</span>,  <span class="hljs-number">1</span>&#125;,<br>                             &#123;<span class="hljs-number">1</span>,  <span class="hljs-number">0</span>&#125;,<br>                             &#123;<span class="hljs-number">0</span>,  <span class="hljs-number">-1</span>&#125;,<br>                             &#123;<span class="hljs-number">-1</span>, <span class="hljs-number">0</span>&#125;&#125;;<br><br>        <span class="hljs-keyword">while</span> (head != <span class="hljs-literal">nullptr</span>) &#123;<br>            <span class="hljs-type">int</span> val = head-&gt;val;<br>            head = head-&gt;next;<br><br>            ans[i][j] = val;<br><br>            <span class="hljs-type">int</span> ni, nj;<br>            ni = i + direction[op % <span class="hljs-number">4</span>][<span class="hljs-number">0</span>], nj = j + direction[op % <span class="hljs-number">4</span>][<span class="hljs-number">1</span>];<br><br>            <span class="hljs-keyword">if</span> (!(ni &gt;= <span class="hljs-number">0</span> &amp;&amp; nj &gt;= <span class="hljs-number">0</span> &amp;&amp; ni &lt; m &amp;&amp; nj &lt; n &amp;&amp; ans[ni][nj] == <span class="hljs-number">-1</span>)) &#123;<br>                op++;<br>                ni = i + direction[op % <span class="hljs-number">4</span>][<span class="hljs-number">0</span>], nj = j + direction[op % <span class="hljs-number">4</span>][<span class="hljs-number">1</span>];<br>            &#125;<br><br>            i = ni, j = nj;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Problem-C：操作后的最大异或和"><a href="#Problem-C：操作后的最大异或和" class="headerlink" title="Problem C：操作后的最大异或和"></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-xor-after-operations/">操作后的最大异或和</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
-<p>当每一位都只留奇数个数字为1，其余都为0时，异或和最大<br>所以最大的异或和就是或和。</p>
+<h3 id="Problem-C：知道秘密的人数"><a href="#Problem-C：知道秘密的人数" class="headerlink" title="Problem C：知道秘密的人数 "></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-people-aware-of-a-secret/">知道秘密的人数 </a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>第一天会有人直到秘密，在接下来的<code>delay</code>天里这个人每天会将秘密告诉一个人，在<code>forget</code>天后忘记这个秘密</p>
+<p>使用哈希表模拟每天新增加的直到秘密的人数<code>born</code>和忘记秘密的人数<code>dead</code></p>
 <h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maximumXOR</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt; &amp;nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> val: nums) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">32</span>; i++) &#123;<br>                res |= (val &amp; (<span class="hljs-number">1</span> &lt;&lt; i));<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">define</span> fori(a, b) for (int i = a; i &lt; b; i++)</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-type">int</span> MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">peopleAwareOfSecret</span><span class="hljs-params">(<span class="hljs-type">int</span> n, <span class="hljs-type">int</span> delay, <span class="hljs-type">int</span> forget)</span> </span>&#123;<br>        map&lt;<span class="hljs-type">int</span>, ll&gt; map;<br><br>        map[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;<br><br>        ll ans = <span class="hljs-number">1</span>;<br><br>        fori(<span class="hljs-number">2</span>, n + <span class="hljs-number">1</span>) &#123;<br>            ll born = <span class="hljs-number">0</span>, dead = <span class="hljs-number">0</span>;<br><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it: map) &#123;<br>                <span class="hljs-keyword">if</span> (i - it.first &gt;= forget) &#123;<br>                    dead += it.second;<br>                    dead %= MOD;<br>                    map.<span class="hljs-built_in">erase</span>(it.first);<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (i - it.first &gt;= delay) &#123;<br>                    born += it.second % MOD;<br>                &#125;<br>            &#125;<br>            ans = (ans + born - dead) % MOD;<br>            <span class="hljs-keyword">if</span> (born != <span class="hljs-number">0</span>) map[i] = born;<br>        &#125;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Problem-D：不同骰子序列的数目"><a href="#Problem-D：不同骰子序列的数目" class="headerlink" title="Problem D：不同骰子序列的数目"></a>Problem D：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-distinct-roll-sequences/">不同骰子序列的数目</a></h3><h4 id="优质题解"><a href="#优质题解" class="headerlink" title="优质题解"></a>优质题解</h4><hr>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-distinct-roll-sequences/solution/by-tsreaper-wxis/">DP解法 - 不同骰子序列的数目</a></p>
+<h3 id="Problem-D：网格图中递增路径的数目"><a href="#Problem-D：网格图中递增路径的数目" class="headerlink" title="Problem D：网格图中递增路径的数目"></a>Problem D：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-increasing-paths-in-a-grid/">网格图中递增路径的数目</a></h3><h4 id="优质题解"><a href="#优质题解" class="headerlink" title="优质题解"></a>优质题解</h4><hr>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-increasing-paths-in-a-grid/solution/ji-yi-hua-sou-suo-pythonjavacgo-by-endle-xecc/">记忆化搜索 (Python&#x2F;Java&#x2F;C++&#x2F;Go)</a></p>
 
                 
               </div>
@@ -370,13 +372,13 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+      
+        <a href="/tags/%E9%93%BE%E8%A1%A8/">#链表</a>
+      
+        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
+      
         <a href="/tags/LeetCode-Contest/">#LeetCode Contest</a>
-      
-        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%88%86%E5%89%B2/">#字符串分割</a>
-      
-        <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">#并查集</a>
-      
-        <a href="/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/">#位运算</a>
       
     </div>
   
@@ -388,8 +390,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LeetCode Biweekly Contest 81</div>
-      <div>http://example.com/2022/06/25/LeetCode-Biweekly-Bontest-81/</div>
+      <div>LeetCode</div>
+      <div>http://example.com/2022/07/03/LeetCode-Weekly-Contest-300/</div>
     </div>
     <div class="license-meta">
       
@@ -401,13 +403,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月25日</div>
+          <div>2022年7月3日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年6月29日</div>
+          <div>2022年7月3日</div>
         </div>
       
       <div class="license-meta-item">
@@ -436,18 +438,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/06/26/LeetCode-Weekly-Contest-299/" title="LeetCode Weekly Contest 299">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LeetCode Weekly Contest 299</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/23/CodeForces-Global-Round-20/" title="CodeForces Global Round 20">
-                        <span class="hidden-mobile">CodeForces Global Round 20</span>
+                      <a href="/2022/07/01/LC204-Count-Primes/" title="LC.204 Count-Primes">
+                        <span class="hidden-mobile">LC.204 Count-Primes</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
