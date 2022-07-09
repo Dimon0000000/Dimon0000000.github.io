@@ -1,0 +1,764 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
+  <link rel="icon" href="/img/fluid.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Haruko Hust">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="MY SUBMISSIONS:   Problems AC: 3Problems Try: 3Wrong Answer: 3   Problem A：数组操作题意分析 给定数组，返回总和减去最小前缀和(初始化为0) 签到题，按要求模拟即可 参考代码 12345678910111213141516171819202122232425262728293031323334353637383940414">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AcWing Weekly Contest 59">
+<meta property="og:url" content="http://example.com/2022/07/09/AcWing-Weekly-Contest-59/index.html">
+<meta property="og:site_name" content="Noiのblog">
+<meta property="og:description" content="MY SUBMISSIONS:   Problems AC: 3Problems Try: 3Wrong Answer: 3   Problem A：数组操作题意分析 给定数组，返回总和减去最小前缀和(初始化为0) 签到题，按要求模拟即可 参考代码 12345678910111213141516171819202122232425262728293031323334353637383940414">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.328888.xyz/2022/07/06/Mkup.jpg">
+<meta property="article:published_time" content="2022-07-09T14:08:05.000Z">
+<meta property="article:modified_time" content="2022-07-09T14:28:50.648Z">
+<meta property="article:author" content="Haruko Hust">
+<meta property="article:tag" content="数论">
+<meta property="article:tag" content="AcWing Contest">
+<meta property="article:tag" content="并查集">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s1.328888.xyz/2022/07/06/Mkup.jpg">
+  
+  
+    <meta name="referrer" content="no-referrer-when-downgrade">
+  
+  
+  <title>AcWing Weekly Contest 59 - Noiのblog</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
+<meta name="generator" content="Hexo 6.2.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>ちーのblog</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="AcWing Weekly Contest 59"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-07-09 22:08" pubdate>
+          2022年7月9日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          54 分钟
+        
+      </span>
+    
+
+    
+    
+      
+        <span id="busuanzi_container_page_pv" style="display: none">
+          <i class="iconfont icon-eye" aria-hidden="true"></i>
+          <span id="busuanzi_value_page_pv"></span> 次
+        </span>
+        
+      
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">AcWing Weekly Contest 59</h1>
+            
+              <p class="note note-info">
+                
+                  
+                    本文最后更新于：2022年7月9日 晚上
+                  
+                
+              </p>
+            
+            
+              <div class="markdown-body">
+                
+                <blockquote>
+<p>MY SUBMISSIONS: </p>
+<blockquote>
+<p>Problems AC: 3<br>Problems Try: 3<br>Wrong Answer: 3</p>
+</blockquote>
+</blockquote>
+<h3 id="Problem-A：数组操作"><a href="#Problem-A：数组操作" class="headerlink" title="Problem A：数组操作"></a>Problem A：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/4494/">数组操作</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定数组，返回总和减去最小前缀和(初始化为0)</p>
+<p>签到题，按要求模拟即可</p>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ph push_heap</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PF(x) = ((x) * (x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LF(x) = ((x) * PF(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fori(a, b) for (int i = a; i &lt; b; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> put(a) for (auto &amp;_x: a) cin &gt;&gt; _x;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> RALL(a) rbegin(a), rend(a)</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ull;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">double</span> ld;<br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; pii;<br><span class="hljs-keyword">typedef</span> pair&lt;ll, ll&gt; pll;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> uint;<br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">char</span>&gt; pic;<br><br><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-6</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf = <span class="hljs-number">0x3f3f3f3f</span>;<br><span class="hljs-type">const</span> ll infl = <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>ll;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> n;<br>    cin &gt;&gt; n;<br><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>    <span class="hljs-built_in">put</span>(a);<br><br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">preSum</span><span class="hljs-params">(n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>)</span></span>;<br><br>    <span class="hljs-type">int</span> minn = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>        preSum[i] = preSum[i - <span class="hljs-number">1</span>] + a[i - <span class="hljs-number">1</span>];<br>        minn = <span class="hljs-built_in">min</span>(minn, preSum[i]);<br>    &#125;<br>    cout &lt;&lt; preSum[n] - minn &lt;&lt; endl;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-B：减法操作"><a href="#Problem-B：减法操作" class="headerlink" title="Problem B：减法操作"></a>Problem B：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/4495/">减法操作</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>对于一个数n有如下操作</p>
+<blockquote>
+<ol>
+<li>如果 n&#x3D;0，则结束算法。</li>
+<li>找到 n 的最小质因子 d。</li>
+<li>令 n 减去 d 并跳转步骤 1。</li>
+</ol>
+</blockquote>
+<p>返回减法操作数</p>
+<ul>
+<li><p>对于传入的<code>n</code>如果为质数，则直接返回1(直接减去本身即可)</p>
+</li>
+<li><p>若为合数且为偶数，则每次减少2，返回<br>$$<br>\frac{n}{2}<br>$$</p>
+</li>
+<li><p>若传入的数为奇数，由于奇数 - 奇数 &#x3D;  偶数，因此返回(d 为最小质因数)<br>$$<br>\frac{n - d}{2}<br>$$</p>
+</li>
+</ul>
+<h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pb push_back</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> ph push_heap</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> PF(x) = ((x) * (x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> LF(x) = ((x) * PF(x))</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fori(a, b) for (int i = a; i &lt; b; i++)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> put(a) for (auto &amp;_x: a) cin &gt;&gt; _x;</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> RALL(a) rbegin(a), rend(a)</span><br><br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ull;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">double</span> ld;<br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; pii;<br><span class="hljs-keyword">typedef</span> pair&lt;ll, ll&gt; pll;<br><span class="hljs-keyword">typedef</span> <span class="hljs-type">unsigned</span> <span class="hljs-type">int</span> uint;<br><span class="hljs-keyword">typedef</span> pair&lt;<span class="hljs-type">int</span>, <span class="hljs-type">char</span>&gt; pic;<br><br><span class="hljs-type">const</span> <span class="hljs-type">double</span> eps = <span class="hljs-number">1e-6</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> MOD = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-type">const</span> <span class="hljs-type">int</span> inf = <span class="hljs-number">0x3f3f3f3f</span>;<br><span class="hljs-type">const</span> ll infl = <span class="hljs-number">0x3f3f3f3f3f3f3f3f</span>ll;<br><br><span class="hljs-type">int</span> isPrime[<span class="hljs-number">100007</span>];<br><br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">prime</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> x)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-built_in">sqrt</span>(x); ++i)<br>        <span class="hljs-keyword">if</span> (!(x % i)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">pre</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-number">100000</span>; ++i) isPrime[i] = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-number">100000</span>; ++i)<br>        <span class="hljs-keyword">if</span> (isPrime[i])<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = i * <span class="hljs-number">2</span>; j &lt;= <span class="hljs-number">100000</span>; j += i)<br>                isPrime[j] = <span class="hljs-number">0</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">solve</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> x)</span> </span>&#123;<br>    <span class="hljs-built_in">pre</span>();<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">2</span>; i &lt;= <span class="hljs-built_in">sqrt</span>(x); ++i) &#123;<br>        <span class="hljs-keyword">if</span> (!(x % i) &amp;&amp; isPrime[i]) &#123;<br>            <span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span>) cout &lt;&lt; (x - i) / <span class="hljs-number">2</span> + <span class="hljs-number">1</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">else</span> cout &lt;&lt; x / <span class="hljs-number">2</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    ll n;<br>    cin &gt;&gt; n;<br>    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">prime</span>(n)) cout &lt;&lt; <span class="hljs-number">1</span> &lt;&lt; endl;<br>    <span class="hljs-keyword">else</span> <span class="hljs-built_in">solve</span>(n);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-C：环形连通分量"><a href="#Problem-C：环形连通分量" class="headerlink" title="Problem C：环形连通分量"></a>Problem C：<a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/4496/">环形连通分量</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定一个无向图，判断其中环的个数</p>
+<p>并查集解决，需注意每一个环中节点个数大于等于3且<strong>度</strong>均为2</p>
+<p>才不是因为C++的并查集模板出了问题才用Java的呢😂</p>
+<h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.io.*;<br><span class="hljs-keyword">import</span> java.math.BigInteger;<br><span class="hljs-keyword">import</span> java.util.*;<br><br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Main</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-type">Read</span> <span class="hljs-variable">sc</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Read</span>();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> sc.nextInt(), m = sc.nextInt();<br>        <span class="hljs-type">UnionFind</span> <span class="hljs-variable">uf</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">UnionFind</span>(n + <span class="hljs-number">1</span>);<br>        Map&lt;Integer, Set&lt;Integer&gt;&gt; map = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br><br>        <span class="hljs-type">int</span>[] systemIO = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[n + <span class="hljs-number">1</span>];<br><br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> sc.nextInt(), b = sc.nextInt();<br>            <span class="hljs-keyword">if</span> (uf.find(a) != uf.find(b)) &#123;<br>                uf.union(a, b);<br>            &#125;<br>            systemIO[a]++;<br>            systemIO[b]++;<br>        &#125;<br>        <span class="hljs-type">int</span>[] relationship = uf.root;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt;= n; i++) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">idx</span> <span class="hljs-operator">=</span> uf.find(i);<br>            <span class="hljs-keyword">if</span> (!map.containsKey(idx)) map.put(idx, <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashSet</span>&lt;&gt;());<br>            map.get(idx).add(i);<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (Map.Entry&lt;Integer, Set&lt;Integer&gt;&gt; entry : map.entrySet()) &#123;<br>            <span class="hljs-keyword">if</span> (entry.getValue().size() &lt; <span class="hljs-number">3</span>) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-type">boolean</span> <span class="hljs-variable">flag</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br><br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> val : entry.getValue()) &#123;<br>                <span class="hljs-keyword">if</span> (systemIO[val] != <span class="hljs-number">2</span>) &#123;<br>                    flag = <span class="hljs-literal">false</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (flag) ans++;<br>        &#125;<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Read</span> &#123;<br>    BufferedReader bf;<br>    StringTokenizer st;<br>    BufferedWriter bw;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">Read</span><span class="hljs-params">()</span> &#123;<br>        bf = <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedReader</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">InputStreamReader</span>(System.in));<br>        st = <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringTokenizer</span>(<span class="hljs-string">&quot;&quot;</span>);<br>        bw = <span class="hljs-keyword">new</span> <span class="hljs-title class_">BufferedWriter</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">OutputStreamWriter</span>(System.out));<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">nextLine</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> bf.readLine();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> String <span class="hljs-title function_">next</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">while</span> (!st.hasMoreTokens()) &#123;<br>            st = <span class="hljs-keyword">new</span> <span class="hljs-title class_">StringTokenizer</span>(bf.readLine());<br>        &#125;<br>        <span class="hljs-keyword">return</span> st.nextToken();<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">char</span> <span class="hljs-title function_">nextChar</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> next().charAt(<span class="hljs-number">0</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">nextInt</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Integer.parseInt(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">long</span> <span class="hljs-title function_">nextLong</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Long.parseLong(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">double</span> <span class="hljs-title function_">nextDouble</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Double.parseDouble(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">float</span> <span class="hljs-title function_">nextFloat</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Float.parseFloat(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">byte</span> <span class="hljs-title function_">nextByte</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Byte.parseByte(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">short</span> <span class="hljs-title function_">nextShort</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> Short.parseShort(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> BigInteger <span class="hljs-title function_">nextBigInteger</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">BigInteger</span>(next());<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">println</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        bw.newLine();<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(<span class="hljs-type">int</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">println</span><span class="hljs-params">(String a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(a);<br>        bw.newLine();<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(String a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(a);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">println</span><span class="hljs-params">(<span class="hljs-type">long</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        bw.newLine();<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(<span class="hljs-type">long</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">println</span><span class="hljs-params">(<span class="hljs-type">double</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        bw.newLine();<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(<span class="hljs-type">double</span> a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(String.valueOf(a));<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">print</span><span class="hljs-params">(BigInteger a)</span> <span class="hljs-keyword">throws</span> IOException &#123;<br>        bw.write(a.toString());<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>&#125;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">UnionFind</span> &#123;<br>    <span class="hljs-type">int</span>[] root;<br>    <span class="hljs-type">int</span>[] rank;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">UnionFind</span><span class="hljs-params">(<span class="hljs-type">int</span> size)</span> &#123;<br>        root = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[size];<br>        rank = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[size];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; size; i++) &#123;<br>            root[i] = i;<br>            rank[i] = <span class="hljs-number">1</span>;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">find</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> &#123;<br>        <span class="hljs-keyword">if</span> (x == root[x]) &#123;<br>            <span class="hljs-keyword">return</span> x;<br>        &#125;<br>        <span class="hljs-keyword">return</span> root[x] = find(root[x]);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">union</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootX</span> <span class="hljs-operator">=</span> find(x);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">rootY</span> <span class="hljs-operator">=</span> find(y);<br>        <span class="hljs-keyword">if</span> (rootX != rootY) &#123;<br>            <span class="hljs-keyword">if</span> (rank[rootX] &gt; rank[rootY]) &#123;<br>                root[rootY] = rootX;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (rank[rootX] &lt; rank[rootY]) &#123;<br>                root[rootX] = rootY;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                root[rootY] = rootX;<br>                rank[rootX] += <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">connected</span><span class="hljs-params">(<span class="hljs-type">int</span> x, <span class="hljs-type">int</span> y)</span> &#123;<br>        <span class="hljs-keyword">return</span> find(x) == find(y);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/AcWing/" class="category-chain-item">AcWing</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
+      
+        <a href="/tags/AcWing-Contest/">#AcWing Contest</a>
+      
+        <a href="/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/">#并查集</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>AcWing Weekly Contest 59</div>
+      <div>http://example.com/2022/07/09/AcWing-Weekly-Contest-59/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Haruko Hust</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年7月9日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2022年7月9日</div>
+        </div>
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/07/05/AtCoder-Beginner-Contest-258/" title="AtCoder Beginner Contest 258">
+                        <span class="hidden-mobile">AtCoder Beginner Contest 258</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  <article id="comments" lazyload>
+    
+  <div id="waline"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#waline', function() {
+      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
+        var options = Object.assign(
+          {"serverURL":"https://noi-comments.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
+          {
+            el: '#waline',
+            path: window.location.pathname
+          }
+        )
+        Waline.init(options);
+        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
+          var imgSelector = '#waline .vcontent img:not(.vemoji)';
+          Fluid.plugins.imageCaption(imgSelector);
+          Fluid.plugins.fancyBox(imgSelector);
+        })
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+  </article>
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
