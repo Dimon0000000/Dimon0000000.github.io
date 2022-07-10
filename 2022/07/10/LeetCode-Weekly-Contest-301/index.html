@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/07/10/v1ZS.jpg">
 <meta property="article:published_time" content="2022-07-10T01:25:49.000Z">
-<meta property="article:modified_time" content="2022-07-10T03:39:07.272Z">
+<meta property="article:modified_time" content="2022-07-10T04:18:56.188Z">
 <meta property="article:author" content="Haruko Hust">
 <meta property="article:tag" content="LeetCode Contest">
 <meta property="article:tag" content="双指针">
@@ -241,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.4k 字
+          3.5k 字
         
       </span>
     
@@ -335,7 +335,8 @@
 <h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.PriorityQueue;<br><span class="hljs-keyword">import</span> java.util.Set;<br><span class="hljs-keyword">import</span> java.util.TreeSet;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">SmallestInfiniteSet</span> &#123;<br>    PriorityQueue&lt;Integer&gt; pq = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SmallestInfiniteSet</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">1001</span>; i++) &#123;<br>            pq.add(i);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">popSmallest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> pq.poll();<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addBack</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br>        <span class="hljs-keyword">if</span> (!pq.contains(num)) pq.offer(num);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h3 id="Problem-C：移动片段得到字符串"><a href="#Problem-C：移动片段得到字符串" class="headerlink" title="Problem C：移动片段得到字符串"></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-301/problems/move-pieces-to-obtain-a-string/">移动片段得到字符串</a></h3><p>给定的字符串有三种字符</p>
+<h3 id="Problem-C：移动片段得到字符串"><a href="#Problem-C：移动片段得到字符串" class="headerlink" title="Problem C：移动片段得到字符串"></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-301/problems/move-pieces-to-obtain-a-string/">移动片段得到字符串</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定的字符串有三种字符</p>
 <blockquote>
 <ul>
 <li><code>L</code>代表该字符可以向左边的空位移动</li>
