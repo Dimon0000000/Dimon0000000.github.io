@@ -16,18 +16,21 @@
   <meta name="author" content="Haruko Hust">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MY SUBMISSIONS:  Problems AC:  Problems Try:  Wrong Answer:">
+    <meta name="description" content="MY SUBMISSIONS:  Problems AC: 3 Problems Try: 3 Wrong Answer: 1   Problem A：装满杯子需要的最短总时长题意分析饮水机每秒钟可以选择装满两杯不同的水或一杯水，返回全部接满需要的次数 优先队列：每次抽取需求最多的水的类型，优先接满两杯，最后再处理一杯的 参考代码 12345678910111213141516171819202">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Weekly Contest 301">
 <meta property="og:url" content="http://example.com/2022/07/10/LeetCode-Weekly-Contest-301/index.html">
 <meta property="og:site_name" content="Noiのblog">
-<meta property="og:description" content="MY SUBMISSIONS:  Problems AC:  Problems Try:  Wrong Answer:">
+<meta property="og:description" content="MY SUBMISSIONS:  Problems AC: 3 Problems Try: 3 Wrong Answer: 1   Problem A：装满杯子需要的最短总时长题意分析饮水机每秒钟可以选择装满两杯不同的水或一杯水，返回全部接满需要的次数 优先队列：每次抽取需求最多的水的类型，优先接满两杯，最后再处理一杯的 参考代码 12345678910111213141516171819202">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/07/10/v1ZS.jpg">
 <meta property="article:published_time" content="2022-07-10T01:25:49.000Z">
-<meta property="article:modified_time" content="2022-07-10T01:28:56.098Z">
+<meta property="article:modified_time" content="2022-07-10T03:39:07.272Z">
 <meta property="article:author" content="Haruko Hust">
 <meta property="article:tag" content="LeetCode Contest">
+<meta property="article:tag" content="双指针">
+<meta property="article:tag" content="字符串">
+<meta property="article:tag" content="堆(优先队列)">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s1.328888.xyz/2022/07/10/v1ZS.jpg">
   
@@ -238,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          49 字
+          3.4k 字
         
       </span>
     
@@ -249,7 +252,7 @@
         
         
         
-          1 分钟
+          29 分钟
         
       </span>
     
@@ -300,7 +303,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月10日 上午
+                    本文最后更新于：2022年7月10日 中午
                   
                 
               </p>
@@ -311,11 +314,61 @@
                 <blockquote>
 <p>MY SUBMISSIONS:</p>
 <blockquote>
-<p>Problems AC: </p>
-<p>Problems Try: </p>
-<p>Wrong Answer: </p>
+<p>Problems AC: 3</p>
+<p>Problems Try: 3</p>
+<p>Wrong Answer: 1</p>
 </blockquote>
 </blockquote>
+<h3 id="Problem-A：装满杯子需要的最短总时长"><a href="#Problem-A：装满杯子需要的最短总时长" class="headerlink" title="Problem A：装满杯子需要的最短总时长"></a>Problem A：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-301/problems/minimum-amount-of-time-to-fill-cups/">装满杯子需要的最短总时长</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><p>饮水机每秒钟可以选择装满两杯不同的水或一杯水，返回全部接满需要的次数</p>
+<p>优先队列：每次抽取需求最多的水的类型，优先接满两杯，最后再处理一杯的</p>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Comparator;<br><span class="hljs-keyword">import</span> java.util.PriorityQueue;<br><span class="hljs-keyword">import</span> java.util.Queue;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">fillCups</span><span class="hljs-params">(<span class="hljs-type">int</span>[] amount)</span> &#123;<br>        Queue&lt;Integer&gt; pq = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Integer&gt;() &#123;<br>            <span class="hljs-meta">@Override</span><br>            <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> &#123;<br>                <span class="hljs-keyword">return</span> o2 - o1;<br>            &#125;<br>        &#125;);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> val: amount) <span class="hljs-keyword">if</span> (val != <span class="hljs-number">0</span>) pq.offer(val);<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (!pq.isEmpty()) &#123;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">n1</span> <span class="hljs-operator">=</span> pq.poll();<br>            <span class="hljs-keyword">if</span> (pq.isEmpty()) &#123;<br>                ans += n1;<br>                <span class="hljs-keyword">break</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">int</span> <span class="hljs-variable">n2</span> <span class="hljs-operator">=</span> pq.poll();<br>                n1--;<br>                n2--;<br>                <span class="hljs-keyword">if</span> (n1 != <span class="hljs-number">0</span>) pq.offer(n1);<br>                <span class="hljs-keyword">if</span> (n2 != <span class="hljs-number">0</span>) pq.offer(n2);<br>                ans++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-B：无限集中的最小数字"><a href="#Problem-B：无限集中的最小数字" class="headerlink" title="Problem B：无限集中的最小数字"></a>Problem B：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-301/problems/smallest-number-in-infinite-set/">无限集中的最小数字</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>对于一个正整数集，实现三个主要的方法</p>
+<blockquote>
+<p><code>SmallestInfiniteSet()</code> 初始化 <strong>SmallestInfiniteSet</strong> 对象以包含 <strong>所有</strong> 正整数。</p>
+<p><code>int popSmallest()</code> <strong>移除</strong> 并返回该无限集中的最小整数。</p>
+<p><code>void addBack(int num)</code> 如果正整数 <code>num</code> <strong>不</strong> 存在于无限集中，则将一个 <code>num</code> <strong>添加</strong> 到该无限集中。</p>
+</blockquote>
+<p>为了实现方法二每次弹出最小值，可以使用堆进行模拟(因为数据量较小的原因)</p>
+<h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.PriorityQueue;<br><span class="hljs-keyword">import</span> java.util.Set;<br><span class="hljs-keyword">import</span> java.util.TreeSet;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">SmallestInfiniteSet</span> &#123;<br>    PriorityQueue&lt;Integer&gt; pq = <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">SmallestInfiniteSet</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>; i &lt; <span class="hljs-number">1001</span>; i++) &#123;<br>            pq.add(i);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">popSmallest</span><span class="hljs-params">()</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> pq.poll();<br>        <span class="hljs-keyword">return</span> num;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">addBack</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> &#123;<br>        <span class="hljs-keyword">if</span> (!pq.contains(num)) pq.offer(num);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-C：移动片段得到字符串"><a href="#Problem-C：移动片段得到字符串" class="headerlink" title="Problem C：移动片段得到字符串"></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-301/problems/move-pieces-to-obtain-a-string/">移动片段得到字符串</a></h3><p>给定的字符串有三种字符</p>
+<blockquote>
+<ul>
+<li><code>L</code>代表该字符可以向左边的空位移动</li>
+<li><code>R</code>代表可以向右边的空位移动</li>
+<li><code>_</code>代表一个空位</li>
+</ul>
+</blockquote>
+<p>按照上述的含义，返回是否可以由<code>start</code>转化为<code>target</code></p>
+<p>双指针 + 字符串模拟</p>
+<ol>
+<li>首先进行字符串检查，若两字符中<code>L</code>和<code>R</code>的个数不同，则直接返回false</li>
+<li>定义两个指针<code>p1</code>, <code>p2</code>分别指向<code>start</code>和<code>target</code></li>
+<li>由<code>p2</code>指针先找到第一个<code>L</code>或<code>R</code></li>
+<li>移动<code>p1</code>指针，移动时要注意<ul>
+<li>如果发现了不同于<code>p2</code>指针指向的字符，则可以直接返回<code>false</code><ul>
+<li>例如<code>start = &quot;L__R___R_L&quot;</code>和<code>target =  &quot;L___L__R_R&quot;</code>(两字符串已经经过了开头的检查)</li>
+<li>当<code>p2</code>遍历到 <code>target</code>中的<code>L</code>时，<code>start</code>字符串中<em><strong>相对应的 L</strong></em> 在字符串的结尾，而结尾的<code>L</code>是无法移动到<code>p2</code>对应位置的→(题目要求只能向相邻的空格移动)</li>
+<li>两种字符同理</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>结束后进行一个判断<ul>
+<li>若字符<code>c</code>为<code>L</code>，则<code>p1</code>的位置只可以比<code>p2</code>大(因为<code>L</code>只能向左移动)</li>
+<li>若字符<code>c</code>为<code>R</code>，则<code>p1</code>的位置只可以比<code>p2</code>小(因为<code>R</code>只能向右移动)</li>
+</ul>
+</li>
+<li>根据上述思路遍历完成字符串即可</li>
+</ol>
+<p>具体的代码中会有相应的注释，观看<strong>代码 + 注释</strong>效果更佳😳</p>
+<h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">check</span><span class="hljs-params">(String s, String t)</span> &#123;		<span class="hljs-comment">//检查方法，检测两字符串中L和R字符数是否相同</span><br>        <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">26</span>];<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; s.length(); i++) &#123;<br>            <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> s.charAt(i);<br>            <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;L&#x27;</span> || c == <span class="hljs-string">&#x27;R&#x27;</span>) cnt[c - <span class="hljs-string">&#x27;A&#x27;</span>]++;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; t.length(); i++) &#123;<br>            <span class="hljs-type">char</span> <span class="hljs-variable">c</span> <span class="hljs-operator">=</span> t.charAt(i);<br>            <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;L&#x27;</span> || c == <span class="hljs-string">&#x27;R&#x27;</span>) cnt[c - <span class="hljs-string">&#x27;A&#x27;</span>]--;<br>        &#125;<br>        <span class="hljs-keyword">return</span> cnt[<span class="hljs-string">&#x27;L&#x27;</span> - <span class="hljs-string">&#x27;A&#x27;</span>] == <span class="hljs-number">0</span> &amp;&amp; cnt[<span class="hljs-string">&#x27;R&#x27;</span> - <span class="hljs-string">&#x27;A&#x27;</span>] == <span class="hljs-number">0</span>;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title function_">canChange</span><span class="hljs-params">(String start, String target)</span> &#123;<br>        <span class="hljs-keyword">if</span> (!check(start, target)) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;	<span class="hljs-comment">//首先进行字符串检查，若两字符中`L`和`R`的个数不同，则直接返回false</span><br>        <span class="hljs-type">int</span> <span class="hljs-variable">p1</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, p2 = <span class="hljs-number">0</span>;		<span class="hljs-comment">//定义两个指针p`, p2分别指向start, target</span><br><br>        <span class="hljs-type">char</span> c;<br>        <span class="hljs-keyword">while</span> (p2 &lt; target.length()) &#123;<br>            <span class="hljs-comment">// 由`p2`指针先找到第一个`L`或`R`</span><br>            <span class="hljs-keyword">while</span> (p2 &lt; target.length() &amp;&amp; target.charAt(p2) == <span class="hljs-string">&#x27;_&#x27;</span>) &#123;<br>                p2++;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (p2 == target.length()) <span class="hljs-keyword">break</span>;<br>            <br>            c = target.charAt(p2);		<span class="hljs-comment">//p2指针指向的字符c</span><br>            <br>            <span class="hljs-comment">//移动p1指针</span><br>            <span class="hljs-keyword">while</span> (p1 &lt; start.length() &amp;&amp; start.charAt(p1) != c) &#123;<br>                <span class="hljs-keyword">if</span> (start.charAt(p1) != <span class="hljs-string">&#x27;_&#x27;</span> &amp;&amp; start.charAt(p1) != c) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;		<span class="hljs-comment">//如果发现了不同于p2指针指向的字符c，则可以直接返回false</span><br>                p1++;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (p1 == start.length()) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>			<br>            <span class="hljs-comment">//结束后进行一个判断</span><br>            <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;L&#x27;</span>) &#123;		<span class="hljs-comment">//若字符c为L，则p1的位置只可以比p2大(因为L只能向左移动)</span><br>                <span class="hljs-keyword">if</span> (p1 &lt; p2) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;		<span class="hljs-comment">//若字符c为R，则p1的位置只可以比p2小(因为R只能向右移动)</span><br>                <span class="hljs-keyword">if</span> (p1 &gt; p2) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            <span class="hljs-comment">//指针继续后移</span><br>            p2++;<br>            p1++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">test</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">main</span><span class="hljs-params">(String[] args)</span> &#123;<br>        <span class="hljs-type">Solution</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Solution</span>();<br>        s.canChange(<span class="hljs-string">&quot;_L__R__R_L&quot;</span>, <span class="hljs-string">&quot;L______RR_&quot;</span>);<span class="hljs-comment">// Wrong Answer on test case 102/103 :(</span><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -350,6 +403,12 @@
       <i class="iconfont icon-tags"></i>
       
         <a href="/tags/LeetCode-Contest/">#LeetCode Contest</a>
+      
+        <a href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/">#双指针</a>
+      
+        <a href="/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/">#字符串</a>
+      
+        <a href="/tags/%E5%A0%86-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">#堆(优先队列)</a>
       
     </div>
   
