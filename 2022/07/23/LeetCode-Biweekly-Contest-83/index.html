@@ -16,18 +16,24 @@
   <meta name="author" content="Haruko Hust">
   <meta name="keywords" content="">
   
-    <meta name="description" content="MY SUBMISSIOM  Problem AC: Problem Try: Wrong Answer:">
+    <meta name="description" content="MY SUBMISSIOM  Problem AC: 3 Problem Try: 4 Wrong Answer: 5    前言比赛心得 我在怀疑昨晚的三场比赛我是否时醒着的 Problem A：最好的扑克手牌题意分析 给定你一副牌，返回你手牌的类型 按要求模拟即可 参考代码 12345678910111213141516171819202122232425class Solution &amp;#1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Biweekly Contest 82">
 <meta property="og:url" content="http://example.com/2022/07/23/LeetCode-Biweekly-Contest-83/index.html">
 <meta property="og:site_name" content="Noiのblog">
-<meta property="og:description" content="MY SUBMISSIOM  Problem AC: Problem Try: Wrong Answer:">
+<meta property="og:description" content="MY SUBMISSIOM  Problem AC: 3 Problem Try: 4 Wrong Answer: 5    前言比赛心得 我在怀疑昨晚的三场比赛我是否时醒着的 Problem A：最好的扑克手牌题意分析 给定你一副牌，返回你手牌的类型 按要求模拟即可 参考代码 12345678910111213141516171819202122232425class Solution &amp;#1">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/07/23/mgLB6.jpg">
 <meta property="article:published_time" content="2022-07-23T03:11:19.000Z">
-<meta property="article:modified_time" content="2022-07-23T03:16:14.845Z">
+<meta property="article:modified_time" content="2022-07-24T00:11:58.550Z">
 <meta property="article:author" content="Haruko Hust">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="数论">
+<meta property="article:tag" content="哈希表">
 <meta property="article:tag" content="LeetCode Contest">
+<meta property="article:tag" content="堆(优先队列)">
+<meta property="article:tag" content="脑筋急转弯">
+<meta property="article:tag" content="计数">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s1.328888.xyz/2022/07/23/mgLB6.jpg">
   
@@ -238,7 +244,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          45 字
+          2.9k 字
         
       </span>
     
@@ -249,7 +255,7 @@
         
         
         
-          1 分钟
+          25 分钟
         
       </span>
     
@@ -300,7 +306,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月23日 上午
+                    本文最后更新于：2022年7月24日 早上
                   
                 
               </p>
@@ -311,11 +317,39 @@
                 <blockquote>
 <p>MY SUBMISSIOM</p>
 <blockquote>
-<p>Problem AC:</p>
-<p>Problem Try:</p>
-<p>Wrong Answer: </p>
+<p>Problem AC: 3</p>
+<p>Problem Try: 4</p>
+<p>Wrong Answer: 5 </p>
 </blockquote>
 </blockquote>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><h4 id="比赛心得"><a href="#比赛心得" class="headerlink" title="比赛心得"></a>比赛心得</h4><hr>
+<p>我在怀疑昨晚的三场比赛我是否时醒着的</p>
+<h3 id="Problem-A：最好的扑克手牌"><a href="#Problem-A：最好的扑克手牌" class="headerlink" title="Problem A：最好的扑克手牌"></a>Problem A：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-poker-hand/">最好的扑克手牌</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定你一副牌，返回你手牌的类型</p>
+<p>按要求模拟即可</p>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">bestHand</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; ranks, vector&lt;<span class="hljs-type">char</span>&gt;&amp; suits)</span> </span>&#123;<br>        map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; m;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> val: suits) m[val]++;<br><br>        <span class="hljs-keyword">if</span> (m.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Flush&quot;</span>;<br><br>        m.<span class="hljs-built_in">clear</span>();<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> val: ranks) &#123;<br>            m[val]++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it: m) &#123;<br>            <span class="hljs-keyword">if</span> (it.second &gt;= <span class="hljs-number">3</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Three of a Kind&quot;</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it: m) &#123;<br>            <span class="hljs-keyword">if</span> (it.second &gt;= <span class="hljs-number">2</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Pair&quot;</span>;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;High Card&quot;</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-B：全-0-子数组的数目"><a href="#Problem-B：全-0-子数组的数目" class="headerlink" title="Problem B：全 0 子数组的数目"></a>Problem B：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/number-of-zero-filled-subarrays/">全 0 子数组的数目</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>返回全为0的子数组数目</p>
+<p>运用乘法原理即可</p>
+<h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs java">#include <span class="hljs-string">&quot;bits/stdc++.h&quot;</span><br><br>using namespace std;<br><br>#define <span class="hljs-title function_">fastIO</span><span class="hljs-params">()</span> ios::sync_with_stdio(<span class="hljs-literal">false</span>),cin.tie(nullptr),cout.tie(nullptr)<br><br>typedef <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title function_">zeroFilledSubarray</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> &#123;<br>        <span class="hljs-type">ll</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br><br>        vector&lt;ll&gt; a;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (p &lt; nums.size()) &#123;<br>            <span class="hljs-keyword">if</span> (nums[p] == <span class="hljs-number">0</span>) &#123;<br>                <span class="hljs-type">ll</span> <span class="hljs-variable">cnt</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">while</span> (p &lt; nums.size() &amp;&amp; nums[p] == <span class="hljs-number">0</span>) &#123;<br>                    cnt++, p++;<br>                &#125;<br>                a.push_back(cnt);<br>            &#125;<br>            p++;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (ll val: a) &#123;<br>            ans += (ll) (<span class="hljs-number">1</span> + val) * val / <span class="hljs-number">2</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-C：设计数字容器系统"><a href="#Problem-C：设计数字容器系统" class="headerlink" title="Problem C：设计数字容器系统"></a>Problem C：<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/design-a-number-container-system/">设计数字容器系统</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>设计一个数据结构，可以满足：</p>
+<ul>
+<li>在系统中给定下标处 <strong>插入</strong> 或者 <strong>替换</strong> 一个数字。</li>
+<li><strong>返回</strong> 系统中给定数字的最小下标。</li>
+</ul>
+<p>双哈希映射 + 优先队列(最小堆)</p>
+<h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">import</span> java.util.Comparator;<br><span class="hljs-keyword">import</span> java.util.HashMap;<br><span class="hljs-keyword">import</span> java.util.Map;<br><span class="hljs-keyword">import</span> java.util.PriorityQueue;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">NumberContainers</span> &#123;<br><br>    Map&lt;Integer, Integer&gt; idx2Num = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>    Map&lt;Integer, PriorityQueue&lt;Integer&gt;&gt; num2Idx = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-title function_">NumberContainers</span><span class="hljs-params">()</span> &#123;<br><br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">change</span><span class="hljs-params">(<span class="hljs-type">int</span> index, <span class="hljs-type">int</span> number)</span> &#123;<br>        <span class="hljs-keyword">if</span> (idx2Num.containsKey(index)) &#123;<span class="hljs-comment">//update</span><br>            <span class="hljs-keyword">if</span> (idx2Num.get(index) == number) <span class="hljs-keyword">return</span>;<br>            <span class="hljs-type">int</span> <span class="hljs-variable">num</span> <span class="hljs-operator">=</span> idx2Num.get(index);<br>            idx2Num.put(index, number);<br><br>            num2Idx.get(num).remove(index);<br>            num2Idx.putIfAbsent(number, <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Integer&gt;() &#123;<br>                <span class="hljs-meta">@Override</span><br>                <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> &#123;<br>                    <span class="hljs-keyword">return</span> o1 - o2;<br>                &#125;<br>            &#125;));<br><br>            <span class="hljs-keyword">if</span> (num2Idx.get(num).size() == <span class="hljs-number">0</span>) num2Idx.remove(num);<br><br>            num2Idx.get(number).add(index);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            num2Idx.putIfAbsent(number, <span class="hljs-keyword">new</span> <span class="hljs-title class_">PriorityQueue</span>&lt;&gt;(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Comparator</span>&lt;Integer&gt;() &#123;<br>                <span class="hljs-meta">@Override</span><br>                <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">compare</span><span class="hljs-params">(Integer o1, Integer o2)</span> &#123;<br>                    <span class="hljs-keyword">return</span> o1 - o2;<br>                &#125;<br>            &#125;));<br>            num2Idx.get(number).add(index);<br>            idx2Num.put(index, number);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">find</span><span class="hljs-params">(<span class="hljs-type">int</span> number)</span> &#123;<br>        <span class="hljs-keyword">if</span> (!num2Idx.containsKey(number)) <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">idx</span> <span class="hljs-operator">=</span> num2Idx.get(number).peek();<br>        <span class="hljs-keyword">return</span> idx;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-D："><a href="#Problem-D：" class="headerlink" title="Problem D："></a>Problem D：</h3><h4 id="参考题解"><a href="#参考题解" class="headerlink" title="参考题解"></a>参考题解</h4><hr>
+<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shortest-impossible-sequence-of-rolls/solution/by-endlesscheng-diiq/">贪心及其证明（Python&#x2F;Java&#x2F;C++&#x2F;Go） - 不可能得到的最短骰子序列 </a></p>
+<h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">using</span> vb = vector&lt;<span class="hljs-type">bool</span>&gt;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">shortestSequence</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; rolls, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-function">vb <span class="hljs-title">visited</span><span class="hljs-params">(k)</span></span>;<br>        <br>        <span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>, ans = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> x : rolls) &#123;<br>            <span class="hljs-keyword">if</span> (!visited[x - <span class="hljs-number">1</span>]) &#123;<br>                visited[x - <span class="hljs-number">1</span>] = <span class="hljs-literal">true</span>;<br>                cnt++;<br>                <span class="hljs-keyword">if</span> (!(cnt - k)) &#123;<br>                    visited.<span class="hljs-built_in">clear</span>();<br>                    visited.<span class="hljs-built_in">resize</span>(k);<br>                    cnt = <span class="hljs-number">0</span>;<br>                    ans++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -349,7 +383,19 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+      
+        <a href="/tags/%E6%95%B0%E8%AE%BA/">#数论</a>
+      
+        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
+      
         <a href="/tags/LeetCode-Contest/">#LeetCode Contest</a>
+      
+        <a href="/tags/%E5%A0%86-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97/">#堆(优先队列)</a>
+      
+        <a href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/">#脑筋急转弯</a>
+      
+        <a href="/tags/%E8%AE%A1%E6%95%B0/">#计数</a>
       
     </div>
   
@@ -380,7 +426,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月23日</div>
+          <div>2022年7月24日</div>
         </div>
       
       <div class="license-meta-item">
@@ -408,6 +454,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/07/24/LeetCode-Weekly-Contest-303/" title="LeetCode Weekly Contest 303">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode Weekly Contest 303</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
