@@ -16,18 +16,22 @@
   <meta name="author" content="Haruko Hust">
   <meta name="keywords" content="">
   
-    <meta name="description" content="My Submission  Problem AC: Problem Try: Wrong Answer:">
+    <meta name="description" content="My Submission  Problem AC: 4 Problem Try: 5 Wrong Answer: 1   Problem A：Everyone Loves to Sleep题意分析 给出Vlad的入睡时间和他的所有闹钟时间，返回他可以睡着的时长 模拟：  将所有小时转换为分钟数，找到第一个大于入睡时间的闹钟，若找不到，则使用第二天的第一个闹钟  参考代码 12345678910">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Codeforces Round 811 (Div. 3)">
 <meta property="og:url" content="http://example.com/2022/07/30/Codeforces%20Round%20811%20(Div.%203)/index.html">
 <meta property="og:site_name" content="Noiのblog">
-<meta property="og:description" content="My Submission  Problem AC: Problem Try: Wrong Answer:">
+<meta property="og:description" content="My Submission  Problem AC: 4 Problem Try: 5 Wrong Answer: 1   Problem A：Everyone Loves to Sleep题意分析 给出Vlad的入睡时间和他的所有闹钟时间，返回他可以睡着的时长 模拟：  将所有小时转换为分钟数，找到第一个大于入睡时间的闹钟，若找不到，则使用第二天的第一个闹钟  参考代码 12345678910">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/07/30/FTobP.jpg">
 <meta property="article:published_time" content="2022-07-30T10:45:40.000Z">
-<meta property="article:modified_time" content="2022-07-30T10:50:46.594Z">
+<meta property="article:modified_time" content="2022-08-02T03:05:32.954Z">
 <meta property="article:author" content="Haruko Hust">
 <meta property="article:tag" content="CodeForces Contest">
+<meta property="article:tag" content="哈希表">
+<meta property="article:tag" content="贪心">
+<meta property="article:tag" content="数学">
+<meta property="article:tag" content="脑筋急转弯">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s1.328888.xyz/2022/07/30/FTobP.jpg">
   
@@ -238,7 +242,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          45 字
+          3.4k 字
         
       </span>
     
@@ -249,7 +253,7 @@
         
         
         
-          1 分钟
+          29 分钟
         
       </span>
     
@@ -300,7 +304,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年7月30日 晚上
+                    本文最后更新于：2022年8月2日 上午
                   
                 
               </p>
@@ -311,11 +315,61 @@
                 <blockquote>
 <p>My Submission</p>
 <blockquote>
-<p>Problem AC:</p>
-<p>Problem Try:</p>
-<p>Wrong Answer:</p>
+<p>Problem AC: 4</p>
+<p>Problem Try: 5</p>
+<p>Wrong Answer: 1</p>
 </blockquote>
 </blockquote>
+<h3 id="Problem-A：Everyone-Loves-to-Sleep"><a href="#Problem-A：Everyone-Loves-to-Sleep" class="headerlink" title="Problem A：Everyone Loves to Sleep"></a>Problem A：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1714/problem/A">Everyone Loves to Sleep</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给出Vlad的入睡时间和他的所有闹钟时间，返回他可以睡着的时长</p>
+<p>模拟：</p>
+<ul>
+<li>将所有小时转换为分钟数，找到第一个大于入睡时间的闹钟，若找不到，则使用第二天的第一个闹钟</li>
+</ul>
+<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> loop(t) while (t-- &gt; 0)</span><br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> put(a) for (auto &amp;_x: a) cin &gt;&gt; _x;</span><br><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><span class="hljs-keyword">using</span> vvi = vector&lt;vi&gt;;<br><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br><br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        <span class="hljs-type">int</span> n, H ,M;<br>        cin &gt;&gt; n &gt;&gt; H &gt;&gt; M;<br><br>        <span class="hljs-type">int</span> h, m;<br><br>        <span class="hljs-function">vvi <span class="hljs-title">time</span><span class="hljs-params">(n, vi(<span class="hljs-number">2</span>))</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-built_in">put</span>(time[i]);<br>        &#125;<br>        <span class="hljs-function">vi <span class="hljs-title">minute</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            minute[i] = time[i][<span class="hljs-number">0</span>] * <span class="hljs-number">60</span> + time[i][<span class="hljs-number">1</span>];<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(<span class="hljs-built_in">all</span>(minute));<br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>, now = H * <span class="hljs-number">60</span> + M;<br>        <span class="hljs-keyword">for</span> (; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (minute[i] &gt;= now) <span class="hljs-keyword">break</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> diff;<br>        <span class="hljs-keyword">if</span> (i == n) &#123;<br>            diff = (<span class="hljs-number">24</span> * <span class="hljs-number">60</span>) - now + minute[<span class="hljs-number">0</span>];<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            diff = minute[i] - now;<br>        &#125;<br>        cout &lt;&lt; diff / <span class="hljs-number">60</span> &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span> &lt;&lt; diff % <span class="hljs-number">60</span> &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Problem-B：-Remove-Prefix"><a href="#Problem-B：-Remove-Prefix" class="headerlink" title="Problem B： Remove Prefix"></a>Problem B：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1714/problem/B"> Remove Prefix</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>从前向后删除元素，直到不存在重复元素为止</p>
+<p>可以从后向前使用哈希表统计，直到出现重复元素为止</p>
+<h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> loop(t) while (t-- &gt; 0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> us unordered_set</span><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br><br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-built_in">put</span>(a);<br><br>        us&lt;<span class="hljs-type">int</span>&gt; set;<br>        <span class="hljs-type">int</span> i;<br>        <span class="hljs-keyword">for</span> (i = a.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span> ; --i) &#123;<br>            <span class="hljs-keyword">if</span> (set.<span class="hljs-built_in">count</span>(a[i])) <span class="hljs-keyword">break</span>;<br>            set.<span class="hljs-built_in">insert</span>(a[i]);<br>        &#125;<br>        i++;<br>        cout &lt;&lt; a.<span class="hljs-built_in">size</span>() - (a.<span class="hljs-built_in">size</span>() - i) &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Problem-C：Minimum-Varied-Number"><a href="#Problem-C：Minimum-Varied-Number" class="headerlink" title="Problem C：Minimum Varied Number"></a>Problem C：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1714/problem/C">Minimum Varied Number</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给定<code>n</code>个查询，对于查询的每一个数，返回它的最短数之和(每个数字只可以用一次)</p>
+<p>贪心，从9开始统计，每次减少1</p>
+<p>若查询的数<code>s</code>大于当前数，则减去，直到<code>s</code>为0</p>
+<h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> loop(t) while (t-- &gt; 0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> all(a) a.begin(),a.end()</span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t, s;<br>    cin &gt;&gt; t;<br><br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        cin &gt;&gt; s;<br>        string a;<br>        <span class="hljs-type">int</span> used = <span class="hljs-number">9</span>;<br>        <span class="hljs-keyword">while</span> (s &gt; <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-keyword">if</span> (s &gt;= used) a += (<span class="hljs-type">char</span>) (used + <span class="hljs-string">&#x27;0&#x27;</span>), s -= used;<br>            used--;<br>        &#125;<br>        <span class="hljs-built_in">reverse</span>(<span class="hljs-built_in">all</span>(a));<br>        cout&lt;&lt;a &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-E：Add-Modulo-10"><a href="#Problem-E：Add-Modulo-10" class="headerlink" title="Problem E：Add Modulo 10"></a>Problem E：<a target="_blank" rel="noopener" href="https://codeforces.com/contest/1714/problem/E">Add Modulo 10</a></h3><h4 id="题意分析-3"><a href="#题意分析-3" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>数学：</p>
+<p>对于任意一个数，会发现按题目要求加下去一定会出现循环</p>
+<p>例：</p>
+<blockquote>
+<p>22 → 24 → 28 → 36 → 42</p>
+<p>此时数字的个位出现了循环</p>
+<p>5 → 10 → 10</p>
+<p>此时数字的个位出现了循环</p>
+<p>18 → 26 → 32 →  34 → 38</p>
+<p>此时数字的个位出现了循环</p>
+</blockquote>
+<p>基于此，可以对每一个数字的变化进行循环，直到出现个位重复的情况时，检查二者余20的模是否相同</p>
+<p>例：</p>
+<blockquote>
+<p>Ⅰ: 18</p>
+<p>Ⅱ : 22 → 24 → 28</p>
+<p>Ⅰ余20的模为18，Ⅱ余20的模为8；无论再如何操作，二者个位相同时，差值总是为10，此时无法使得数组全部数字相同</p>
+</blockquote>
+<p>根据以上思路遍历每一个数字即可</p>
+<p>需要注意的是，当数组中出现5或10，整个数组就只能为<code>I * 10</code></p>
+<h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> sz(a) a.size()</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> judge(x) <span class="hljs-keyword">if</span> (x) cout &lt;&lt; <span class="hljs-string">&quot;Yes&quot;</span> &lt;&lt; endl; <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;No&quot;</span> &lt;&lt; endl</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> loop(t) while (t-- &gt; 0)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> enhanceFor(t) for (auto it: t)</span><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n)</span>,b</span>;<br>        us &lt;<span class="hljs-type">int</span>&gt; set;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            cin &gt;&gt; a[i];<br>            <span class="hljs-keyword">if</span> (a[i] % <span class="hljs-number">10</span> == <span class="hljs-number">5</span>) b.<span class="hljs-built_in">pb</span>(a[i] + <span class="hljs-number">5</span>);<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (a[i] % <span class="hljs-number">10</span> == <span class="hljs-number">0</span>) b.<span class="hljs-built_in">pb</span>(a[i]);<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-type">int</span> v = a[i];<br>                <span class="hljs-keyword">while</span> (v % <span class="hljs-number">10</span> != <span class="hljs-number">8</span>) &#123;<br>                    v += v % <span class="hljs-number">10</span>;<br>                &#125;<br>                set.<span class="hljs-built_in">insert</span>(v % <span class="hljs-number">20</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">sz</span>(b)) &#123;<br>            <span class="hljs-type">bool</span> flag = <span class="hljs-built_in">sz</span>(b) == n;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> v: b) <span class="hljs-keyword">if</span> (v != b[<span class="hljs-number">0</span>]) flag = <span class="hljs-number">0</span>;<br>            <span class="hljs-built_in">judge</span>(flag);<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-built_in">judge</span>(set.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>);<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -351,6 +405,14 @@
       
         <a href="/tags/CodeForces-Contest/">#CodeForces Contest</a>
       
+        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
+      
+        <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
+      
+        <a href="/tags/%E6%95%B0%E5%AD%A6/">#数学</a>
+      
+        <a href="/tags/%E8%84%91%E7%AD%8B%E6%80%A5%E8%BD%AC%E5%BC%AF/">#脑筋急转弯</a>
+      
     </div>
   
 </div>
@@ -380,7 +442,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年7月30日</div>
+          <div>2022年8月2日</div>
         </div>
       
       <div class="license-meta-item">
