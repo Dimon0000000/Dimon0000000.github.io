@@ -16,18 +16,21 @@
   <meta name="author" content="Haruko Hust">
   <meta name="keywords" content="">
   
-    <meta name="description" content="My Submission  Problem AC:  Problem Try:  Wrong Answer:    Problem A：题意分析 参考代码 Problem B：题意分析 参考代码 Problem C：题意分析 参考代码 Problem D：题意分析 参考代码">
+    <meta name="description" content="My Submission  Problem AC: 3 Problem Try: 4 Wrong Answer: 0   Problem A：Full House题意分析 签到题 参考代码 12345678910111213141516171819202122232425262728#include &quot;bits&#x2F;stdc++.h&quot;#include &quot;iomanip">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LINE Verda Programming Contest(AtCoder Beginner Contest 263)">
 <meta property="og:url" content="http://example.com/2022/08/05/AtCoder-Beginner-Contest-263/index.html">
 <meta property="og:site_name" content="Noiのblog">
-<meta property="og:description" content="My Submission  Problem AC:  Problem Try:  Wrong Answer:    Problem A：题意分析 参考代码 Problem B：题意分析 参考代码 Problem C：题意分析 参考代码 Problem D：题意分析 参考代码">
+<meta property="og:description" content="My Submission  Problem AC: 3 Problem Try: 4 Wrong Answer: 0   Problem A：Full House题意分析 签到题 参考代码 12345678910111213141516171819202122232425262728#include &quot;bits&#x2F;stdc++.h&quot;#include &quot;iomanip">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/08/05/jeq2n.jpg">
 <meta property="article:published_time" content="2022-08-05T01:52:40.000Z">
-<meta property="article:modified_time" content="2022-08-05T02:09:29.925Z">
+<meta property="article:modified_time" content="2022-08-07T05:26:25.444Z">
 <meta property="article:author" content="Haruko Hust">
 <meta property="article:tag" content="Atcoder Contest">
+<meta property="article:tag" content="模拟">
+<meta property="article:tag" content="哈希表">
+<meta property="article:tag" content="回溯算法">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s1.328888.xyz/2022/08/05/jeq2n.jpg">
   
@@ -238,7 +241,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          113 字
+          2.1k 字
         
       </span>
     
@@ -249,7 +252,7 @@
         
         
         
-          1 分钟
+          18 分钟
         
       </span>
     
@@ -300,7 +303,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年8月5日 上午
+                    本文最后更新于：2022年8月7日 下午
                   
                 
               </p>
@@ -311,17 +314,33 @@
                 <blockquote>
 <p>My Submission</p>
 <blockquote>
-<p>Problem AC: </p>
-<p>Problem Try: </p>
-<p>Wrong Answer: </p>
+<p>Problem AC: 3</p>
+<p>Problem Try: 4</p>
+<p>Wrong Answer: 0</p>
 </blockquote>
 </blockquote>
-<h3 id="Problem-A："><a href="#Problem-A：" class="headerlink" title="Problem A："></a>Problem A：</h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<h3 id="Problem-A：Full-House"><a href="#Problem-A：Full-House" class="headerlink" title="Problem A：Full House"></a>Problem A：<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc263/tasks/abc263_a">Full House</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>签到题</p>
 <h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<h3 id="Problem-B："><a href="#Problem-B：" class="headerlink" title="Problem B："></a>Problem B：</h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> a, b, c, d, e;<br>    cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d &gt;&gt; e;<br>    map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; map;<br>    map[a]++;<br>    map[b]++;<br>    map[c]++;<br>    map[d]++;<br>    map[e]++;<br>    <span class="hljs-keyword">if</span> (map.<span class="hljs-built_in">size</span>() != <span class="hljs-number">2</span>) cout &lt;&lt; <span class="hljs-string">&quot;No&quot;</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>    <span class="hljs-keyword">else</span> &#123;<br>        <span class="hljs-type">int</span> g = <span class="hljs-number">-1</span>, h = <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it: map) &#123;<br>            <span class="hljs-keyword">if</span> (g == <span class="hljs-number">-1</span>) g = it.second;<br>            <span class="hljs-keyword">else</span> h = it.second;<br>        &#125;<br>        <span class="hljs-keyword">if</span> ((g == <span class="hljs-number">3</span> &amp;&amp; h == <span class="hljs-number">2</span> ) || ( h == <span class="hljs-number">3</span> &amp;&amp; g == <span class="hljs-number">2</span>)) cout &lt;&lt; <span class="hljs-string">&quot;Yes&quot;</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>        <span class="hljs-keyword">else</span> cout &lt;&lt; <span class="hljs-string">&quot;No&quot;</span> &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="Problem-B：B-Ancestor"><a href="#Problem-B：B-Ancestor" class="headerlink" title="Problem B：B - Ancestor"></a>Problem B：<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc263/tasks/abc263_b">B - Ancestor</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>从第N个节点寻找，直到1节点为止</p>
+<p>深搜即可</p>
 <h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<h3 id="Problem-C："><a href="#Problem-C：" class="headerlink" title="Problem C："></a>Problem C：</h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">dfs</span><span class="hljs-params">(vi a, <span class="hljs-type">int</span> n)</span> </span>&#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">while</span> (a[n] != <span class="hljs-number">1</span>) &#123;<br>        ans++;<br>        n = a[n] - <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ans;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> n;<br><br>    cin &gt;&gt; n;<br>    <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n, <span class="hljs-number">0</span>)</span></span>;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; n; ++i) &#123;<br>        cin &gt;&gt; a[i];<br>    &#125;<br>    cout &lt;&lt; <span class="hljs-built_in">dfs</span>(a, n - <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="Problem-C：Monotonically-Increasing"><a href="#Problem-C：Monotonically-Increasing" class="headerlink" title="Problem C：Monotonically Increasing"></a>Problem C：<a target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc263/tasks/abc263_c">Monotonically Increasing</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>长度为n的，最大值为m的递增子序列</p>
+<p>回溯求解即可</p>
 <h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> fastIO() ios::sync_with_stdio(false),cin.tie(nullptr),cout.tie(nullptr)</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> pb push_back</span><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><br>set&lt;<span class="hljs-type">int</span>&gt; sets;<br><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">backTrack</span><span class="hljs-params">(<span class="hljs-type">int</span> limit, vector&lt;<span class="hljs-type">int</span>&gt; a, <span class="hljs-type">int</span> k, <span class="hljs-type">int</span> num)</span> </span>&#123;<br>    <span class="hljs-keyword">if</span> (a.<span class="hljs-built_in">size</span>() == limit) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; limit; ++i) &#123;<br>            <span class="hljs-keyword">if</span> (i == limit - <span class="hljs-number">1</span>) cout &lt;&lt; a[i] &lt;&lt; endl;<br>            <span class="hljs-keyword">else</span> cout &lt;&lt; a[i] &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = num; i &lt;= k; ++i) &#123;<br>        <span class="hljs-keyword">if</span> (!sets.<span class="hljs-built_in">count</span>(i)) &#123;<br>            sets.<span class="hljs-built_in">insert</span>(i);<br>            a.<span class="hljs-built_in">pb</span>(i);<br>            <span class="hljs-built_in">backTrack</span>(limit, a, k, i + <span class="hljs-number">1</span>);<br>            a.<span class="hljs-built_in">pop_back</span>();<br>            sets.<span class="hljs-built_in">erase</span>(i);<br>        &#125;<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> n, m;<br>    cin &gt;&gt; n &gt;&gt; m;<br>    vi a;<br>    <span class="hljs-built_in">backTrack</span>(n, a, m, <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<blockquote>
+<p>以下为补题</p>
+</blockquote>
 <h3 id="Problem-D："><a href="#Problem-D：" class="headerlink" title="Problem D："></a>Problem D：</h3><h4 id="题意分析-3"><a href="#题意分析-3" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
 
@@ -359,6 +378,12 @@
       
         <a href="/tags/Atcoder-Contest/">#Atcoder Contest</a>
       
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+      
+        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
+      
+        <a href="/tags/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95/">#回溯算法</a>
+      
     </div>
   
 </div>
@@ -388,7 +413,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年8月5日</div>
+          <div>2022年8月7日</div>
         </div>
       
       <div class="license-meta-item">
