@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>Test</title>
+    <link href="/2022/08/18/Test/"/>
+    <url>/2022/08/18/Test/</url>
+    
+    <content type="html"><![CDATA[<p>This is a test</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Welcome to Noiのblog</title>
+    <link href="/2022/08/18/Q&amp;A/"/>
+    <url>/2022/08/18/Q&amp;A/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些LeetCode, CodeForce, Atcoder竞赛题题解<br>以及个人平时的摄影作品</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>发一些高质量的题吧，或是说等我上紫名</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>Q&amp;A</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Quention &amp; Answer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LeetCode Weekly Contest 305</title>
     <link href="/2022/08/07/LeetCode-Weekly-Contest-305/"/>
     <url>/2022/08/07/LeetCode-Weekly-Contest-305/</url>
@@ -24,9 +62,9 @@
       
       <tag>枚举</tag>
       
-      <tag>动态规划</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
+      
+      <tag>动态规划</tag>
       
     </tags>
     
@@ -53,38 +91,13 @@
       
       <tag>CodeForces Contest</tag>
       
+      <tag>脑筋急转弯</tag>
+      
       <tag>哈希表</tag>
       
       <tag>贪心</tag>
       
       <tag>数学</tag>
-      
-      <tag>脑筋急转弯</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>Welcome to Noiのblog</title>
-    <link href="/2022/06/17/Q&amp;A/"/>
-    <url>/2022/06/17/Q&amp;A/</url>
-    
-    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些LeetCode, CodeForce, Atcoder竞赛题题解<br>以及个人平时的摄影作品</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>发一些高质量的题吧，或是说等我上紫名</p>]]></content>
-    
-    
-    <categories>
-      
-      <category>Q&amp;A</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Quention &amp; Answer</tag>
       
     </tags>
     
