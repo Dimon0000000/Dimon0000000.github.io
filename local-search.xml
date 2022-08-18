@@ -4,23 +4,23 @@
   
   
   <entry>
-    <title>Welcome to Noiのblog</title>
-    <link href="/2022/08/18/Q&amp;A/"/>
-    <url>/2022/08/18/Q&amp;A/</url>
+    <title>freee Programming Contest 2022 (AtCoder Beginner Contest 264)</title>
+    <link href="/2022/08/18/AtCoder-Beginner-Contest/"/>
+    <url>/2022/08/18/AtCoder-Beginner-Contest/</url>
     
-    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些LeetCode, CodeForce, Atcoder竞赛题题解<br>以及个人平时的摄影作品</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>发一些高质量的题吧，或是说等我上紫名</p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>My SubMisson</p><blockquote><p>Number of Problem:</p><p>Problem AC:</p><p>Wrong Answer:</p></blockquote></blockquote>]]></content>
     
     
     <categories>
       
-      <category>Q&amp;A</category>
+      <category>AtCoder</category>
       
     </categories>
     
     
     <tags>
       
-      <tag>Quention &amp; Answer</tag>
+      <tag>AtCoder Contest</tag>
       
     </tags>
     
@@ -85,6 +85,31 @@
       <tag>贪心</tag>
       
       <tag>数学</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Welcome to Noiのblog</title>
+    <link href="/2022/06/21/Q&amp;A/"/>
+    <url>/2022/06/21/Q&amp;A/</url>
+    
+    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些LeetCode, CodeForce, Atcoder竞赛题题解<br>以及个人平时的摄影作品</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>发一些高质量的题吧，或是说等我上紫名</p><hr><h3 id="你主打哪些比赛"><a href="#你主打哪些比赛" class="headerlink" title="你主打哪些比赛"></a>你主打哪些比赛</h3><p>LeetCode, AtCoder, CodeForces,AcWing</p><hr><h3 id="你主要使用的语言"><a href="#你主要使用的语言" class="headerlink" title="你主要使用的语言"></a>你主要使用的语言</h3><p>C++, Python3, Java</p><p>频率从前向后递减</p><hr>]]></content>
+    
+    
+    <categories>
+      
+      <category>Q&amp;A</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Quention &amp; Answer</tag>
       
     </tags>
     
