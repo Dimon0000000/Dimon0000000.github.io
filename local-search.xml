@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>数据库系统原理</title>
+    <link href="/2022/08/20/Databae-system-principles/"/>
+    <url>/2022/08/20/Databae-system-principles/</url>
+    
+    <content type="html"><![CDATA[<h1 id="1-数据库系统概述"><a href="#1-数据库系统概述" class="headerlink" title="1.数据库系统概述"></a>1.数据库系统概述</h1><h3 id="请简述什么是数据库管理系统-DBMS-，以及它的主要功能有哪些"><a href="#请简述什么是数据库管理系统-DBMS-，以及它的主要功能有哪些" class="headerlink" title="请简述什么是数据库管理系统(DBMS)，以及它的主要功能有哪些?"></a>请简述什么是数据库管理系统(DBMS)，以及它的主要功能有哪些?</h3><ul><li><p>数据库管理系统安装于操作系统之上，是一个<strong>管理</strong>，<strong>控制</strong>数据库中各种数据库对象的系统软件。</p></li><li><p>数据库管理系统通过调用操作系统的服务，为数据库用户提供管理，控制数据库中各种数据库对象，数据库文件的接口，实现对数据的管理和维护</p></li></ul><h3 id="什么是数据库系统-DBS-？它有什么特点？"><a href="#什么是数据库系统-DBS-？它有什么特点？" class="headerlink" title="什么是数据库系统(DBS)？它有什么特点？"></a>什么是数据库系统(DBS)？它有什么特点？</h3><ul><li>DBS是指计算机引入数据库之后的系统，它能够有组织地、动态地存储大量的数据，提供数据处理和数据共享机制</li><li>数据库系统包含了：DB、DBMS、计算机系统(硬件 + 软件平台 + 人)</li><li>DBS的特点有：<ul><li>数据结构化<ul><li>不仅描述数据本身，还要描述数据与数据之间的关系</li></ul></li><li>高共享性，低冗余度，易扩充<ul><li>数据不再面向某个应用，而是面向整个操作系统</li></ul></li><li>数据独立性高<ul><li>物理独立性和逻辑独立性</li></ul></li><li>由DBMS管理和控制<ul><li>安全性，完整性，并发，恢复</li></ul></li></ul></li></ul><h3 id="请简述什么是模式，外模式和内模式；三者是如何保证数据独立性的？"><a href="#请简述什么是模式，外模式和内模式；三者是如何保证数据独立性的？" class="headerlink" title="请简述什么是模式，外模式和内模式；三者是如何保证数据独立性的？"></a>请简述什么是模式，外模式和内模式；三者是如何保证数据独立性的？</h3><ul><li><strong>模式</strong>是数据库中全体数据的逻辑结构特征的描述</li><li><strong>外模式</strong>是数据库中用户所见和使用的局部数据的逻辑结构和特征的描述(也成为<strong>子模式</strong>)</li><li><strong>内模式</strong>是数据物理结构和存储方法的描述</li><li>通常通过<strong>三层模式</strong>和<strong>二级映像</strong>来保证数据独立性</li></ul><h3 id="请具体简述数据独立性和二级映像的功能"><a href="#请具体简述数据独立性和二级映像的功能" class="headerlink" title="请具体简述数据独立性和二级映像的功能"></a>请具体简述数据独立性和二级映像的功能</h3><ul><li>数据独立性是指数据与程序之间的互不依赖性，一般分为<strong>物理独立性</strong>和<strong>逻辑独立性</strong><ul><li><strong>物理独立性</strong>是指数据库<strong>存储结构</strong>的改变不影响逻辑结构及应用程序，依靠”外模式&#x2F;模式”映射实现</li><li><strong>逻辑独立性</strong>是指数据库<strong>逻辑结构</strong>的改变不影响应用程序，依靠“模式&#x2F;内模式”实现</li></ul></li><li>为实现数据独立性，数据库在三层模式之间提供了两级映像<ul><li>外模式&#x2F;模式<ul><li>模式描述的是全局的逻辑结构，外模式描述的是数据的局部逻辑结构。<em><strong>对于每一个外模式，数据库都有一个外模式&#x2F;模式映射</strong></em>，它定义了该外模式与模式之间的对应关系</li><li>当模式发生改变时(如增加了新的关系，属性，数据类型等)，DBA可以对各个外模式&#x2F;模式映射做相应改变，使外模式不发生变化，从而应用程序不必修改，保证了数据与应用程序的<strong>逻辑独立性</strong></li></ul></li><li>模式&#x2F;内模式<ul><li>内模式描述的是数据物理结构和存储方法。数据库中只有一个模式，也只有一个内模式，因此<em><strong>内模式是唯一的</strong></em></li><li>当内模式发生改变时(如选用了另一种存储方式)，DBA可以对模式&#x2F;内模式映射做相应改变，使模式不发生变化，从而应用程序不必修改，保证了数据与应用程序的<strong>物理独立性</strong></li></ul></li></ul></li></ul><h3 id="请简述三级模式与两层映像的优点"><a href="#请简述三级模式与两层映像的优点" class="headerlink" title="请简述三级模式与两层映像的优点"></a>请简述三级模式与两层映像的优点</h3><ol><li>保证了数据的独立性</li><li>方便用户使用，简化用户接口</li><li>保证数据库安全性</li><li>有利于数据库的共享</li><li>利于宏观上理解数据库系统的内部构造</li></ol><h3 id="信息系统-IS-的概念及基本功能"><a href="#信息系统-IS-的概念及基本功能" class="headerlink" title="信息系统(IS)的概念及基本功能"></a>信息系统(IS)的概念及基本功能</h3><ul><li>信息系统使由计算机硬件、网络和通信设备、计算机软件、信息资源、信息用户等组成的，以处理信息流为目的的人机一体化系统</li><li>5个基本功能：信息的输入、存储、处理、输出、控制</li></ul><h3 id="请简述C-x2F-S和B-x2F-S结构和区别"><a href="#请简述C-x2F-S和B-x2F-S结构和区别" class="headerlink" title="请简述C&#x2F;S和B&#x2F;S结构和区别"></a>请简述C&#x2F;S和B&#x2F;S结构和区别</h3><ul><li>C&#x2F;S(Client&#x2F;Server)结构，即客户机和服务器结构。通过它可以充分利用两端硬件的优势，将任务合理分配到Client端和Server端来实现，降低了系统的通信开销。C&#x2F;S结构的基本原则是将计算机应用任务拆分成多个子任务，由多个计算机分工完成，及采用”功能分布”原则</li><li>B&#x2F;S(Browser&#x2F;Server)结构，使Web兴起后的一种网络模式结构，Web浏览器是客户端主要的应用软件，实现了客户端的统一。B&#x2F;S最大的优点就是可以在任何地方进行操作而不用安装专门的客户端</li><li>二者的最大区别在于C&#x2F;S需要安装专门的客户端，而B&#x2F;S仅需要通过浏览器页面即可实现相关功能</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>数据库系统原理</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>数据库系统原理</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LeetCode Weekly Contest Album (Q3 &amp; Q4 only)</title>
     <link href="/2022/08/20/LeetCode-Weekly-Contest-album1/"/>
     <url>/2022/08/20/LeetCode-Weekly-Contest-album1/</url>
