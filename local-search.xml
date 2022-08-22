@@ -8,7 +8,7 @@
     <link href="/2022/08/20/Operation-System/"/>
     <url>/2022/08/20/Operation-System/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="1-操作系统引论"><a href="#1-操作系统引论" class="headerlink" title="1.操作系统引论"></a>1.操作系统引论</h1><h3 id="请简述什么是操作系统"><a href="#请简述什么是操作系统" class="headerlink" title="请简述什么是操作系统"></a>请简述什么是操作系统</h3><p>操作系统(Operation System, OS)是配置在计算机硬件上的第一层软件，是对硬件系统的扩充。其主要作用是管理好这些设备(硬件设施)，提高它们的利用率和系统的吞吐量，并为用户和应用程序提供一个简单的接口，便于用户使用</p><h3 id="设计操作系统的目标有哪些"><a href="#设计操作系统的目标有哪些" class="headerlink" title="设计操作系统的目标有哪些"></a>设计操作系统的目标有哪些</h3><ol><li>方便性</li><li>有效性</li><li>可扩充性</li><li>开放性</li></ol><h3 id="操作系统的作用有哪些"><a href="#操作系统的作用有哪些" class="headerlink" title="操作系统的作用有哪些"></a>操作系统的作用有哪些</h3><ol><li>作为用户与计算机硬件系统之间的接口<ul><li>OS处于用户与计算机硬件系统之间，用户通过OS来使用计算机系统</li></ul></li><li>作为计算机系统的管理者<ul><li>在一个计算机系统中，通常包含有许多硬件和软件资源。归纳起来可将这些资源分为：处理机、存储器、I&#x2F;O设备和文件。OS的主要功能就是对这四类资源进行管理</li></ul></li><li>实现对计算机资源的抽象<ul><li>OS向用户提供的是一个“虚拟机”，用户无需具体了解计算机硬件的物理接口的作用，便可实现对计算机的使用</li></ul></li></ol>]]></content>
     
     
     <categories>
@@ -99,9 +99,9 @@
       
       <tag>广度优先搜索(BFS)</tag>
       
-      <tag>贪心</tag>
-      
       <tag>差分数组</tag>
+      
+      <tag>贪心</tag>
       
     </tags>
     
@@ -182,13 +182,13 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
-      
-      <tag>贪心</tag>
       
       <tag>数学</tag>
       
