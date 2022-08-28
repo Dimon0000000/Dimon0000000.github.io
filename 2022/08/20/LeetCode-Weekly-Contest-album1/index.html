@@ -25,12 +25,14 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s1.328888.xyz/2022/08/19/3HhHP.png">
 <meta property="article:published_time" content="2022-08-20T00:14:08.000Z">
-<meta property="article:modified_time" content="2022-08-22T00:08:05.533Z">
+<meta property="article:modified_time" content="2022-08-28T06:39:39.195Z">
 <meta property="article:author" content="Haruko Hust">
 <meta property="article:tag" content="LeetCode Contest">
 <meta property="article:tag" content="广度优先搜索(BFS)">
 <meta property="article:tag" content="差分数组">
 <meta property="article:tag" content="贪心">
+<meta property="article:tag" content="拓扑排序">
+<meta property="article:tag" content="模拟">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s1.328888.xyz/2022/08/19/3HhHP.png">
   
@@ -241,7 +243,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          3.5k 字
+          5.3k 字
         
       </span>
     
@@ -252,7 +254,7 @@
         
         
         
-          30 分钟
+          45 分钟
         
       </span>
     
@@ -303,7 +305,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年8月22日 早上
+                    本文最后更新于：2022年8月28日 下午
                   
                 
               </p>
@@ -347,6 +349,21 @@
 <h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(unordered_map&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;map, TreeNode* root)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (root== <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">if</span> (root-&gt;left!= <span class="hljs-literal">nullptr</span>)map[root-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;left-&gt;val),map[root-&gt;left-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;val), <span class="hljs-built_in">dfs</span>(map, root-&gt;left);<br>        <span class="hljs-keyword">if</span> (root-&gt;right!= <span class="hljs-literal">nullptr</span>)map[root-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;right-&gt;val),map[root-&gt;right-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;val), <span class="hljs-built_in">dfs</span>(map,root-&gt;right);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">amountOfTime</span><span class="hljs-params">(TreeNode* root, <span class="hljs-type">int</span> start)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;&gt; map;<br>        <span class="hljs-built_in">dfs</span>(map, root);<br><br>        queue&lt;<span class="hljs-type">int</span>&gt; queue;<br>        queue.<span class="hljs-built_in">push</span>(start);<br><br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>, n = map.<span class="hljs-built_in">size</span>();<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; set;<br><br><br>        <span class="hljs-keyword">while</span> (!queue.<span class="hljs-built_in">empty</span>())&#123;<br>            <span class="hljs-type">int</span> size = queue.<span class="hljs-built_in">size</span>();<br>            <span class="hljs-keyword">while</span> (size--&gt;<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-type">int</span> pos = queue.<span class="hljs-built_in">front</span>();<br>                queue.<span class="hljs-built_in">pop</span>();<br><br>                <span class="hljs-keyword">if</span>(set.<span class="hljs-built_in">count</span>(pos)) <span class="hljs-keyword">continue</span>;<br>                set.<span class="hljs-built_in">insert</span>(pos);<br><br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v: map[pos]) <span class="hljs-keyword">if</span> (!set.<span class="hljs-built_in">count</span>(v)) queue.<span class="hljs-built_in">push</span>(v);<br>            &#125;<br>            ++ans;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans - <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
 
+<h3 id="W308-T3-收集垃圾的最少总时间"><a href="#W308-T3-收集垃圾的最少总时间" class="headerlink" title="W308-T3 收集垃圾的最少总时间"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-amount-of-time-to-collect-garbage/">W308-T3 收集垃圾的最少总时间</a></h3><h4 id="题意分析-4"><a href="#题意分析-4" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>每次只能使用一辆垃圾车，每次必须收集完全部的垃圾</p>
+<p>则可以对每一栋房子中的三种垃圾以及所有的三种垃圾计数</p>
+<p>直到采集完成后结束</p>
+<h4 id="参考代码-4"><a href="#参考代码-4" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">garbageCollection</span><span class="hljs-params">(vector&lt;string&gt;&amp; garbage, vector&lt;<span class="hljs-type">int</span>&gt;&amp; travel)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>, unordered_map&lt;<span class="hljs-type">char</span>, <span class="hljs-type">int</span>&gt;&gt; map;<br>        unordered_map&lt;<span class="hljs-type">char</span>, <span class="hljs-type">int</span>&gt; cnt;<br>        <span class="hljs-type">int</span> n = garbage.<span class="hljs-built_in">size</span>();<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; ++i) &#123;<br>            string g = garbage[i];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:g) map[i][c]++,++cnt[c];<br>        &#125;<br><br>        <span class="hljs-type">char</span> a[<span class="hljs-number">3</span>] = &#123;<span class="hljs-string">&#x27;P&#x27;</span>,<span class="hljs-string">&#x27;M&#x27;</span>,<span class="hljs-string">&#x27;G&#x27;</span>&#125;;<br><br>        <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> <span class="hljs-type">char</span>&amp; c: a)&#123;<br>            <span class="hljs-type">int</span> p=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span> (cnt[c]&gt;<span class="hljs-number">0</span>)&#123;<br>                ans += map[p][c],cnt[c]-=map[p][c];<br>                <span class="hljs-keyword">if</span> (cnt[c]&gt;<span class="hljs-number">0</span>)ans+=travel[p],++p;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+
+
+<h3 id="W308-T4-给定条件下构造矩阵"><a href="#W308-T4-给定条件下构造矩阵" class="headerlink" title="W308-T4 给定条件下构造矩阵"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/build-a-matrix-with-conditions/">W308-T4 给定条件下构造矩阵</a></h3><h4 id="题意分析-5"><a href="#题意分析-5" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+<p>给的一个行元素限制和列元素限制，返回按照限制之下所能构成的矩阵</p>
+<p>由于元素之间只有先后出现之分，可以使用拓扑排序来确定每一个元素由下到上的出现次序和由右到左的出现次序</p>
+<h4 id="参考代码-5"><a href="#参考代码-5" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">topo_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> k, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; edges)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">grid</span>(k);<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">in</span><span class="hljs-params">(k)</span></span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp;e: edges)&#123;<br>            <span class="hljs-type">int</span> x = e[<span class="hljs-number">0</span>]<span class="hljs-number">-1</span>,y=e[<span class="hljs-number">1</span>]<span class="hljs-number">-1</span>;<br>            grid[x].<span class="hljs-built_in">push_back</span>(y);<br>            in[y]++;<br>        &#125;<br><br>        vector&lt;<span class="hljs-type">int</span>&gt; order;<br>        queue&lt;<span class="hljs-type">int</span>&gt; queue;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)<br>            <span class="hljs-keyword">if</span>(in[i]==<span class="hljs-number">0</span>)queue.<span class="hljs-built_in">push</span>(i);<br>        <br>        <span class="hljs-keyword">while</span>(!queue.<span class="hljs-built_in">empty</span>())&#123;<br>            <span class="hljs-type">int</span> pos = queue.<span class="hljs-built_in">front</span>();<br>            queue.<span class="hljs-built_in">pop</span>();<br>            order.<span class="hljs-built_in">push_back</span>(pos);<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v: grid[pos])<span class="hljs-keyword">if</span>(--in[v]==<span class="hljs-number">0</span>)queue.<span class="hljs-built_in">push</span>(v);<br>        &#125;<br>        <span class="hljs-keyword">return</span> order;<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">buildMatrix</span>(<span class="hljs-type">int</span> k, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; rowConditions, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; colConditions) &#123;<br>        <span class="hljs-keyword">auto</span> row=<span class="hljs-built_in">topo_sort</span>(k, rowConditions), col=<span class="hljs-built_in">topo_sort</span>(k,colConditions);<br>        <span class="hljs-keyword">if</span>(row.<span class="hljs-built_in">size</span>()&lt;k || col.<span class="hljs-built_in">size</span>()&lt;k)<span class="hljs-keyword">return</span> &#123;&#125;;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">pos</span><span class="hljs-params">(k)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)pos[col[i]]=i;<br><br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">ans</span>(k,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(k,<span class="hljs-number">0</span>));<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)<br>            ans[i][pos[row[i]]] = row[i] + <span class="hljs-number">1</span>;<br>    <br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+
 
                 
               </div>
@@ -388,6 +405,10 @@
       
         <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
       
+        <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">#拓扑排序</a>
+      
+        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
+      
     </div>
   
 </div>
@@ -417,7 +438,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2022年8月22日</div>
+          <div>2022年8月28日</div>
         </div>
       
       <div class="license-meta-item">
@@ -446,9 +467,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/08/20/Databae-system-principles/" title="数据库系统原理">
+                      <a href="/2022/08/20/Principles-of-computer-composition/" title="计算机组成原理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">数据库系统原理</span>
+                        <span class="hidden-mobile">计算机组成原理</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
