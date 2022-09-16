@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>分享一些我一年以来的算法学习网站</title>
+    <link href="/2022/09/16/website-share/"/>
+    <url>/2022/09/16/website-share/</url>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>从刚开始学习算法，到第一次参加算法竞赛，到现在的又菜又爱玩，大约已有一年的光景；</p><p>在此分享一些我一年以来的，学习算法用到的一些资源和网站，希望可以帮助到看到这篇博客的人。</p><hr><h3 id="正片"><a href="#正片" class="headerlink" title="正片"></a>正片</h3><hr><h4 id="算法学习"><a href="#算法学习" class="headerlink" title="算法学习"></a>算法学习</h4><ol><li><p><a href="https://leetcode.cn/">力扣（LeetCode）全球极客挚爱的技术成长平台</a></p><p>力扣可以算是我的算法起点，最初也是听学长的建议来力扣平台做题的。</p><p>力扣的算法题面向求职，难度并不是太高，因此很适合新手从0起步。</p><p>学习界面的有很多相关的基本数据结构和算法的“LeetCode Book”有些内容非常棒。</p><p><a href="https://imgloc.com/i/ceBBB"><img src="https://s1.328888.xyz/2022/09/16/ceBBB.png" alt="ceBBB.png" border="0" /></a></p></li><li><p><a href="https://www.acwing.com/">AcWing</a></p><p>AcWing是Y总在运营的一个网站，Y总的相关介绍<a href="https://zhuanlan.zhihu.com/p/412120664">点此</a></p><p>其活动界面有很多语法基础课，算法基础课等，非常适合新手上手</p><p><a href="https://imgloc.com/i/cehWU"><img src="https://s1.328888.xyz/2022/09/16/cehWU.png" alt="cehWU.png" border="0" /></a></p></li><li><p><a href="https://www.programmercarl.com/">代码随想录</a></p><p>代码随想录是Carl总运营的一个网站，也是有很多基础的数据结构的讲解</p><p>我的动态规划背包问题就是听着Carl总的讲解学会的</p><p><a href="https://imgloc.com/i/cebPR"><img src="https://s1.328888.xyz/2022/09/16/cebPR.png" alt="cebPR.png" border="0" /></a></p></li><li><p><a href="https://oi-wiki.org/">OI Wiki</a></p><p>此网站为算法进阶学习网站，内容已经和信息学竞赛接轨，若不是专精OI&#x2F;ACM，可以忽略</p><p><a href="https://imgloc.com/i/cewYP"><img src="https://s1.328888.xyz/2022/09/16/cewYP.png" alt="cewYP.png" border="0" /></a></p></li></ol><h4 id="算法竞赛"><a href="#算法竞赛" class="headerlink" title="算法竞赛"></a>算法竞赛</h4><p>一些仅为笔者自己参加的一些竞赛网站，AcWing和LeetCode难度较为友好且拥有国内平台，</p><p>后四者为国外的算法竞赛平台</p><ol><li><p><a href="https://www.acwing.com/activity/1/competition/">竞赛 - AcWing</a></p><p><a href="https://imgloc.com/i/ce6kC"><img src="https://s1.328888.xyz/2022/09/16/ce6kC.png" alt="ce6kC.png" border="0" /></a></p></li><li><p><a href="https://leetcode.cn/contest/">全球竞赛 - 力扣</a></p><p><a href="https://imgloc.com/i/cejo5"><img src="https://s1.328888.xyz/2022/09/16/cejo5.png" alt="cejo5.png" border="0" /></a></p></li><li><p><a href="https://atcoder.jp/">AtCoder</a></p><p><a href="https://imgloc.com/i/ceDYF"><img src="https://s1.328888.xyz/2022/09/16/ceDYF.png" alt="ceDYF.png" border="0" /></a></p></li><li><p><a href="https://codeforces.com/">Codeforces</a></p><p><a href="https://imgloc.com/i/ceOuS"><img src="https://s1.328888.xyz/2022/09/16/ceOuS.png" alt="ceOuS.png" border="0" /></a></p></li><li><p><a href="https://yukicoder.me/">yukicoder</a></p><p><a href="https://imgloc.com/i/ceueN"><img src="https://s1.328888.xyz/2022/09/16/ceueN.png" alt="ceueN.png" border="0" /></a></p></li><li><p><a href="https://www.codechef.com/">Competitive Programming | Participate &amp; Learn | CodeChef</a></p><p><a href="https://imgloc.com/i/ce4ly"><img src="https://s1.328888.xyz/2022/09/16/ce4ly.png" alt="ce4ly.png" border="0" /></a></p></li></ol>]]></content>
+    
+    
+    <categories>
+      
+      <category>Q&amp;A</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Quention &amp; Answer</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>操作系统</title>
     <link href="/2022/09/13/Operation-System/"/>
     <url>/2022/09/13/Operation-System/</url>
@@ -70,11 +95,11 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>LeetCode Contest</tag>
       
       <tag>广度优先搜索(BFS)</tag>
-      
-      <tag>贪心</tag>
       
       <tag>差分数组</tag>
       
@@ -182,7 +207,7 @@
     <link href="/2022/06/21/Q&amp;A/"/>
     <url>/2022/06/21/Q&amp;A/</url>
     
-    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些LeetCode, CodeForce, Atcoder竞赛题题解<br>以及个人平时的摄影作品</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>发一些高质量的题吧，或是说等我上紫名</p><hr><h3 id="你主打哪些比赛"><a href="#你主打哪些比赛" class="headerlink" title="你主打哪些比赛"></a>你主打哪些比赛</h3><p>LeetCode, AtCoder, CodeForces,AcWing</p><hr><h3 id="你主要使用的语言"><a href="#你主要使用的语言" class="headerlink" title="你主要使用的语言"></a>你主要使用的语言</h3><p>C++, Python3, Java</p><p>频率从前向后递减</p><hr>]]></content>
+    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些竞赛题题解<br>以及一些学习经验，资源</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>质量大于数量</p><hr><h3 id="你主打哪些比赛"><a href="#你主打哪些比赛" class="headerlink" title="你主打哪些比赛"></a>你主打哪些比赛</h3><p>LeetCode, AtCoder, CodeForces,AcWing,CodeChef,Yukicoder</p><hr><h3 id="你主要使用的语言"><a href="#你主要使用的语言" class="headerlink" title="你主要使用的语言"></a>你主要使用的语言</h3><p>C++, Python3, Java</p><p>频率从前向后递减</p><hr><h3 id="你是OIer或是是ACMer吗"><a href="#你是OIer或是是ACMer吗" class="headerlink" title="你是OIer或是是ACMer吗"></a>你是OIer或是是ACMer吗</h3><p>不是，算法竞赛纯粹是爱好</p><p>从开始学习到现在为止没有任何的外界帮助</p><p>纯靠自己领悟，因此水平不是很高，属于是又菜又爱玩</p><hr>]]></content>
     
     
     <categories>
