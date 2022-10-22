@@ -4,6 +4,44 @@
   
   
   <entry>
+    <title>由于图床网站炸了，所以本博客暂时处于爆炸状态</title>
+    <link href="/2022/10/22/Note/"/>
+    <url>/2022/10/22/Note/</url>
+    
+    <content type="html"><![CDATA[<p>等笔者放假了有时间再进行网站重建</p>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>MySQL基本语句必知必会</title>
+    <link href="/2022/10/18/MySql/"/>
+    <url>/2022/10/18/MySql/</url>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote><p>此内容为笔者自己总结的，最初的MySql语句的用法和细节</p><p>部分简单语句可能会无语法说明</p></blockquote><h4 id="全局解释"><a href="#全局解释" class="headerlink" title="全局解释"></a>全局解释</h4><p> <code>[]</code>表示该部分内容是可选的</p><h3 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h3><hr><h4 id="创建新表"><a href="#创建新表" class="headerlink" title="创建新表"></a>创建新表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name<br>[([column_definition], [index_definition])]<br>[table_option][select_statement]<br></code></pre></td></tr></table></figure><h4 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h4><ul><li><code>TEMPORARY</code>表示创建临时表</li><li><code>IF NOT EXISTS</code>表示不存在则创建新表</li><li><code>table_name</code>表示表的名字</li><li><code>column_definition</code>字段定义，包括数据类型，字段名，是否允许为空等</li></ul><hr><h4 id="显示表"><a href="#显示表" class="headerlink" title="显示表"></a>显示表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SHOW TABLES #显示数据库中的所有表<br>DESCRIBE table_name #显示某一个表的结构<br></code></pre></td></tr></table></figure><hr><h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ALTER TABLE &lt;旧表名&gt; RENAME [TO] &lt;新表名&gt; #修改表名<br>ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名&gt;&lt;数据类型&gt; #修改某字段的数据类型<br>ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名&gt;&lt;新字段名&gt;&lt;新数据类型&gt; #修改字段名<br>ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt;&lt;数据类型&gt; [约束条件] #添加字段<br>ALTER TABLE &lt;表名&gt; DROP &lt;字段名&gt; #删除字段<br>ALTER TABLE &lt;表名&gt; DROP FOREIGN KEY &lt;外键约束名&gt; #删除外键约束<br></code></pre></td></tr></table></figure><hr><h4 id="复制表"><a href="#复制表" class="headerlink" title="复制表"></a>复制表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name<br>[LIKE old_table_name[]]<br>[AS (selece_statement)]<br></code></pre></td></tr></table></figure><hr><h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">DROP TABLE [IF EXISTS] table_name<br></code></pre></td></tr></table></figure><hr><h3 id="2-数据管理"><a href="#2-数据管理" class="headerlink" title="2.数据管理"></a>2.数据管理</h3>]]></content>
+    
+    
+    <categories>
+      
+      <category>MySql</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>MySql</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Codeforces Round 827 (Div. 4)</title>
     <link href="/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/"/>
     <url>/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/</url>
@@ -238,11 +276,11 @@
       
       <tag>LeetCode Contest</tag>
       
+      <tag>广度优先搜索(BFS)</tag>
+      
       <tag>模拟</tag>
       
       <tag>贪心</tag>
-      
-      <tag>广度优先搜索(BFS)</tag>
       
       <tag>差分数组</tag>
       
