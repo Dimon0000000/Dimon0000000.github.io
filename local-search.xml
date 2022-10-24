@@ -33,9 +33,9 @@
     
     <tags>
       
-      <tag>二分查找</tag>
-      
       <tag>贪心</tag>
+      
+      <tag>二分查找</tag>
       
       <tag>CodeForces Contest</tag>
       
@@ -199,11 +199,11 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
-      
-      <tag>贪心</tag>
       
       <tag>广度优先搜索(BFS)</tag>
       
