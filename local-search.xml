@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>由于图床网站炸了，所以本博客暂时处于爆炸状态</title>
-    <link href="/2022/10/22/Note/"/>
-    <url>/2022/10/22/Note/</url>
-    
-    <content type="html"><![CDATA[<p>等笔者放假了有时间再进行网站重建</p>]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Codeforces Round 827 (Div. 4)</title>
     <link href="/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/"/>
     <url>/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/</url>
@@ -35,13 +22,13 @@
       
       <tag>贪心</tag>
       
-      <tag>二分查找</tag>
-      
       <tag>CodeForces Contest</tag>
+      
+      <tag>哈希表</tag>
       
       <tag>脑筋急转弯</tag>
       
-      <tag>哈希表</tag>
+      <tag>二分查找</tag>
       
       <tag>离散化</tag>
       
@@ -116,13 +103,13 @@
     
     <tags>
       
+      <tag>二分查找</tag>
+      
       <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
       
       <tag>双指针</tag>
-      
-      <tag>二分查找</tag>
       
       <tag>链表</tag>
       
@@ -203,9 +190,9 @@
       
       <tag>LeetCode Contest</tag>
       
-      <tag>模拟</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
+      
+      <tag>模拟</tag>
       
       <tag>差分数组</tag>
       
@@ -294,9 +281,9 @@
       
       <tag>CodeForces Contest</tag>
       
-      <tag>脑筋急转弯</tag>
-      
       <tag>哈希表</tag>
+      
+      <tag>脑筋急转弯</tag>
       
       <tag>数学</tag>
       
