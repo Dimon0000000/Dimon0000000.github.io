@@ -17,31 +17,6 @@
   
   
   <entry>
-    <title>MySQL基本语句必知必会</title>
-    <link href="/2022/10/18/MySql/"/>
-    <url>/2022/10/18/MySql/</url>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote><p>此内容为笔者自己总结的，最初的MySql语句的用法和细节</p><p>部分简单语句可能会无语法说明</p></blockquote><h4 id="全局解释"><a href="#全局解释" class="headerlink" title="全局解释"></a>全局解释</h4><p> <code>[]</code>表示该部分内容是可选的</p><h3 id="1-表的创建"><a href="#1-表的创建" class="headerlink" title="1.表的创建"></a>1.表的创建</h3><hr><h4 id="创建新表"><a href="#创建新表" class="headerlink" title="创建新表"></a>创建新表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name<br>[([column_definition], [index_definition])]<br>[table_option][select_statement]<br></code></pre></td></tr></table></figure><h4 id="语法说明"><a href="#语法说明" class="headerlink" title="语法说明"></a>语法说明</h4><ul><li><code>TEMPORARY</code>表示创建临时表</li><li><code>IF NOT EXISTS</code>表示不存在则创建新表</li><li><code>table_name</code>表示表的名字</li><li><code>column_definition</code>字段定义，包括数据类型，字段名，是否允许为空等</li></ul><hr><h4 id="显示表"><a href="#显示表" class="headerlink" title="显示表"></a>显示表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SHOW TABLES #显示数据库中的所有表<br>DESCRIBE table_name #显示某一个表的结构<br></code></pre></td></tr></table></figure><hr><h4 id="修改表"><a href="#修改表" class="headerlink" title="修改表"></a>修改表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs mysql">ALTER TABLE &lt;旧表名&gt; RENAME [TO] &lt;新表名&gt; #修改表名<br>ALTER TABLE &lt;表名&gt; MODIFY &lt;字段名&gt;&lt;数据类型&gt; #修改某字段的数据类型<br>ALTER TABLE &lt;表名&gt; CHANGE &lt;旧字段名&gt;&lt;新字段名&gt;&lt;新数据类型&gt; #修改字段名<br>ALTER TABLE &lt;表名&gt; ADD &lt;新字段名&gt;&lt;数据类型&gt; [约束条件] #添加字段<br>ALTER TABLE &lt;表名&gt; DROP &lt;字段名&gt; #删除字段<br>ALTER TABLE &lt;表名&gt; DROP FOREIGN KEY &lt;外键约束名&gt; #删除外键约束<br></code></pre></td></tr></table></figure><hr><h4 id="复制表"><a href="#复制表" class="headerlink" title="复制表"></a>复制表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs mysql">CREATE [TEMPORARY] TABLE [IF NOT EXISTS] table_name<br>[LIKE old_table_name[]]<br>[AS (selece_statement)]<br></code></pre></td></tr></table></figure><hr><h4 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs mysql">DROP TABLE [IF EXISTS] table_name<br></code></pre></td></tr></table></figure><hr><h3 id="2-数据管理"><a href="#2-数据管理" class="headerlink" title="2.数据管理"></a>2.数据管理</h3>]]></content>
-    
-    
-    <categories>
-      
-      <category>MySql</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>MySql</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Codeforces Round 827 (Div. 4)</title>
     <link href="/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/"/>
     <url>/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/</url>
@@ -150,56 +125,6 @@
       <tag>二分查找</tag>
       
       <tag>链表</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>分享几个实用且有趣的网站</title>
-    <link href="/2022/09/16/funwebsite-share/"/>
-    <url>/2022/09/16/funwebsite-share/</url>
-    
-    <content type="html"><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><hr><p>在此分享一些日常使用的摸鱼，实用的网站，希望对看到的小伙伴有帮助。</p><h4 id="网站及介绍"><a href="#网站及介绍" class="headerlink" title="网站及介绍"></a>网站及介绍</h4><hr><ul><li><p><a href="edge://surf/">网上冲浪🏄‍</a></p><p>仅限于Edge浏览器，控制小人冲浪，获得最高分</p><p><a href="https://imgloc.com/i/cq06B"><img src="https://s1.328888.xyz/2022/09/16/cq06B.png" alt="cq06B.png" border="0"></a></p></li><li><p><a href="https://pastebin.ubuntu.com/">Ubuntu Pastebin</a></p><p>贴代码网站，可以生成你代码的链接，方便分享代码给他人看时，文本内容有合理的格式化</p><p><a href="https://imgloc.com/i/cqhF6"><img src="https://s1.328888.xyz/2022/09/16/cqhF6.png" alt="cqhF6.png" border="0"></a></p></li><li><p><a href="http://patorjk.com/software/taag/">Text to ASCII Art Generator</a></p><p>文本转为艺术字ASCII字体，效果如图</p><p><a href="https://imgloc.com/i/cqwEj"><img src="https://s1.328888.xyz/2022/09/16/cqwEj.png" alt="cqwEj.png" border="0"></a></p></li><li><p><a href="https://www.emojiall.com/zh-hans">Emoji大全 | Emoji表情符号词典 📓 | EmojiAll中文官方网站</a></p><p>在这里可能会找到你从来没见到过的Emoji</p><p><a href="https://imgloc.com/i/cq9pE"><img src="https://s1.328888.xyz/2022/09/16/cq9pE.png" alt="cq9pE.png" border="0"></a></p></li><li><p><a href="https://bigjpg.com/zh">Bigjpg - AI人工智能图片无损放大 - 使用人工智能深度卷积神经网络(CNN)无损放大图片</a></p><p>将你的图片分辨率近似无损地加倍，推荐放大卡通插画</p><p><a href="https://imgloc.com/i/cXEhm"><img src="https://s1.328888.xyz/2022/09/16/cXEhm.png" alt="cXEhm.png" border="0"></a></p></li><li><p><a href="https://www.aconvert.com/">Convert document, image, video and audio files online (aconvert.com)</a></p><p>支持各种文件的转换，例如</p><blockquote><p>AVI → MP4</p><p>WEBP → JPG</p><p>WORD → PDF</p></blockquote><p><a href="https://imgloc.com/i/cXLs7"><img src="https://s1.328888.xyz/2022/09/16/cXLs7.png" alt="cXLs7.png" border="0"></a></p></li><li><p><a href="https://imgloc.com/">图床 - 免费图片外链, 图片转链接, 图片生成URL网址链接</a></p><p>图片外链服务，本网站所有图片均挂在该平台</p><p><a href="https://imgloc.com/i/cXNqk"><img src="https://s1.328888.xyz/2022/09/16/cXNqk.png" alt="cXNqk.png" border="0"></a></p></li><li><p><a href="https://www.deepl.com/translator">DeepL翻译：全世界最准确的翻译</a></p><p>个人认为翻译的特别好的翻译软件</p><p><a href="https://imgloc.com/i/cXmjE"><img src="https://s1.328888.xyz/2022/09/16/cXmjE.png" alt="cXmjE.png" border="0"></a></p></li><li><p><a href="https://www.iconfont.cn/">iconfont-阿里巴巴矢量图标库</a></p><p>免费的矢量图标库</p><p><a href="https://imgloc.com/i/cXDKJ"><img src="https://s1.328888.xyz/2022/09/16/cXDKJ.png" alt="cXDKJ.png" border="0"></a></p></li><li><p><a href="https://clist.by/">CLIST</a></p><p>查看各个主流算法平台的各种比赛的信息，以及自己参加的比赛的分数情况<br><a href="https://imgloc.com/i/cXFQw"><img src="https://s1.328888.xyz/2022/09/16/cXFQw.png" alt="cXFQw.png" border="0"></a></p></li><li><p>持续更新中……😉</p></li></ul>]]></content>
-    
-    
-    <categories>
-      
-      <category>Q&amp;A</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Quention &amp; Answer</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>分享一些我一年以来的算法学习网站</title>
-    <link href="/2022/09/16/website-share/"/>
-    <url>/2022/09/16/website-share/</url>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>从刚开始学习算法，到第一次参加算法竞赛，到现在的又菜又爱玩，大约已有一年的光景；</p><p>在此分享一些我一年以来的，学习算法用到的一些资源和网站，希望可以帮助到看到这篇博客的人。</p><hr><h3 id="正片"><a href="#正片" class="headerlink" title="正片"></a>正片</h3><hr><h4 id="算法学习"><a href="#算法学习" class="headerlink" title="算法学习"></a>算法学习</h4><ol><li><p><a href="https://leetcode.cn/">力扣（LeetCode）全球极客挚爱的技术成长平台</a></p><p>力扣可以算是我的算法起点，最初也是听学长的建议来力扣平台做题的。</p><p>力扣的算法题面向求职，难度并不是太高，因此很适合新手从0起步。</p><p>学习界面的有很多相关的基本数据结构和算法的“LeetCode Book”有些内容非常棒。</p><p><a href="https://imgloc.com/i/ceBBB"><img src="https://s1.328888.xyz/2022/09/16/ceBBB.png" alt="ceBBB.png" border="0" /></a></p></li><li><p><a href="https://www.acwing.com/">AcWing</a></p><p>AcWing是Y总在运营的一个网站，Y总的相关介绍<a href="https://zhuanlan.zhihu.com/p/412120664">点此</a></p><p>其活动界面有很多语法基础课，算法基础课等，非常适合新手上手</p><p><a href="https://imgloc.com/i/cehWU"><img src="https://s1.328888.xyz/2022/09/16/cehWU.png" alt="cehWU.png" border="0" /></a></p></li><li><p><a href="https://www.programmercarl.com/">代码随想录</a></p><p>代码随想录是Carl总运营的一个网站，也是有很多基础的数据结构的讲解</p><p>我的动态规划背包问题就是听着Carl总的讲解学会的</p><p><a href="https://imgloc.com/i/cebPR"><img src="https://s1.328888.xyz/2022/09/16/cebPR.png" alt="cebPR.png" border="0" /></a></p></li><li><p><a href="https://oi-wiki.org/">OI Wiki</a></p><p>此网站为算法进阶学习网站，内容已经和信息学竞赛接轨，若不是专精OI&#x2F;ACM，可以忽略</p><p><a href="https://imgloc.com/i/cewYP"><img src="https://s1.328888.xyz/2022/09/16/cewYP.png" alt="cewYP.png" border="0" /></a></p></li></ol><h4 id="算法竞赛"><a href="#算法竞赛" class="headerlink" title="算法竞赛"></a>算法竞赛</h4><p>一些仅为笔者自己参加的一些竞赛网站，AcWing和LeetCode难度较为友好且拥有国内平台，</p><p>后四者为国外的算法竞赛平台</p><ol><li><p><a href="https://www.acwing.com/activity/1/competition/">竞赛 - AcWing</a></p><p><a href="https://imgloc.com/i/ce6kC"><img src="https://s1.328888.xyz/2022/09/16/ce6kC.png" alt="ce6kC.png" border="0" /></a></p></li><li><p><a href="https://leetcode.cn/contest/">全球竞赛 - 力扣</a></p><p><a href="https://imgloc.com/i/cejo5"><img src="https://s1.328888.xyz/2022/09/16/cejo5.png" alt="cejo5.png" border="0" /></a></p></li><li><p><a href="https://atcoder.jp/">AtCoder</a></p><p><a href="https://imgloc.com/i/ceDYF"><img src="https://s1.328888.xyz/2022/09/16/ceDYF.png" alt="ceDYF.png" border="0" /></a></p></li><li><p><a href="https://codeforces.com/">Codeforces</a></p><p><a href="https://imgloc.com/i/ceOuS"><img src="https://s1.328888.xyz/2022/09/16/ceOuS.png" alt="ceOuS.png" border="0" /></a></p></li><li><p><a href="https://yukicoder.me/">yukicoder</a></p><p><a href="https://imgloc.com/i/ceueN"><img src="https://s1.328888.xyz/2022/09/16/ceueN.png" alt="ceueN.png" border="0" /></a></p></li><li><p><a href="https://www.codechef.com/">Competitive Programming | Participate &amp; Learn | CodeChef</a></p><p><a href="https://imgloc.com/i/ce4ly"><img src="https://s1.328888.xyz/2022/09/16/ce4ly.png" alt="ce4ly.png" border="0" /></a></p></li><li><p><a href="https://acm.hdu.edu.cn/">Welcome to Hangzhou Dianzi University Online Judge (hdu.edu.cn)</a></p><p><a href="https://imgloc.com/i/crhDi"><img src="https://s1.328888.xyz/2022/09/16/crhDi.png" alt="crhDi.png" border="0" /></a></p></li></ol>]]></content>
-    
-    
-    <categories>
-      
-      <category>Q&amp;A</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Quention &amp; Answer</tag>
       
     </tags>
     
