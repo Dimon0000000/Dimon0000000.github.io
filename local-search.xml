@@ -58,8 +58,6 @@
     
     <tags>
       
-      <tag>二分查找</tag>
-      
       <tag>贪心</tag>
       
       <tag>CodeForces Contest</tag>
@@ -67,6 +65,8 @@
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>二分查找</tag>
       
       <tag>离散化</tag>
       
@@ -274,13 +274,13 @@
     
     <tags>
       
-      <tag>LeetCode Contest</tag>
+      <tag>贪心</tag>
       
-      <tag>广度优先搜索(BFS)</tag>
+      <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
       
-      <tag>贪心</tag>
+      <tag>广度优先搜索(BFS)</tag>
       
       <tag>差分数组</tag>
       
