@@ -20,8 +20,6 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>二分查找</tag>
       
       <tag>CodeForces Contest</tag>
@@ -29,6 +27,8 @@
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>离散化</tag>
       
@@ -49,11 +49,11 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>AtCoder</tag>
       
       <tag>广度优先搜索</tag>
-      
-      <tag>贪心</tag>
       
     </tags>
     
@@ -186,11 +186,11 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
+      
+      <tag>贪心</tag>
       
       <tag>广度优先搜索(BFS)</tag>
       
@@ -277,13 +277,13 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>数学</tag>
       
