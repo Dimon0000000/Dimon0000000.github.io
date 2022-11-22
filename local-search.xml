@@ -4,6 +4,41 @@
   
   
   <entry>
+    <title>Codeforces Round 835 (Div. 4)</title>
+    <link href="/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/"/>
+    <url>/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/</url>
+    
+    <content type="html"><![CDATA[<blockquote><p>My Submission</p><blockquote><p>Problem AC: 6</p><p>Problem Try: 6</p><p>Wrong Answer: 2</p></blockquote></blockquote><h3 id="Medium-Number"><a href="#Medium-Number" class="headerlink" title="Medium Number"></a><a href="https://codeforces.com/contest/1760/problem/A">Medium Number</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>返回三个数中的第二大的数字</p><h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt;t;<br>    <span class="hljs-built_in">loop</span>(t)&#123;<br>        <span class="hljs-type">int</span> a,b,c;<br>        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c;<br>        vi d;<br>        d.<span class="hljs-built_in">push_back</span>(a);<br>        d.<span class="hljs-built_in">push_back</span>(b);<br>        d.<span class="hljs-built_in">push_back</span>(c);<br> <br>        <span class="hljs-built_in">sort</span>(<span class="hljs-built_in">all</span>(d));<br>        cout &lt;&lt; d[<span class="hljs-number">1</span>] &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Atilla’s-Favorite-Problem"><a href="#Atilla’s-Favorite-Problem" class="headerlink" title="Atilla’s Favorite Problem"></a><a href="https://codeforces.com/contest/1760/problem/B">Atilla’s Favorite Problem</a></h3><h4 id="题意分析-1"><a href="#题意分析-1" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>返回给定字符串中最大的字符</p><h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt;t;<br>    <span class="hljs-built_in">loop</span>(t)&#123;<br>        <span class="hljs-type">int</span> n;<br>        string s;<br>        cin &gt;&gt; n &gt;&gt; s;<br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:s)&#123;<br>            ans = <span class="hljs-built_in">max</span>(ans, c - <span class="hljs-string">&#x27;a&#x27;</span> + <span class="hljs-number">1</span>);<br>        &#125;<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Advantage"><a href="#Advantage" class="headerlink" title="Advantage"></a><a href="https://codeforces.com/contest/1760/problem/C">Advantage</a></h3><h4 id="题意分析-2"><a href="#题意分析-2" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>返回最大值和第二大的值的差值</p><h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt;t;<br>    <span class="hljs-built_in">loop</span>(t)&#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n)</span>, <span class="hljs-title">b</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-built_in">put</span>(a);<br> <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            b[i]=a[i];<br>        &#125;<br>        <span class="hljs-built_in">sort</span>(<span class="hljs-built_in">all</span>(b));<br>        <span class="hljs-type">int</span> c = b[n<span class="hljs-number">-1</span>], d = b[n<span class="hljs-number">-2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            <span class="hljs-keyword">if</span>(a[i] == c) cout &lt;&lt; c - d &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>            <span class="hljs-keyword">else</span> cout &lt;&lt; a[i] - c &lt;&lt; <span class="hljs-string">&#x27; &#x27;</span>;<br>        &#125;<br>        <span class="hljs-built_in">space</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Challenging-Valleys"><a href="#Challenging-Valleys" class="headerlink" title="Challenging Valleys"></a><a href="https://codeforces.com/contest/1760/problem/D">Challenging Valleys</a></h3><h4 id="题意分析-3"><a href="#题意分析-3" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>寻找谷底，可在数组前后加入<code>INT_MAX</code>辅助判断</p><h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n + <span class="hljs-number">2</span>)</span></span>;<br>        a[<span class="hljs-number">0</span>] = INT_MAX, a[n + <span class="hljs-number">1</span>] = INT_MAX;<br> <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>            cin &gt;&gt; a[i];<br>        &#125;<br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; n + <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">if</span> (i == n + <span class="hljs-number">1</span>) &#123;<br>                ++i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (a[i] &gt;= a[i + <span class="hljs-number">1</span>])++i;<br>            <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br> <br>        <span class="hljs-keyword">while</span> (i &lt; n + <span class="hljs-number">2</span>) &#123;<br>            <span class="hljs-keyword">if</span> (i == n + <span class="hljs-number">1</span>) &#123;<br>                ++i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (a[i] &lt;= a[i + <span class="hljs-number">1</span>])++i;<br>            <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>        &#125;<br> <br>        <span class="hljs-built_in">judge</span>(i == n + <span class="hljs-number">2</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Binary-Inversions"><a href="#Binary-Inversions" class="headerlink" title="Binary Inversions"></a><a href="https://codeforces.com/contest/1760/problem/E">Binary Inversions</a></h3><h4 id="题意分析-4"><a href="#题意分析-4" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>贪心：把最前面的0改成1和把最后面的1改成0计数即可</p><h4 id="参考代码-4"><a href="#参考代码-4" class="headerlink" title="参考代码"></a>参考代码</h4><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">ll <span class="hljs-title">check</span><span class="hljs-params">(vi &amp;a)</span> </span>&#123;<br>    ll tot = <span class="hljs-number">0</span>;<br>    unordered_map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; map;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v:a)++map[v];<br> <br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v:a)&#123;<br>        <span class="hljs-keyword">if</span> (v == <span class="hljs-number">1</span>) &#123;<br>            tot += map[<span class="hljs-number">0</span>];<br>        &#125; <span class="hljs-keyword">else</span> --map[<span class="hljs-number">0</span>];<br>    &#125;<br>    <span class="hljs-keyword">return</span> tot;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        <span class="hljs-type">int</span> n;<br>        cin &gt;&gt; n;<br>        <span class="hljs-function">vi <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-built_in">put</span>(a);<br> <br>        ll ans = <span class="hljs-built_in">check</span>(a);<br> <br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> &amp;v:a)&#123;<br>            <span class="hljs-keyword">if</span> (v == <span class="hljs-number">0</span>) &#123;<br>                v = <span class="hljs-number">1</span>;<br>                ans = <span class="hljs-built_in">max</span>(ans, <span class="hljs-built_in">check</span>(a));<br>                v = <span class="hljs-number">0</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br> <br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = n - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; --i) &#123;<br>            <span class="hljs-keyword">if</span> (a[i] == <span class="hljs-number">1</span>) &#123;<br>                a[i] = <span class="hljs-number">0</span>;<br>                ans = <span class="hljs-built_in">max</span>(ans,<span class="hljs-built_in">check</span>(a));<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        cout &lt;&lt; ans &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="Quests"><a href="#Quests" class="headerlink" title="Quests"></a><a href="https://codeforces.com/contest/1760/problem/F">Quests</a></h3><h4 id="题意分析-5"><a href="#题意分析-5" class="headerlink" title="题意分析"></a>题意分析</h4><hr><p>二分查找：二分答案<code>k</code>进行判定即可</p><p>注意返回<code>Impossible</code>和<code>Infinity</code>的条件</p><h4 id="参考代码-5"><a href="#参考代码-5" class="headerlink" title="参考代码"></a>参考代码</h4><hr><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(vector&lt;ll&gt; &amp;a, ll tot, ll day)</span> </span>&#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">size</span>() &amp;&amp; day &gt; <span class="hljs-number">0</span>; ++i, --day) &#123;<br>        tot -= a[i];<br>        <span class="hljs-keyword">if</span> (tot &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> tot &lt;= <span class="hljs-number">0</span>;<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">cc</span><span class="hljs-params">(vector&lt;ll&gt; &amp;a, ll tot, ll day, ll k)</span> </span>&#123;<br>    ll backet = k + <span class="hljs-number">1</span>, more = day % (k + <span class="hljs-number">1</span>), have = day / backet;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; a.<span class="hljs-built_in">size</span>() &amp;&amp; backet &gt; <span class="hljs-number">0</span>; ++i) &#123;<br>        tot -= (a[i] * have);<br>        <span class="hljs-keyword">if</span> (more)--more, tot -= a[i];<br>        <span class="hljs-keyword">if</span> (tot &lt;= <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        --backet;<br>    &#125;<br>    <span class="hljs-keyword">return</span> tot &lt;= <span class="hljs-number">0</span>;<br>&#125;<br> <br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">fastIO</span>();<br>    <span class="hljs-type">int</span> t;<br>    cin &gt;&gt; t;<br>    <span class="hljs-built_in">loop</span>(t) &#123;<br>        ll n, c, d;<br>        cin &gt;&gt; n &gt;&gt; c &gt;&gt; d;<br>        <span class="hljs-function">vector&lt;ll&gt; <span class="hljs-title">a</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-built_in">put</span>(a);<br> <br>        <span class="hljs-built_in">sort</span>(<span class="hljs-built_in">rall</span>(a));<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(a, c,d)) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;Infinity&quot;</span> &lt;&lt; endl;<br>            <span class="hljs-keyword">continue</span>;<br>        &#125;<br>        ll left = <span class="hljs-number">0</span>, right = LLONG_MAX, ans = <span class="hljs-number">-1</span>;<br> <br>        <span class="hljs-keyword">while</span> (left &lt; right) &#123;<br>            ll mid = left + (right - left) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">cc</span>(a, c, d, mid))ans = mid, left = mid + <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">else</span> right = mid;<br>        &#125;<br> <br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">cc</span>(a,c,d,left))ans = left;<br> <br>        <span class="hljs-keyword">if</span> (ans == <span class="hljs-number">-1</span>) &#123;<br>            cout &lt;&lt; <span class="hljs-string">&quot;Impossible&quot;</span> &lt;&lt; endl;<br>        &#125; <span class="hljs-keyword">else</span> cout &lt;&lt; ans &lt;&lt; endl;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>CodeForces</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>贪心</tag>
+      
+      <tag>CodeForces Contest</tag>
+      
+      <tag>哈希表</tag>
+      
+      <tag>二分查找</tag>
+      
+      <tag>模拟</tag>
+      
+      <tag>排序</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>算竞模板</title>
     <link href="/2022/10/26/Moudle/"/>
     <url>/2022/10/26/Moudle/</url>
@@ -45,15 +80,15 @@
     
     <tags>
       
-      <tag>二分查找</tag>
-      
       <tag>贪心</tag>
       
       <tag>CodeForces Contest</tag>
       
+      <tag>脑筋急转弯</tag>
+      
       <tag>哈希表</tag>
       
-      <tag>脑筋急转弯</tag>
+      <tag>二分查找</tag>
       
       <tag>离散化</tag>
       
@@ -128,13 +163,13 @@
     
     <tags>
       
+      <tag>二分查找</tag>
+      
       <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
       
       <tag>双指针</tag>
-      
-      <tag>二分查找</tag>
       
       <tag>链表</tag>
       
@@ -211,17 +246,17 @@
     
     <tags>
       
-      <tag>LeetCode Contest</tag>
-      
-      <tag>模拟</tag>
-      
       <tag>贪心</tag>
       
       <tag>哈希表</tag>
       
-      <tag>广度优先搜索(BFS)</tag>
+      <tag>LeetCode Contest</tag>
+      
+      <tag>模拟</tag>
       
       <tag>差分数组</tag>
+      
+      <tag>广度优先搜索(BFS)</tag>
       
       <tag>拓扑排序</tag>
       
@@ -275,9 +310,9 @@
       
       <tag>LeetCode Contest</tag>
       
-      <tag>枚举</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
+      
+      <tag>枚举</tag>
       
       <tag>动态规划</tag>
       
@@ -308,9 +343,9 @@
       
       <tag>CodeForces Contest</tag>
       
-      <tag>哈希表</tag>
-      
       <tag>脑筋急转弯</tag>
+      
+      <tag>哈希表</tag>
       
       <tag>数学</tag>
       
