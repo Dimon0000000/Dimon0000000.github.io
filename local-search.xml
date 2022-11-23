@@ -22,15 +22,15 @@
       
       <tag>贪心</tag>
       
+      <tag>CodeForces Contest</tag>
+      
       <tag>模拟</tag>
       
-      <tag>二分查找</tag>
-      
-      <tag>CodeForces Contest</tag>
+      <tag>排序</tag>
       
       <tag>哈希表</tag>
       
-      <tag>排序</tag>
+      <tag>二分查找</tag>
       
     </tags>
     
@@ -82,11 +82,11 @@
       
       <tag>贪心</tag>
       
-      <tag>二分查找</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>二分查找</tag>
       
       <tag>脑筋急转弯</tag>
       
@@ -163,13 +163,13 @@
     
     <tags>
       
-      <tag>LeetCode Contest</tag>
-      
       <tag>模拟</tag>
       
-      <tag>双指针</tag>
-      
       <tag>二分查找</tag>
+      
+      <tag>LeetCode Contest</tag>
+      
+      <tag>双指针</tag>
       
       <tag>链表</tag>
       
@@ -248,11 +248,11 @@
       
       <tag>贪心</tag>
       
-      <tag>LeetCode Contest</tag>
-      
       <tag>模拟</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>LeetCode Contest</tag>
       
       <tag>广度优先搜索(BFS)</tag>
       
