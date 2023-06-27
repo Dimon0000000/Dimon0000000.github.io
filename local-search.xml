@@ -4,19 +4,6 @@
   
   
   <entry>
-    <title>page</title>
-    <link href="/2023/06/27/page/"/>
-    <url>/2023/06/27/page/</url>
-    
-    <content type="html"><![CDATA[]]></content>
-    
-    
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>Codeforces Round 835 (Div. 4)</title>
     <link href="/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/"/>
     <url>/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/</url>
@@ -33,17 +20,17 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
-      <tag>模拟</tag>
-      
-      <tag>二分查找</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>哈希表</tag>
       
+      <tag>贪心</tag>
+      
+      <tag>模拟</tag>
+      
       <tag>排序</tag>
+      
+      <tag>二分查找</tag>
       
     </tags>
     
@@ -93,15 +80,15 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
-      <tag>二分查找</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
+      
+      <tag>二分查找</tag>
       
       <tag>离散化</tag>
       
@@ -122,11 +109,11 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>AtCoder</tag>
       
       <tag>广度优先搜索</tag>
-      
-      <tag>贪心</tag>
       
     </tags>
     
@@ -176,13 +163,13 @@
     
     <tags>
       
-      <tag>LeetCode Contest</tag>
-      
       <tag>模拟</tag>
       
-      <tag>双指针</tag>
-      
       <tag>二分查找</tag>
+      
+      <tag>LeetCode Contest</tag>
+      
+      <tag>双指针</tag>
       
       <tag>链表</tag>
       
@@ -259,13 +246,13 @@
     
     <tags>
       
-      <tag>贪心</tag>
+      <tag>哈希表</tag>
       
-      <tag>LeetCode Contest</tag>
+      <tag>贪心</tag>
       
       <tag>模拟</tag>
       
-      <tag>哈希表</tag>
+      <tag>LeetCode Contest</tag>
       
       <tag>广度优先搜索(BFS)</tag>
       
@@ -352,13 +339,13 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>数学</tag>
       
