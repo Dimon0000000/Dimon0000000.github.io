@@ -1,336 +1,178 @@
-
-
-<!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=auto>
-
-
-
-<head>
-  <meta charset="UTF-8">
-  <link rel="apple-touch-icon" sizes="76x76" href="/img/fluid.png">
-  <link rel="icon" href="/img/fluid.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  
-  <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Haruko">
-  <meta name="keywords" content="">
-  
-    <meta name="description" content="B85 - T3 字母移位 II题意分析 每次将给的区间内的字母+1或-1 区间和问题，可以使用差分数组来完成 参考代码 12345678910111213141516171819202122232425262728293031323334class Solution &amp;#123;public:    string shiftingLetters(string s, vector&lt;vecto">
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>LeetCode Weekly Contest Album (307 - 317) | ちーのblog</title><meta name="author" content="Haruko"><meta name="copyright" content="Haruko"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="B85 - T3 字母移位 II题意分析 每次将给的区间内的字母+1或-1 区间和问题，可以使用差分数组来完成 参考代码 12345678910111213141516171819202122232425262728293031323334class Solution &amp;#123;public:    string shiftingLetters(string s, vector&lt;vecto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode Weekly Contest Album (307 - 317)">
 <meta property="og:url" content="http://example.com/2022/08/20/LeetCode-Weekly-Contest-album1/index.html">
 <meta property="og:site_name" content="ちーのblog">
 <meta property="og:description" content="B85 - T3 字母移位 II题意分析 每次将给的区间内的字母+1或-1 区间和问题，可以使用差分数组来完成 参考代码 12345678910111213141516171819202122232425262728293031323334class Solution &amp;#123;public:    string shiftingLetters(string s, vector&lt;vecto">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/10/24/EQuDCg87i3qjKto.jpg">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:published_time" content="2022-08-20T00:14:08.000Z">
 <meta property="article:modified_time" content="2022-10-30T08:52:55.072Z">
 <meta property="article:author" content="Haruko">
 <meta property="article:tag" content="贪心">
+<meta property="article:tag" content="哈希表">
 <meta property="article:tag" content="LeetCode Contest">
 <meta property="article:tag" content="模拟">
-<meta property="article:tag" content="哈希表">
-<meta property="article:tag" content="广度优先搜索(BFS)">
 <meta property="article:tag" content="差分数组">
+<meta property="article:tag" content="广度优先搜索(BFS)">
 <meta property="article:tag" content="拓扑排序">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2022/10/24/EQuDCg87i3qjKto.jpg">
-  
-  
-    <meta name="referrer" content="no-referrer-when-downgrade">
-  
-  
-  <title>LeetCode Weekly Contest Album (307 - 317) - ちーのblog</title>
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
-
-
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
-
-  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-
-
-<!-- 主题依赖的图标库，不要自行修改 -->
-<!-- Do not modify the link that theme dependent icons -->
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
-
-
-
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
-
-
-<link  rel="stylesheet" href="/css/main.css" />
-
-
-  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
-  
-    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
-  
-
-
-
-
-  <script id="fluid-configs">
-    var Fluid = window.Fluid || {};
-    Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
-
-    if (CONFIG.web_analytics.follow_dnt) {
-      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
-      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/08/20/LeetCode-Weekly-Contest-album1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
     }
-  </script>
-  <script  src="/js/utils.js" ></script>
-  <script  src="/js/color-schema.js" ></script>
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'LeetCode Weekly Contest Album (307 - 317)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-30 16:52:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
   
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-  
-<meta name="generator" content="Hexo 6.2.0"></head>
-
-
-<body>
-  
-
-  <header>
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-
-<div class="header-inner" style="height: 70vh;">
-  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <strong>ちーのblog</strong>
-    </a>
-
-    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <div class="animated-icon"><span></span><span></span><span></span></div>
-    </button>
-
-    <!-- Collapsible content -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto text-center">
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/">
-                <i class="iconfont icon-home-fill"></i>
-                首页
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/archives/">
-                <i class="iconfont icon-archive-fill"></i>
-                归档
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                分类
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/tags/">
-                <i class="iconfont icon-tags-fill"></i>
-                标签
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/links/">
-                <i class="iconfont icon-link-fill"></i>
-                友链
-              </a>
-            </li>
-          
-        
-        
-          <li class="nav-item" id="search-btn">
-            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
-            </a>
-          </li>
-          
-        
-        
-          <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-</nav>
-
-  
-
-<div id="banner" class="banner" parallax=true
-     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          
-            <span id="subtitle" data-typed-text="LeetCode Weekly Contest Album (307 - 317)"></span>
-          
-        </div>
-
-        
-          
-  <div class="mt-3">
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    
-      <span class="post-meta">
-        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-08-20 08:14" pubdate>
-          2022年8月20日 早上
-        </time>
-      </span>
-    
-  </div>
-
-  <div class="mt-1">
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-chart"></i>
-        
-          13k 字
-        
-      </span>
-    
-
-    
-      <span class="post-meta mr-2">
-        <i class="iconfont icon-clock-fill"></i>
-        
-        
-        
-          112 分钟
-        
-      </span>
-    
-
-    
-    
-      
-        <span id="busuanzi_container_page_pv" style="display: none">
-          <i class="iconfont icon-eye" aria-hidden="true"></i>
-          <span id="busuanzi_value_page_pv"></span> 次
-        </span>
-        
-      
-    
-  </div>
-
-
-        
-      </div>
-
-      
-    </div>
-  </div>
-</div>
-
-</div>
-
-  </header>
-
-  <main>
-    
-      
-
-<div class="container-fluid nopadding-x">
-  <div class="row nomargin-x">
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-
-    </div>
-
-    <div class="col-lg-8 nopadding-x-md">
-      <div class="container nopadding-x-md" id="board-ctn">
-        <div id="board">
-          <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">LeetCode Weekly Contest Album (307 - 317)</h1>
-            
-              <p class="note note-info">
-                
-                  
-                    本文最后更新于：2022年10月30日 下午
-                  
-                
-              </p>
-            
-            
-              <div class="markdown-body">
-                
-                <h3 id="B85-T3-字母移位-II"><a href="#B85-T3-字母移位-II" class="headerlink" title="B85 - T3 字母移位 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shifting-letters-ii/">B85 - T3 字母移位 II</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.2.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="ちーのblog"><span class="site-name">ちーのblog</span></a></span><div id="menus"><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">LeetCode Weekly Contest Album (307 - 317)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-08-20T00:14:08.000Z" title="发表于 2022-08-20 08:14:08">2022-08-20</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-30T08:52:55.072Z" title="更新于 2022-10-30 16:52:55">2022-10-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/LeetCode/">LeetCode</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="LeetCode Weekly Contest Album (307 - 317)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="B85-T3-字母移位-II"><a href="#B85-T3-字母移位-II" class="headerlink" title="B85 - T3 字母移位 II"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/shifting-letters-ii/">B85 - T3 字母移位 II</a></h3><h4 id="题意分析"><a href="#题意分析" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>每次将给的区间内的字母<code>+1</code>或<code>-1</code></p>
 <p>区间和问题，可以使用差分数组来完成</p>
 <h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">shiftingLetters</span><span class="hljs-params">(string s, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; shifts)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = s.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> cnt[n];<br>        <span class="hljs-built_in">memset</span>(cnt, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(cnt));<br><br>        <span class="hljs-keyword">for</span>(vector&lt;<span class="hljs-type">int</span>&gt; a:shifts)&#123;<br>            <span class="hljs-type">int</span> start=a[<span class="hljs-number">0</span>],end=a[<span class="hljs-number">1</span>],op=a[<span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">if</span> (op==<span class="hljs-number">0</span>)&#123;<br>                cnt[start]--;<br>                <span class="hljs-keyword">if</span> (end+<span class="hljs-number">1</span>&lt;n)cnt[end+<span class="hljs-number">1</span>]++;<br>            &#125; <span class="hljs-keyword">else</span>&#123;<br>                cnt[start]++;<br>                <span class="hljs-keyword">if</span> (end+<span class="hljs-number">1</span>&lt;n)cnt[end+<span class="hljs-number">1</span>]--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>;i&lt;n;++i)<br>            cnt[i]+=cnt[i<span class="hljs-number">-1</span>];<br>        <br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            cnt[i]+=(s[i]-<span class="hljs-string">&#x27;a&#x27;</span>);<br>            <span class="hljs-keyword">while</span>(cnt[i]&lt;<span class="hljs-number">0</span>)cnt[i]+=<span class="hljs-number">26</span>;<br>            <span class="hljs-keyword">if</span>(cnt[i]&gt;=<span class="hljs-number">26</span>)cnt[i]%=<span class="hljs-number">26</span>;<br>        &#125;<br>   <br>        string a;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) <br>            a+=(<span class="hljs-type">char</span>)(cnt[i] + <span class="hljs-string">&#x27;a&#x27;</span>);<br>        <br>        <span class="hljs-keyword">return</span> a;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">shiftingLetters</span><span class="params">(string s, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; shifts)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = s.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> cnt[n];</span><br><span class="line">        <span class="built_in">memset</span>(cnt, <span class="number">0</span>, <span class="built_in">sizeof</span>(cnt));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(vector&lt;<span class="type">int</span>&gt; a:shifts)&#123;</span><br><span class="line">            <span class="type">int</span> start=a[<span class="number">0</span>],end=a[<span class="number">1</span>],op=a[<span class="number">2</span>];</span><br><span class="line">            <span class="keyword">if</span> (op==<span class="number">0</span>)&#123;</span><br><span class="line">                cnt[start]--;</span><br><span class="line">                <span class="keyword">if</span> (end+<span class="number">1</span>&lt;n)cnt[end+<span class="number">1</span>]++;</span><br><span class="line">            &#125; <span class="keyword">else</span>&#123;</span><br><span class="line">                cnt[start]++;</span><br><span class="line">                <span class="keyword">if</span> (end+<span class="number">1</span>&lt;n)cnt[end+<span class="number">1</span>]--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>;i&lt;n;++i)</span><br><span class="line">            cnt[i]+=cnt[i<span class="number">-1</span>];</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            cnt[i]+=(s[i]-<span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">            <span class="keyword">while</span>(cnt[i]&lt;<span class="number">0</span>)cnt[i]+=<span class="number">26</span>;</span><br><span class="line">            <span class="keyword">if</span>(cnt[i]&gt;=<span class="number">26</span>)cnt[i]%=<span class="number">26</span>;</span><br><span class="line">        &#125;</span><br><span class="line">   </span><br><span class="line">        string a;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) </span><br><span class="line">            a+=(<span class="type">char</span>)(cnt[i] + <span class="string">&#x27;a&#x27;</span>);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> a;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -345,7 +187,7 @@
 <li><em>ans</em>[<em>i</em>] 要么取上一个*ans[i+1]*的子段和，要么取合并后的子段和(二者取最大值)</li>
 </ul>
 <h4 id="参考代码-1"><a href="#参考代码-1" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">long</span> <span class="hljs-type">long</span>&gt; <span class="hljs-title">maximumSegmentSum</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, vector&lt;<span class="hljs-type">int</span>&gt;&amp; removeQueries)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n = nums.<span class="hljs-built_in">size</span>();<br>        <span class="hljs-type">int</span> f[n+<span class="hljs-number">1</span>];<br>        <span class="hljs-built_in">iota</span>(f, f + n + <span class="hljs-number">1</span>, <span class="hljs-number">0</span>);<br>        ll sum[n+<span class="hljs-number">1</span>];<br>        <span class="hljs-built_in">memset</span>(sum, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(sum));<br><br>        function&lt;<span class="hljs-type">int</span>(<span class="hljs-type">int</span>)&gt; find = [&amp;](<span class="hljs-type">int</span> x) -&gt; <span class="hljs-type">int</span> &#123; <span class="hljs-keyword">return</span> f[x] == x ? x : f[x] = <span class="hljs-built_in">find</span>(f[x]); &#125;;<br>        <span class="hljs-function">std::vector&lt;ll&gt; <span class="hljs-title">ans</span><span class="hljs-params">(n)</span></span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=n<span class="hljs-number">-1</span>; i&gt;<span class="hljs-number">0</span>; --i)&#123;<br>            <span class="hljs-type">int</span> x = removeQueries[i];<br>            <span class="hljs-type">int</span> to = <span class="hljs-built_in">find</span>(x+<span class="hljs-number">1</span>);<br>            f[x]=to;<br>            sum[to]+= sum[x] + nums[x];<br>            ans[i<span class="hljs-number">-1</span>] = <span class="hljs-built_in">max</span>(ans[i], sum[to]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">long</span> <span class="type">long</span>&gt; <span class="title">maximumSegmentSum</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, vector&lt;<span class="type">int</span>&gt;&amp; removeQueries)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n = nums.<span class="built_in">size</span>();</span><br><span class="line">        <span class="type">int</span> f[n+<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">iota</span>(f, f + n + <span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">        ll sum[n+<span class="number">1</span>];</span><br><span class="line">        <span class="built_in">memset</span>(sum, <span class="number">0</span>, <span class="built_in">sizeof</span>(sum));</span><br><span class="line"></span><br><span class="line">        function&lt;<span class="type">int</span>(<span class="type">int</span>)&gt; find = [&amp;](<span class="type">int</span> x) -&gt; <span class="type">int</span> &#123; <span class="keyword">return</span> f[x] == x ? x : f[x] = <span class="built_in">find</span>(f[x]); &#125;;</span><br><span class="line">        <span class="function">std::vector&lt;ll&gt; <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=n<span class="number">-1</span>; i&gt;<span class="number">0</span>; --i)&#123;</span><br><span class="line">            <span class="type">int</span> x = removeQueries[i];</span><br><span class="line">            <span class="type">int</span> to = <span class="built_in">find</span>(x+<span class="number">1</span>);</span><br><span class="line">            f[x]=to;</span><br><span class="line">            sum[to]+= sum[x] + nums[x];</span><br><span class="line">            ans[i<span class="number">-1</span>] = <span class="built_in">max</span>(ans[i], sum[to]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -356,7 +198,7 @@
 <li>对于前缀0问题，我们可以使用一个<code>flag</code>来统计，由于0只能在结果字符串的中间部分，则若向字符串内增加了0，暂时将<code>flag</code>标记为<code>1</code>。若后续向0前方又增加了数字，此时便可以将<code>flag</code>置<code>0</code>(没有前缀0问题了)</li>
 </ul>
 <h4 id="参考代码-2"><a href="#参考代码-2" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">largestPalindromic</span><span class="hljs-params">(string num)</span> </span>&#123;<br>        map&lt;<span class="hljs-type">int</span>, <span class="hljs-type">int</span>&gt; map;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:num)map[c-<span class="hljs-string">&#x27;0&#x27;</span>]++;<br>        <span class="hljs-keyword">if</span>(map.<span class="hljs-built_in">size</span>() == <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">return</span> map.<span class="hljs-built_in">begin</span>()-&gt;first == <span class="hljs-number">0</span> ? <span class="hljs-string">&quot;0&quot;</span> : num;<br>        &#125;<br>        string a;<br>        <span class="hljs-type">bool</span> flag = <span class="hljs-literal">false</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp;it: map)&#123;<br>            <span class="hljs-type">int</span> to = it.second;<br>            <span class="hljs-keyword">if</span>(to &gt; <span class="hljs-number">1</span>)&#123;<br>                <span class="hljs-keyword">if</span>(!flag &amp;&amp; it.first == <span class="hljs-number">0</span>) flag = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span> flag = <span class="hljs-number">0</span>;<br>                <br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; to / <span class="hljs-number">2</span>; ++i) &#123;<br>                    a.<span class="hljs-built_in">push_back</span>((<span class="hljs-type">char</span>)(it.first + <span class="hljs-string">&#x27;0&#x27;</span>));<br>                &#125;<br>                <span class="hljs-keyword">if</span>(to % <span class="hljs-number">2</span> == <span class="hljs-number">1</span>) it.second = <span class="hljs-number">1</span>;<br>                <span class="hljs-keyword">else</span> it.second = <span class="hljs-number">0</span>;<br>            &#125;<br>        &#125;<br>        string b;<br>        <span class="hljs-keyword">if</span> (flag) b = <span class="hljs-string">&quot;&quot;</span>;<br>        <span class="hljs-keyword">else</span> &#123;<br>            b = a; <br>            <span class="hljs-built_in">reverse</span>(b.<span class="hljs-built_in">begin</span>(), b.<span class="hljs-built_in">end</span>());<br>            b += a;<br>        &#125;<br>        <span class="hljs-type">int</span> mid = b.<span class="hljs-built_in">size</span>() / <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> it = map.<span class="hljs-built_in">rbegin</span>(); it != map.<span class="hljs-built_in">rend</span>(); ++it)&#123;<br>            <span class="hljs-keyword">if</span> (it-&gt;second != <span class="hljs-number">0</span>) &#123;<br>                b.<span class="hljs-built_in">insert</span>(b.<span class="hljs-built_in">begin</span>() + mid, (<span class="hljs-type">char</span>)(it-&gt;first + <span class="hljs-string">&#x27;0&#x27;</span>));<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> b;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">string <span class="title">largestPalindromic</span><span class="params">(string num)</span> </span>&#123;</span><br><span class="line">        map&lt;<span class="type">int</span>, <span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c:num)map[c-<span class="string">&#x27;0&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">if</span>(map.<span class="built_in">size</span>() == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> map.<span class="built_in">begin</span>()-&gt;first == <span class="number">0</span> ? <span class="string">&quot;0&quot;</span> : num;</span><br><span class="line">        &#125;</span><br><span class="line">        string a;</span><br><span class="line">        <span class="type">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;it: map)&#123;</span><br><span class="line">            <span class="type">int</span> to = it.second;</span><br><span class="line">            <span class="keyword">if</span>(to &gt; <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(!flag &amp;&amp; it.first == <span class="number">0</span>) flag = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> flag = <span class="number">0</span>;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; to / <span class="number">2</span>; ++i) &#123;</span><br><span class="line">                    a.<span class="built_in">push_back</span>((<span class="type">char</span>)(it.first + <span class="string">&#x27;0&#x27;</span>));</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(to % <span class="number">2</span> == <span class="number">1</span>) it.second = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> it.second = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        string b;</span><br><span class="line">        <span class="keyword">if</span> (flag) b = <span class="string">&quot;&quot;</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            b = a; </span><br><span class="line">            <span class="built_in">reverse</span>(b.<span class="built_in">begin</span>(), b.<span class="built_in">end</span>());</span><br><span class="line">            b += a;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> mid = b.<span class="built_in">size</span>() / <span class="number">2</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> it = map.<span class="built_in">rbegin</span>(); it != map.<span class="built_in">rend</span>(); ++it)&#123;</span><br><span class="line">            <span class="keyword">if</span> (it-&gt;second != <span class="number">0</span>) &#123;</span><br><span class="line">                b.<span class="built_in">insert</span>(b.<span class="built_in">begin</span>() + mid, (<span class="type">char</span>)(it-&gt;first + <span class="string">&#x27;0&#x27;</span>));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> b;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -364,7 +206,7 @@
 <p>本题没有什么思维量，仅存的难点在于由<code>TreeNode</code>建图</p>
 <p>作者此处使用了较为方便的<code>unordered_map</code>建图</p>
 <h4 id="参考代码-3"><a href="#参考代码-3" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(unordered_map&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;map, TreeNode* root)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (root== <span class="hljs-literal">nullptr</span>) <span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">if</span> (root-&gt;left!= <span class="hljs-literal">nullptr</span>)map[root-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;left-&gt;val),map[root-&gt;left-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;val), <span class="hljs-built_in">dfs</span>(map, root-&gt;left);<br>        <span class="hljs-keyword">if</span> (root-&gt;right!= <span class="hljs-literal">nullptr</span>)map[root-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;right-&gt;val),map[root-&gt;right-&gt;val].<span class="hljs-built_in">push_back</span>(root-&gt;val), <span class="hljs-built_in">dfs</span>(map,root-&gt;right);<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">amountOfTime</span><span class="hljs-params">(TreeNode* root, <span class="hljs-type">int</span> start)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>, vector&lt;<span class="hljs-type">int</span>&gt;&gt; map;<br>        <span class="hljs-built_in">dfs</span>(map, root);<br><br>        queue&lt;<span class="hljs-type">int</span>&gt; queue;<br>        queue.<span class="hljs-built_in">push</span>(start);<br><br>        <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>, n = map.<span class="hljs-built_in">size</span>();<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; set;<br><br><br>        <span class="hljs-keyword">while</span> (!queue.<span class="hljs-built_in">empty</span>())&#123;<br>            <span class="hljs-type">int</span> size = queue.<span class="hljs-built_in">size</span>();<br>            <span class="hljs-keyword">while</span> (size--&gt;<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-type">int</span> pos = queue.<span class="hljs-built_in">front</span>();<br>                queue.<span class="hljs-built_in">pop</span>();<br><br>                <span class="hljs-keyword">if</span>(set.<span class="hljs-built_in">count</span>(pos)) <span class="hljs-keyword">continue</span>;<br>                set.<span class="hljs-built_in">insert</span>(pos);<br><br>                <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v: map[pos]) <span class="hljs-keyword">if</span> (!set.<span class="hljs-built_in">count</span>(v)) queue.<span class="hljs-built_in">push</span>(v);<br>            &#125;<br>            ++ans;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans - <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(unordered_map&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;&gt; &amp;map, TreeNode* root)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root== <span class="literal">nullptr</span>) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;left!= <span class="literal">nullptr</span>)map[root-&gt;val].<span class="built_in">push_back</span>(root-&gt;left-&gt;val),map[root-&gt;left-&gt;val].<span class="built_in">push_back</span>(root-&gt;val), <span class="built_in">dfs</span>(map, root-&gt;left);</span><br><span class="line">        <span class="keyword">if</span> (root-&gt;right!= <span class="literal">nullptr</span>)map[root-&gt;val].<span class="built_in">push_back</span>(root-&gt;right-&gt;val),map[root-&gt;right-&gt;val].<span class="built_in">push_back</span>(root-&gt;val), <span class="built_in">dfs</span>(map,root-&gt;right);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">amountOfTime</span><span class="params">(TreeNode* root, <span class="type">int</span> start)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, vector&lt;<span class="type">int</span>&gt;&gt; map;</span><br><span class="line">        <span class="built_in">dfs</span>(map, root);</span><br><span class="line"></span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">        queue.<span class="built_in">push</span>(start);</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> ans = <span class="number">0</span>, n = map.<span class="built_in">size</span>();</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; set;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (!queue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="type">int</span> size = queue.<span class="built_in">size</span>();</span><br><span class="line">            <span class="keyword">while</span> (size--&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="type">int</span> pos = queue.<span class="built_in">front</span>();</span><br><span class="line">                queue.<span class="built_in">pop</span>();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(set.<span class="built_in">count</span>(pos)) <span class="keyword">continue</span>;</span><br><span class="line">                set.<span class="built_in">insert</span>(pos);</span><br><span class="line"></span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> v: map[pos]) <span class="keyword">if</span> (!set.<span class="built_in">count</span>(v)) queue.<span class="built_in">push</span>(v);</span><br><span class="line">            &#125;</span><br><span class="line">            ++ans;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -373,7 +215,7 @@
 <p>则可以对每一栋房子中的三种垃圾以及所有的三种垃圾计数</p>
 <p>直到采集完成后结束</p>
 <h4 id="参考代码-4"><a href="#参考代码-4" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">garbageCollection</span><span class="hljs-params">(vector&lt;string&gt;&amp; garbage, vector&lt;<span class="hljs-type">int</span>&gt;&amp; travel)</span> </span>&#123;<br>        unordered_map&lt;<span class="hljs-type">int</span>, unordered_map&lt;<span class="hljs-type">char</span>, <span class="hljs-type">int</span>&gt;&gt; map;<br>        unordered_map&lt;<span class="hljs-type">char</span>, <span class="hljs-type">int</span>&gt; cnt;<br>        <span class="hljs-type">int</span> n = garbage.<span class="hljs-built_in">size</span>();<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;n; ++i) &#123;<br>            string g = garbage[i];<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">char</span> c:g) map[i][c]++,++cnt[c];<br>        &#125;<br><br>        <span class="hljs-type">char</span> a[<span class="hljs-number">3</span>] = &#123;<span class="hljs-string">&#x27;P&#x27;</span>,<span class="hljs-string">&#x27;M&#x27;</span>,<span class="hljs-string">&#x27;G&#x27;</span>&#125;;<br><br>        <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">const</span> <span class="hljs-type">char</span>&amp; c: a)&#123;<br>            <span class="hljs-type">int</span> p=<span class="hljs-number">0</span>;<br>            <span class="hljs-keyword">while</span> (cnt[c]&gt;<span class="hljs-number">0</span>)&#123;<br>                ans += map[p][c],cnt[c]-=map[p][c];<br>                <span class="hljs-keyword">if</span> (cnt[c]&gt;<span class="hljs-number">0</span>)ans+=travel[p],++p;<br>                <span class="hljs-keyword">else</span> <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">garbageCollection</span><span class="params">(vector&lt;string&gt;&amp; garbage, vector&lt;<span class="type">int</span>&gt;&amp; travel)</span> </span>&#123;</span><br><span class="line">        unordered_map&lt;<span class="type">int</span>, unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt;&gt; map;</span><br><span class="line">        unordered_map&lt;<span class="type">char</span>, <span class="type">int</span>&gt; cnt;</span><br><span class="line">        <span class="type">int</span> n = garbage.<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i=<span class="number">0</span>; i&lt;n; ++i) &#123;</span><br><span class="line">            string g = garbage[i];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span> c:g) map[i][c]++,++cnt[c];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span> a[<span class="number">3</span>] = &#123;<span class="string">&#x27;P&#x27;</span>,<span class="string">&#x27;M&#x27;</span>,<span class="string">&#x27;G&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">const</span> <span class="type">char</span>&amp; c: a)&#123;</span><br><span class="line">            <span class="type">int</span> p=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (cnt[c]&gt;<span class="number">0</span>)&#123;</span><br><span class="line">                ans += map[p][c],cnt[c]-=map[p][c];</span><br><span class="line">                <span class="keyword">if</span> (cnt[c]&gt;<span class="number">0</span>)ans+=travel[p],++p;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -381,7 +223,7 @@
 <p>给的一个行元素限制和列元素限制，返回按照限制之下所能构成的矩阵</p>
 <p>由于元素之间只有先后出现之分，可以使用拓扑排序来确定每一个元素由下到上的出现次序和由右到左的出现次序</p>
 <h4 id="参考代码-5"><a href="#参考代码-5" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">topo_sort</span><span class="hljs-params">(<span class="hljs-type">int</span> k, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; edges)</span> </span>&#123;<br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">grid</span>(k);<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">in</span><span class="hljs-params">(k)</span></span>;<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">auto</span> &amp;e: edges)&#123;<br>            <span class="hljs-type">int</span> x = e[<span class="hljs-number">0</span>]<span class="hljs-number">-1</span>,y=e[<span class="hljs-number">1</span>]<span class="hljs-number">-1</span>;<br>            grid[x].<span class="hljs-built_in">push_back</span>(y);<br>            in[y]++;<br>        &#125;<br><br>        vector&lt;<span class="hljs-type">int</span>&gt; order;<br>        queue&lt;<span class="hljs-type">int</span>&gt; queue;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)<br>            <span class="hljs-keyword">if</span>(in[i]==<span class="hljs-number">0</span>)queue.<span class="hljs-built_in">push</span>(i);<br>        <br>        <span class="hljs-keyword">while</span>(!queue.<span class="hljs-built_in">empty</span>())&#123;<br>            <span class="hljs-type">int</span> pos = queue.<span class="hljs-built_in">front</span>();<br>            queue.<span class="hljs-built_in">pop</span>();<br>            order.<span class="hljs-built_in">push_back</span>(pos);<br>            <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v: grid[pos])<span class="hljs-keyword">if</span>(--in[v]==<span class="hljs-number">0</span>)queue.<span class="hljs-built_in">push</span>(v);<br>        &#125;<br>        <span class="hljs-keyword">return</span> order;<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">buildMatrix</span>(<span class="hljs-type">int</span> k, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; rowConditions, vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; colConditions) &#123;<br>        <span class="hljs-keyword">auto</span> row=<span class="hljs-built_in">topo_sort</span>(k, rowConditions), col=<span class="hljs-built_in">topo_sort</span>(k,colConditions);<br>        <span class="hljs-keyword">if</span>(row.<span class="hljs-built_in">size</span>()&lt;k || col.<span class="hljs-built_in">size</span>()&lt;k)<span class="hljs-keyword">return</span> &#123;&#125;;<br>        <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">pos</span><span class="hljs-params">(k)</span></span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)pos[col[i]]=i;<br><br>        vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; <span class="hljs-built_in">ans</span>(k,<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(k,<span class="hljs-number">0</span>));<br><br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i=<span class="hljs-number">0</span>; i&lt;k; ++i)<br>            ans[i][pos[row[i]]] = row[i] + <span class="hljs-number">1</span>;<br>    <br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">topo_sort</span><span class="params">(<span class="type">int</span> k, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; edges)</span> </span>&#123;</span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">grid</span>(k);</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">in</span><span class="params">(k)</span></span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> &amp;e: edges)&#123;</span><br><span class="line">            <span class="type">int</span> x = e[<span class="number">0</span>]<span class="number">-1</span>,y=e[<span class="number">1</span>]<span class="number">-1</span>;</span><br><span class="line">            grid[x].<span class="built_in">push_back</span>(y);</span><br><span class="line">            in[y]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; order;</span><br><span class="line">        queue&lt;<span class="type">int</span>&gt; queue;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;k; ++i)</span><br><span class="line">            <span class="keyword">if</span>(in[i]==<span class="number">0</span>)queue.<span class="built_in">push</span>(i);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(!queue.<span class="built_in">empty</span>())&#123;</span><br><span class="line">            <span class="type">int</span> pos = queue.<span class="built_in">front</span>();</span><br><span class="line">            queue.<span class="built_in">pop</span>();</span><br><span class="line">            order.<span class="built_in">push_back</span>(pos);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> v: grid[pos])<span class="keyword">if</span>(--in[v]==<span class="number">0</span>)queue.<span class="built_in">push</span>(v);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> order;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">buildMatrix</span>(<span class="type">int</span> k, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; rowConditions, vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; colConditions) &#123;</span><br><span class="line">        <span class="keyword">auto</span> row=<span class="built_in">topo_sort</span>(k, rowConditions), col=<span class="built_in">topo_sort</span>(k,colConditions);</span><br><span class="line">        <span class="keyword">if</span>(row.<span class="built_in">size</span>()&lt;k || col.<span class="built_in">size</span>()&lt;k)<span class="keyword">return</span> &#123;&#125;;</span><br><span class="line">        <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">pos</span><span class="params">(k)</span></span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;k; ++i)pos[col[i]]=i;</span><br><span class="line"></span><br><span class="line">        vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; <span class="built_in">ans</span>(k,<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(k,<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>; i&lt;k; ++i)</span><br><span class="line">            ans[i][pos[row[i]]] = row[i] + <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -389,7 +231,7 @@
 <p>选择其中<code>col</code>列，检测是否每一行中所有的<code>1</code>都被选中了</p>
 <p>数据量小，直接回溯即可</p>
 <h4 id="参考代码-6"><a href="#参考代码-6" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> ans = <span class="hljs-number">0</span>;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">check</span><span class="hljs-params">(vector&lt;vector&lt;&gt;<span class="hljs-type">int</span>&gt; &amp;mat, unordered_set&lt;<span class="hljs-type">int</span>&gt; &amp;set)</span> </span>&#123;<br>        <span class="hljs-type">int</span> cnt = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; mat.<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            <span class="hljs-type">int</span> j;<br>            <span class="hljs-keyword">for</span> (j = <span class="hljs-number">0</span>; j &lt; mat[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>(); ++j) &#123;<br>                <span class="hljs-keyword">if</span> (mat[i][j] == <span class="hljs-number">1</span>) &#123;<br>                    <span class="hljs-keyword">if</span> (!set.<span class="hljs-built_in">count</span>(j))<span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (j == mat[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>())++cnt;<br>        &#125;<br>        ans = <span class="hljs-built_in">max</span>(ans, cnt);<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;mat, <span class="hljs-type">int</span> cols, unordered_set&lt;<span class="hljs-type">int</span>&gt; set, <span class="hljs-type">int</span> idx)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (idx == mat[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>()&amp;&amp;cols!=<span class="hljs-number">0</span>)<span class="hljs-keyword">return</span>;<br>        <span class="hljs-keyword">if</span> (cols == <span class="hljs-number">0</span>) &#123;<br>            <span class="hljs-built_in">check</span>(mat, set);<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = idx; i &lt; mat[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>(); ++i) &#123;<br>            set.<span class="hljs-built_in">insert</span>(i);<br>            <span class="hljs-built_in">dfs</span>(mat, cols - <span class="hljs-number">1</span>, set, i + <span class="hljs-number">1</span>);<br>            set.<span class="hljs-built_in">erase</span>(i);<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maximumRows</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;mat, <span class="hljs-type">int</span> cols)</span> </span>&#123;<br>        unordered_set&lt;<span class="hljs-type">int</span>&gt; set;<br>        <span class="hljs-built_in">dfs</span>(mat, cols, set, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> ans = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">check</span><span class="params">(vector&lt;vector&lt;&gt;<span class="type">int</span>&gt; &amp;mat, unordered_set&lt;<span class="type">int</span>&gt; &amp;set)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; mat.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            <span class="type">int</span> j;</span><br><span class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; mat[<span class="number">0</span>].<span class="built_in">size</span>(); ++j) &#123;</span><br><span class="line">                <span class="keyword">if</span> (mat[i][j] == <span class="number">1</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (!set.<span class="built_in">count</span>(j))<span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (j == mat[<span class="number">0</span>].<span class="built_in">size</span>())++cnt;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = <span class="built_in">max</span>(ans, cnt);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;mat, <span class="type">int</span> cols, unordered_set&lt;<span class="type">int</span>&gt; set, <span class="type">int</span> idx)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (idx == mat[<span class="number">0</span>].<span class="built_in">size</span>()&amp;&amp;cols!=<span class="number">0</span>)<span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (cols == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="built_in">check</span>(mat, set);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = idx; i &lt; mat[<span class="number">0</span>].<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">            set.<span class="built_in">insert</span>(i);</span><br><span class="line">            <span class="built_in">dfs</span>(mat, cols - <span class="number">1</span>, set, i + <span class="number">1</span>);</span><br><span class="line">            set.<span class="built_in">erase</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumRows</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;mat, <span class="type">int</span> cols)</span> </span>&#123;</span><br><span class="line">        unordered_set&lt;<span class="type">int</span>&gt; set;</span><br><span class="line">        <span class="built_in">dfs</span>(mat, cols, set, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -397,7 +239,7 @@
 <p>运行 <code>k</code> 个机器人 <strong>总开销</strong> 是 <code>max(chargeTimes) + k * sum(runningCosts)</code></p>
 <p>注意到需要取所有机器人中的最大充电时间，我们可以使用单调队列来动态维护区间最大值，双指针进行区间的选择</p>
 <h4 id="参考代码-7"><a href="#参考代码-7" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">maximumRobots</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; chargeTimes, vector&lt;<span class="hljs-type">int</span>&gt;&amp; runningCosts, <span class="hljs-type">long</span> <span class="hljs-type">long</span> budget)</span> </span>&#123;<br>        <span class="hljs-type">int</span> ans=<span class="hljs-number">0</span>,left=<span class="hljs-number">0</span>,right=<span class="hljs-number">0</span>;<br>        deque&lt;<span class="hljs-type">int</span>&gt; deque;<br>        <span class="hljs-type">long</span> <span class="hljs-type">long</span> sum=<span class="hljs-number">0ll</span>;<br>        <span class="hljs-keyword">while</span>(right&lt;chargeTimes.<span class="hljs-built_in">size</span>())&#123;<br>            <span class="hljs-keyword">while</span>(!deque.<span class="hljs-built_in">empty</span>()&amp;&amp;chargeTimes[right]&gt;=chargeTimes[deque.<span class="hljs-built_in">back</span>()])<br>                deque.<span class="hljs-built_in">pop_back</span>();<br>            deque.<span class="hljs-built_in">push_back</span>(right);<br>            sum += runningCosts[right];<br>            <span class="hljs-keyword">while</span>(!deque.<span class="hljs-built_in">empty</span>()&amp;&amp;chargeTimes[deque.<span class="hljs-built_in">front</span>()]+(right-left+<span class="hljs-number">1</span>)*sum&gt;budget)&#123;<br>                <span class="hljs-keyword">if</span>(deque.<span class="hljs-built_in">front</span>()==left)deque.<span class="hljs-built_in">pop_front</span>();<br>                sum-=runningCosts[left],left++;<br>            &#125;<br>            ans=<span class="hljs-built_in">max</span>(ans,right-left+<span class="hljs-number">1</span>),++right;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">maximumRobots</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; chargeTimes, vector&lt;<span class="type">int</span>&gt;&amp; runningCosts, <span class="type">long</span> <span class="type">long</span> budget)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> ans=<span class="number">0</span>,left=<span class="number">0</span>,right=<span class="number">0</span>;</span><br><span class="line">        deque&lt;<span class="type">int</span>&gt; deque;</span><br><span class="line">        <span class="type">long</span> <span class="type">long</span> sum=<span class="number">0ll</span>;</span><br><span class="line">        <span class="keyword">while</span>(right&lt;chargeTimes.<span class="built_in">size</span>())&#123;</span><br><span class="line">            <span class="keyword">while</span>(!deque.<span class="built_in">empty</span>()&amp;&amp;chargeTimes[right]&gt;=chargeTimes[deque.<span class="built_in">back</span>()])</span><br><span class="line">                deque.<span class="built_in">pop_back</span>();</span><br><span class="line">            deque.<span class="built_in">push_back</span>(right);</span><br><span class="line">            sum += runningCosts[right];</span><br><span class="line">            <span class="keyword">while</span>(!deque.<span class="built_in">empty</span>()&amp;&amp;chargeTimes[deque.<span class="built_in">front</span>()]+(right-left+<span class="number">1</span>)*sum&gt;budget)&#123;</span><br><span class="line">                <span class="keyword">if</span>(deque.<span class="built_in">front</span>()==left)deque.<span class="built_in">pop_front</span>();</span><br><span class="line">                sum-=runningCosts[left],left++;</span><br><span class="line">            &#125;</span><br><span class="line">            ans=<span class="built_in">max</span>(ans,right-left+<span class="number">1</span>),++right;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -411,7 +253,7 @@
 </ul>
 <p><code>Java</code>提供了使得数字转换为二进制数的方法，利用其进行模拟</p>
 <h4 id="参考代码-8"><a href="#参考代码-8" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><code class="hljs Java"><span class="hljs-keyword">import</span> java.util.ArrayList;<br><span class="hljs-keyword">import</span> java.util.List;<br><span class="hljs-keyword">import</span> java.util.Map;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">boolean</span> <span class="hljs-title function_">check</span><span class="hljs-params">(List&lt;String&gt; list, String s, <span class="hljs-type">int</span>[] cnt)</span> &#123;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">n</span> <span class="hljs-operator">=</span> s.length();<br>        <span class="hljs-type">boolean</span> <span class="hljs-variable">f</span> <span class="hljs-operator">=</span> <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> n - <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>; i &gt;= <span class="hljs-number">0</span>; --i, ++j) &#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(i) == <span class="hljs-string">&#x27;1&#x27;</span> &amp;&amp; cnt[j] == <span class="hljs-number">1</span>) &#123;<br>                f = <span class="hljs-literal">false</span>;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> f;<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title function_">longestNiceSubarray</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums)</span> &#123;<br>        <span class="hljs-type">int</span>[] cnt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">int</span>[<span class="hljs-number">32</span>];<br>        List&lt;String&gt; list = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-type">int</span> <span class="hljs-variable">maxLen</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> n : nums) &#123;<br>            list.add(Integer.toBinaryString(n));<br>        &#125;<br><br>        <span class="hljs-type">int</span> <span class="hljs-variable">ans</span> <span class="hljs-operator">=</span> <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> <span class="hljs-variable">l</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>, r = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (r &lt; nums.length) &#123;<br>            <span class="hljs-type">String</span> <span class="hljs-variable">s</span> <span class="hljs-operator">=</span> list.get(r);<br>            <span class="hljs-keyword">if</span> (check(list,s,cnt))&#123;<br>                ans= Math.max(ans, r-l+<span class="hljs-number">1</span>);<br>                ++r;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> s.length() - <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>; i &gt;= <span class="hljs-number">0</span>; --i, ++j) &#123;<br>                    <span class="hljs-keyword">if</span> (s.charAt(i)==<span class="hljs-string">&#x27;1&#x27;</span>)cnt[j]=<span class="hljs-number">1</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">while</span> (!check(list, s,cnt))&#123;<br>                    String q=list.get(l);<br>                    <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> q.length() - <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>; i &gt;= <span class="hljs-number">0</span>; --i, ++j) &#123;<br>                        <span class="hljs-keyword">if</span> (q.charAt(i)==<span class="hljs-string">&#x27;1&#x27;</span>)cnt[j]=<span class="hljs-number">0</span>;<br>                    &#125;<br>                    ++l;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">boolean</span> <span class="title function_">check</span><span class="params">(List&lt;String&gt; list, String s, <span class="type">int</span>[] cnt)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> s.length();</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">f</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n - <span class="number">1</span>, j = <span class="number">0</span>; i &gt;= <span class="number">0</span>; --i, ++j) &#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(i) == <span class="string">&#x27;1&#x27;</span> &amp;&amp; cnt[j] == <span class="number">1</span>) &#123;</span><br><span class="line">                f = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> f;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">longestNiceSubarray</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] cnt = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">32</span>];</span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxLen</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> n : nums) &#123;</span><br><span class="line">            list.add(Integer.toBinaryString(n));</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>, r = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (r &lt; nums.length) &#123;</span><br><span class="line">            <span class="type">String</span> <span class="variable">s</span> <span class="operator">=</span> list.get(r);</span><br><span class="line">            <span class="keyword">if</span> (check(list,s,cnt))&#123;</span><br><span class="line">                ans= Math.max(ans, r-l+<span class="number">1</span>);</span><br><span class="line">                ++r;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> s.length() - <span class="number">1</span>, j = <span class="number">0</span>; i &gt;= <span class="number">0</span>; --i, ++j) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (s.charAt(i)==<span class="string">&#x27;1&#x27;</span>)cnt[j]=<span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">while</span> (!check(list, s,cnt))&#123;</span><br><span class="line">                    String q=list.get(l);</span><br><span class="line">                    <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> q.length() - <span class="number">1</span>, j = <span class="number">0</span>; i &gt;= <span class="number">0</span>; --i, ++j) &#123;</span><br><span class="line">                        <span class="keyword">if</span> (q.charAt(i)==<span class="string">&#x27;1&#x27;</span>)cnt[j]=<span class="number">0</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    ++l;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="W310-T3-将区间分为最少组数"><a href="#W310-T3-将区间分为最少组数" class="headerlink" title="W310-T3 将区间分为最少组数"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/divide-intervals-into-minimum-number-of-groups/">W310-T3 将区间分为最少组数</a></h3><h4 id="题意分析-9"><a href="#题意分析-9" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>给定一些区间段，按照一定的顺序将其分为<code>n</code>组，使得在<code>n</code>组中，每一个区间都不相交，返回<code>n</code>的最小数目</p>
@@ -431,20 +273,20 @@
 </ul>
 <p>由于要求区间不可相交，则需要从<code>start</code>小的区间开始选取；因此需要对数组进行一个<strong>排序</strong></p>
 <h4 id="参考代码-9"><a href="#参考代码-9" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;bits/stdc++.h&quot;</span></span><br><span class="hljs-meta">#<span class="hljs-keyword">include</span> <span class="hljs-string">&quot;iomanip&quot;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> all(a) a.begin(),a.end()</span><br><span class="hljs-meta">#<span class="hljs-keyword">define</span> rall(a) rbegin(a), rend(a)</span><br><br><span class="hljs-keyword">using</span> vi = vector&lt;<span class="hljs-type">int</span>&gt;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">minGroups</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt;&amp; intervals)</span> </span>&#123;<br>        <span class="hljs-built_in">sort</span>(<span class="hljs-built_in">all</span>(intervals));<span class="hljs-comment">//排序，满足从小到大选择区间</span><br>        <br>        priority_queue&lt;<span class="hljs-type">int</span>, vi, greater&lt;&gt;&gt; pq;<br>        <br>        <span class="hljs-keyword">for</span> (vi a:intervals)&#123;<br>            <span class="hljs-type">int</span> start=a[<span class="hljs-number">0</span>],end=a[<span class="hljs-number">1</span>];<span class="hljs-comment">//当前请求加入分组的区间的起始值</span><br>            <span class="hljs-keyword">if</span> (pq.<span class="hljs-built_in">empty</span>())pq.<span class="hljs-built_in">push</span>(end);<span class="hljs-comment">//空分组时</span><br>            <span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">if</span> (start &lt;= pq.<span class="hljs-built_in">top</span>())&#123;<span class="hljs-comment">//不可加入已有的分组，直接以end新建分组</span><br>                    pq.<span class="hljs-built_in">push</span>(end);<br>                &#125;<span class="hljs-keyword">else</span>&#123;<span class="hljs-comment">//可加入已有分组，加入其中并更新区间尾数end</span><br>                    pq.<span class="hljs-built_in">pop</span>();<br>                    pq.<span class="hljs-built_in">push</span>(end);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-comment">//答案即为优先队列大小</span><br>        <span class="hljs-keyword">return</span> pq.<span class="hljs-built_in">size</span>();<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;bits/stdc++.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;iomanip&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> all(a) a.begin(),a.end()</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> rall(a) rbegin(a), rend(a)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> vi = vector&lt;<span class="type">int</span>&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">minGroups</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt;&amp; intervals)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">sort</span>(<span class="built_in">all</span>(intervals));<span class="comment">//排序，满足从小到大选择区间</span></span><br><span class="line">        </span><br><span class="line">        priority_queue&lt;<span class="type">int</span>, vi, greater&lt;&gt;&gt; pq;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (vi a:intervals)&#123;</span><br><span class="line">            <span class="type">int</span> start=a[<span class="number">0</span>],end=a[<span class="number">1</span>];<span class="comment">//当前请求加入分组的区间的起始值</span></span><br><span class="line">            <span class="keyword">if</span> (pq.<span class="built_in">empty</span>())pq.<span class="built_in">push</span>(end);<span class="comment">//空分组时</span></span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">if</span> (start &lt;= pq.<span class="built_in">top</span>())&#123;<span class="comment">//不可加入已有的分组，直接以end新建分组</span></span><br><span class="line">                    pq.<span class="built_in">push</span>(end);</span><br><span class="line">                &#125;<span class="keyword">else</span>&#123;<span class="comment">//可加入已有分组，加入其中并更新区间尾数end</span></span><br><span class="line">                    pq.<span class="built_in">pop</span>();</span><br><span class="line">                    pq.<span class="built_in">push</span>(end);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//答案即为优先队列大小</span></span><br><span class="line">        <span class="keyword">return</span> pq.<span class="built_in">size</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="B87-T3-按位或最大的最小子数组长度"><a href="#B87-T3-按位或最大的最小子数组长度" class="headerlink" title="B87 - T3 按位或最大的最小子数组长度"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/smallest-subarrays-with-maximum-bitwise-or/">B87 - T3 按位或最大的最小子数组长度</a></h3><h4 id="题意分析-10"><a href="#题意分析-10" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>给定一个数组<code>nums</code>，对于其中的每一位<code>i</code>，找到包含这一位的一个子数组<code>[i,len(nums)]</code>，使得该子数组中所有数或运算结果最大</p>
 <p>枚举 + 二分</p>
 <p>对于每一个数，结果最大则需要每一个二进制位上均为1，因此使用哈希表统计各个位上，存在1的下标，使用二分查找确定最远位置即可</p>
 <h4 id="参考代码-10"><a href="#参考代码-10" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function">string <span class="hljs-title">Binary</span><span class="hljs-params">(<span class="hljs-type">int</span> x)</span> </span>&#123;<br>    string s = <span class="hljs-string">&quot;&quot;</span>;<br>    <span class="hljs-keyword">while</span> (x) &#123;<br>        <span class="hljs-keyword">if</span> (x % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) s = <span class="hljs-string">&#x27;0&#x27;</span> + s;<br>        <span class="hljs-keyword">else</span> s = <span class="hljs-string">&#x27;1&#x27;</span> + s;<br>        x /= <span class="hljs-number">2</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> s.<span class="hljs-built_in">size</span>()==<span class="hljs-number">0</span> ? <span class="hljs-string">&quot;0&quot;</span> : s;<br>&#125;<br><br><span class="hljs-keyword">using</span> vi=vector&lt;<span class="hljs-type">int</span>&gt;;<br><span class="hljs-keyword">using</span> vs=vector&lt;string&gt;;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">smallestSubarrays</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums)</span> </span>&#123;<br>        <span class="hljs-type">int</span> n=nums.<span class="hljs-built_in">size</span>(),maxx=<span class="hljs-number">0</span>;<br><br>        <span class="hljs-function">vs <span class="hljs-title">s</span><span class="hljs-params">(n)</span></span>;<br>        <span class="hljs-function">vi <span class="hljs-title">ans</span><span class="hljs-params">(n)</span></span>;<br>        map&lt;<span class="hljs-type">int</span>, set&lt;<span class="hljs-type">int</span>&gt;&gt; map;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            s[i]= <span class="hljs-built_in">Binary</span>(nums[i]);<br>            maxx=<span class="hljs-built_in">max</span>(maxx,(<span class="hljs-type">int</span>)s[i].<span class="hljs-built_in">size</span>());<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            string b=s[i];<br>            <span class="hljs-type">int</span> j=b.<span class="hljs-built_in">size</span>()<span class="hljs-number">-1</span>;<br>            <span class="hljs-keyword">while</span> (j&gt;=<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">if</span> (b[j]==<span class="hljs-string">&#x27;1&#x27;</span>)&#123;<br>                    map[b.<span class="hljs-built_in">size</span>()-j].<span class="hljs-built_in">insert</span>(i);<br>                &#125;<br>                --j;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            string target=s[i];<br>            <span class="hljs-type">int</span> last=i;<br>            <span class="hljs-type">int</span> j=maxx<span class="hljs-number">-1</span>;<br>            <span class="hljs-keyword">while</span> (target.<span class="hljs-built_in">size</span>() &lt; maxx)target.<span class="hljs-built_in">insert</span>(target.<span class="hljs-built_in">begin</span>(), <span class="hljs-string">&#x27;0&#x27;</span>);<br>            <span class="hljs-keyword">while</span> (j&gt;=<span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">if</span> (target[j]==<span class="hljs-string">&#x27;0&#x27;</span>)&#123;<br>                    <span class="hljs-keyword">auto</span> it=map[maxx-j].<span class="hljs-built_in">lower_bound</span>(i);<br>                    <span class="hljs-keyword">if</span>(it!=map[maxx-j].<span class="hljs-built_in">end</span>())last=<span class="hljs-built_in">max</span>(last, *it);<br>                &#125;<br>                --j;<br>            &#125;<br>            ans[i]=last-i+<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">string <span class="title">Binary</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">    string s = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x % <span class="number">2</span> == <span class="number">0</span>) s = <span class="string">&#x27;0&#x27;</span> + s;</span><br><span class="line">        <span class="keyword">else</span> s = <span class="string">&#x27;1&#x27;</span> + s;</span><br><span class="line">        x /= <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s.<span class="built_in">size</span>()==<span class="number">0</span> ? <span class="string">&quot;0&quot;</span> : s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> vi=vector&lt;<span class="type">int</span>&gt;;</span><br><span class="line"><span class="keyword">using</span> vs=vector&lt;string&gt;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">smallestSubarrays</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> n=nums.<span class="built_in">size</span>(),maxx=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function">vs <span class="title">s</span><span class="params">(n)</span></span>;</span><br><span class="line">        <span class="function">vi <span class="title">ans</span><span class="params">(n)</span></span>;</span><br><span class="line">        map&lt;<span class="type">int</span>, set&lt;<span class="type">int</span>&gt;&gt; map;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            s[i]= <span class="built_in">Binary</span>(nums[i]);</span><br><span class="line">            maxx=<span class="built_in">max</span>(maxx,(<span class="type">int</span>)s[i].<span class="built_in">size</span>());</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            string b=s[i];</span><br><span class="line">            <span class="type">int</span> j=b.<span class="built_in">size</span>()<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span> (j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (b[j]==<span class="string">&#x27;1&#x27;</span>)&#123;</span><br><span class="line">                    map[b.<span class="built_in">size</span>()-j].<span class="built_in">insert</span>(i);</span><br><span class="line">                &#125;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i) &#123;</span><br><span class="line">            string target=s[i];</span><br><span class="line">            <span class="type">int</span> last=i;</span><br><span class="line">            <span class="type">int</span> j=maxx<span class="number">-1</span>;</span><br><span class="line">            <span class="keyword">while</span> (target.<span class="built_in">size</span>() &lt; maxx)target.<span class="built_in">insert</span>(target.<span class="built_in">begin</span>(), <span class="string">&#x27;0&#x27;</span>);</span><br><span class="line">            <span class="keyword">while</span> (j&gt;=<span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (target[j]==<span class="string">&#x27;0&#x27;</span>)&#123;</span><br><span class="line">                    <span class="keyword">auto</span> it=map[maxx-j].<span class="built_in">lower_bound</span>(i);</span><br><span class="line">                    <span class="keyword">if</span>(it!=map[maxx-j].<span class="built_in">end</span>())last=<span class="built_in">max</span>(last, *it);</span><br><span class="line">                &#125;</span><br><span class="line">                --j;</span><br><span class="line">            &#125;</span><br><span class="line">            ans[i]=last-i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="W311-T4-字符串的前缀分数和"><a href="#W311-T4-字符串的前缀分数和" class="headerlink" title="W311 - T4 字符串的前缀分数和"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sum-of-prefix-scores-of-strings/">W311 - T4 字符串的前缀分数和</a></h3><h4 id="题意分析-11"><a href="#题意分析-11" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>找到每一个字符的前缀在全部数组中的数量</p>
 <p>字典树的每个节点记录以该节点为前缀的字符串有几个，计算答案的时候只需要将字符串所有前缀节点的值加起来即可。复杂度 $$\mathcal{O}(n|s|)$$，其中 |s| 是字符串长度</p>
 <h4 id="参考代码-11"><a href="#参考代码-11" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span> nCnt;<br>    vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; ch;<br>    vector&lt;<span class="hljs-type">int</span>&gt; f;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">newNode</span><span class="hljs-params">()</span> </span>&#123;<br>        ch.<span class="hljs-built_in">push_back</span>(<span class="hljs-built_in">vector</span>&lt;<span class="hljs-type">int</span>&gt;(<span class="hljs-number">26</span>, <span class="hljs-number">-1</span>));<br>        f.<span class="hljs-built_in">push_back</span>(<span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> nCnt++;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">add</span><span class="hljs-params">(string &amp;s)</span> </span>&#123;<br>        <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            f[now]++;<br>            <span class="hljs-type">int</span> c = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            <span class="hljs-keyword">if</span> (ch[now][c] == <span class="hljs-number">-1</span>) ch[now][c] = <span class="hljs-built_in">newNode</span>();<br>            now = ch[now][c];<br>        &#125;<br>        f[now]++;<br>    &#125;<br><br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">query</span><span class="hljs-params">(string &amp;s)</span> </span>&#123;<br>        <span class="hljs-type">int</span> now = <span class="hljs-number">0</span>, ret = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.<span class="hljs-built_in">size</span>(); i++) &#123;<br>            <span class="hljs-keyword">if</span> (now &gt; <span class="hljs-number">0</span>) ret += f[now];<br>            <span class="hljs-type">int</span> c = s[i] - <span class="hljs-string">&#x27;a&#x27;</span>;<br>            now = ch[now][c];<br>        &#125;<br>        ret += f[now];<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">vector&lt;<span class="hljs-type">int</span>&gt; <span class="hljs-title">sumPrefixScores</span><span class="hljs-params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;<br>        <span class="hljs-built_in">newNode</span>(); <br>        <span class="hljs-keyword">for</span> (string &amp;s : words) <span class="hljs-built_in">add</span>(s);<br>        vector&lt;<span class="hljs-type">int</span>&gt; ans;<br>        <span class="hljs-keyword">for</span> (string &amp;s : words) ans.<span class="hljs-built_in">push_back</span>(<span class="hljs-built_in">query</span>(s));<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> nCnt;</span><br><span class="line">    vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; ch;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt; f;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">newNode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        ch.<span class="built_in">push_back</span>(<span class="built_in">vector</span>&lt;<span class="type">int</span>&gt;(<span class="number">26</span>, <span class="number">-1</span>));</span><br><span class="line">        f.<span class="built_in">push_back</span>(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> nCnt++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">add</span><span class="params">(string &amp;s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> now = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            f[now]++;</span><br><span class="line">            <span class="type">int</span> c = s[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (ch[now][c] == <span class="number">-1</span>) ch[now][c] = <span class="built_in">newNode</span>();</span><br><span class="line">            now = ch[now][c];</span><br><span class="line">        &#125;</span><br><span class="line">        f[now]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(string &amp;s)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> now = <span class="number">0</span>, ret = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (now &gt; <span class="number">0</span>) ret += f[now];</span><br><span class="line">            <span class="type">int</span> c = s[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            now = ch[now][c];</span><br><span class="line">        &#125;</span><br><span class="line">        ret += f[now];</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">sumPrefixScores</span><span class="params">(vector&lt;string&gt;&amp; words)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">newNode</span>(); </span><br><span class="line">        <span class="keyword">for</span> (string &amp;s : words) <span class="built_in">add</span>(s);</span><br><span class="line">        vector&lt;<span class="type">int</span>&gt; ans;</span><br><span class="line">        <span class="keyword">for</span> (string &amp;s : words) ans.<span class="built_in">push_back</span>(<span class="built_in">query</span>(s));</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="W314-T4-矩阵中和能被-K-整除的路径"><a href="#W314-T4-矩阵中和能被-K-整除的路径" class="headerlink" title="W314 - T4 矩阵中和能被 K 整除的路径"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/paths-in-matrix-whose-sum-is-divisible-by-k/">W314 - T4 矩阵中和能被 K 整除的路径</a></h3><h4 id="题意分析-12"><a href="#题意分析-12" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>从**(0,0)<strong>出发前往</strong>(m - 1, n - 1)**，返回路径上和可以整除<code>k</code>的路径数目</p>
@@ -455,10 +297,10 @@
 <li><p>状态转移：</p>
 <ul>
 <li><p>由格子上方转移而来：</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7">f<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span><span class="hljs-comment">[l]</span> = (f<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span><span class="hljs-comment">[l]</span> + f<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[j]</span><span class="hljs-comment">[(l - grid<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span> % k + k) % k]</span>) % mod;<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[i][j][l] = (f[i][j][l] + f[i - 1][j][(l - grid[i][j] % k + k) % k]) % mod;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>由格子左边转移而来</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs inform7">f<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span><span class="hljs-comment">[l]</span> = (f<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span><span class="hljs-comment">[l]</span> + f<span class="hljs-comment">[i]</span><span class="hljs-comment">[j - 1]</span><span class="hljs-comment">[(l - grid<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span> % k + k) % k]</span>) % mod;<br></code></pre></td></tr></table></figure></li>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f[i][j][l] = (f[i][j][l] + f[i][j - 1][(l - grid[i][j] % k + k) % k]) % mod;</span><br></pre></td></tr></table></figure></li>
 </ul>
 </li>
 <li><p>状态初始化：</p>
@@ -468,14 +310,14 @@
 </li>
 </ul>
 <h4 id="参考代码-12"><a href="#参考代码-12" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br>    <span class="hljs-type">const</span> <span class="hljs-type">int</span> mod = <span class="hljs-number">1e9</span> + <span class="hljs-number">7</span>;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">numberOfPaths</span><span class="hljs-params">(vector&lt;vector&lt;<span class="hljs-type">int</span>&gt;&gt; &amp;grid, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        <span class="hljs-type">int</span> m = grid.<span class="hljs-built_in">size</span>(), n = grid[<span class="hljs-number">0</span>].<span class="hljs-built_in">size</span>();<br><br>        ll f[m][n][k];<br>        <span class="hljs-built_in">memset</span>(f, <span class="hljs-number">0</span>, <span class="hljs-built_in">sizeof</span>(f));<br><br>        f[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>][grid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] % k] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; m; i++) &#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++) &#123;<br>                <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> l = <span class="hljs-number">0</span>; l &lt; k; l++) &#123;<br>                    <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span>)<br>                        f[i][j][l] = (f[i][j][l] + f[i - <span class="hljs-number">1</span>][j][(l - grid[i][j] % k + k) % k]) % mod;<br>                    <span class="hljs-keyword">if</span> (j &gt; <span class="hljs-number">0</span>) <br>                        f[i][j][l] = (f[i][j][l] + f[i][j - <span class="hljs-number">1</span>][(l - grid[i][j] % k + k) % k]) % mod;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> (<span class="hljs-type">int</span>) (f[m - <span class="hljs-number">1</span>][n - <span class="hljs-number">1</span>][<span class="hljs-number">0</span>] % mod);<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> mod = <span class="number">1e9</span> + <span class="number">7</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">numberOfPaths</span><span class="params">(vector&lt;vector&lt;<span class="type">int</span>&gt;&gt; &amp;grid, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> m = grid.<span class="built_in">size</span>(), n = grid[<span class="number">0</span>].<span class="built_in">size</span>();</span><br><span class="line"></span><br><span class="line">        ll f[m][n][k];</span><br><span class="line">        <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="built_in">sizeof</span>(f));</span><br><span class="line"></span><br><span class="line">        f[<span class="number">0</span>][<span class="number">0</span>][grid[<span class="number">0</span>][<span class="number">0</span>] % k] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt; n; j++) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">0</span>; l &lt; k; l++) &#123;</span><br><span class="line">                    <span class="keyword">if</span> (i &gt; <span class="number">0</span>)</span><br><span class="line">                        f[i][j][l] = (f[i][j][l] + f[i - <span class="number">1</span>][j][(l - grid[i][j] % k + k) % k]) % mod;</span><br><span class="line">                    <span class="keyword">if</span> (j &gt; <span class="number">0</span>) </span><br><span class="line">                        f[i][j][l] = (f[i][j][l] + f[i][j - <span class="number">1</span>][(l - grid[i][j] % k + k) % k]) % mod;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) (f[m - <span class="number">1</span>][n - <span class="number">1</span>][<span class="number">0</span>] % mod);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="B90-T3-摧毁一系列目标"><a href="#B90-T3-摧毁一系列目标" class="headerlink" title="B90 - T3 摧毁一系列目标"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/destroy-sequential-targets/">B90 - T3 摧毁一系列目标</a></h3><h4 id="题意分析-13"><a href="#题意分析-13" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>在水平的位置上有一些目标需要击毁，你可以击毁的目标为<br>$$<br>nums[i] + c * space<br>$$<br>返回可以击毁的最大数目</p>
 <p>“表达式中有<code>space</code>，那我去掉<code>space</code>会怎么样？”</p>
 <p>两边同时整除<code>space</code>得到（<code>MarkDown</code>中<code>|</code>为整除）<br>$$<br>nums[i] \mid space + 0<br>$$<br>那么问题一下子就简洁了，直接计数即可出结果</p>
 <h4 id="参考代码-13"><a href="#参考代码-13" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">destroyTargets</span><span class="hljs-params">(vector&lt;<span class="hljs-type">int</span>&gt;&amp; nums, <span class="hljs-type">int</span> space)</span> </span>&#123;<br>        std::unordered_map&lt;<span class="hljs-type">long</span> <span class="hljs-type">long</span>, <span class="hljs-type">int</span>&gt; map;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> v:nums) map[v % space]++;<br>        <span class="hljs-type">int</span> tot = <span class="hljs-number">0</span>, ans = INT_MAX;<br>        <br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i: nums) &#123;<br>            <span class="hljs-type">int</span> have = map[i % space];<br>            <span class="hljs-keyword">if</span> (tot == have) &#123;<br>                ans = <span class="hljs-built_in">min</span>(ans, i);<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (tot &lt; have) &#123;<br>                tot = have;<br>                ans = i;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">destroyTargets</span><span class="params">(vector&lt;<span class="type">int</span>&gt;&amp; nums, <span class="type">int</span> space)</span> </span>&#123;</span><br><span class="line">        std::unordered_map&lt;<span class="type">long</span> <span class="type">long</span>, <span class="type">int</span>&gt; map;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> v:nums) map[v % space]++;</span><br><span class="line">        <span class="type">int</span> tot = <span class="number">0</span>, ans = INT_MAX;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i: nums) &#123;</span><br><span class="line">            <span class="type">int</span> have = map[i % space];</span><br><span class="line">            <span class="keyword">if</span> (tot == have) &#123;</span><br><span class="line">                ans = <span class="built_in">min</span>(ans, i);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (tot &lt; have) &#123;</span><br><span class="line">                tot = have;</span><br><span class="line">                ans = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <h3 id="W317-T3-美丽整数的最小增量"><a href="#W317-T3-美丽整数的最小增量" class="headerlink" title="W317 - T3 美丽整数的最小增量"></a><a target="_blank" rel="noopener" href="https://leetcode.cn/contest/weekly-contest-317/problems/minimum-addition-to-make-integer-beautiful/">W317 - T3 美丽整数的最小增量</a></h3><h4 id="题意分析-14"><a href="#题意分析-14" class="headerlink" title="题意分析"></a>题意分析</h4><hr>
 <p>给你两个正整数 <code>n</code> 和 <code>target</code> 。</p>
@@ -483,455 +325,6 @@
 <p>目标是找到最小的<code>X</code>则可以使用贪心法</p>
 <p>由于是要让整个数字之和变小，则我们直接让每一个数字都变0，从最小开始即可</p>
 <h4 id="参考代码-14"><a href="#参考代码-14" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">typedef</span> <span class="hljs-type">long</span> <span class="hljs-type">long</span> ll;<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-type">bool</span> <span class="hljs-title">check</span><span class="hljs-params">(ll n, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-type">int</span> to = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (n &gt; <span class="hljs-number">0</span>)&#123;<br>            to += n % <span class="hljs-number">10</span>;<br>            n /= <span class="hljs-number">10</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> to &lt;= target;<br>    &#125;<br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function"><span class="hljs-type">long</span> <span class="hljs-type">long</span> <span class="hljs-title">makeIntegerBeautiful</span><span class="hljs-params">(<span class="hljs-type">long</span> <span class="hljs-type">long</span> n, <span class="hljs-type">int</span> target)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">check</span>(n,target)) <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        ll t = n;<br>        ll ans = <span class="hljs-number">0</span>, p = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (!<span class="hljs-built_in">check</span>(n, target)) &#123;<br>            ll num = t % <span class="hljs-number">10</span>;<br>            t /= <span class="hljs-number">10</span>;<br><br>            <span class="hljs-keyword">if</span> (num != <span class="hljs-number">0</span>)&#123;<br>                n += ((<span class="hljs-number">10</span> - num) * p);<br>                ans += p * (<span class="hljs-number">10</span> - num);<br>            &#125;<br>            p *= <span class="hljs-number">10</span>;<br>            t = n / p;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="type">long</span> <span class="type">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">check</span><span class="params">(ll n, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="type">int</span> to = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            to += n % <span class="number">10</span>;</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> to &lt;= target;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="type">long</span> <span class="type">long</span> <span class="title">makeIntegerBeautiful</span><span class="params">(<span class="type">long</span> <span class="type">long</span> n, <span class="type">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">check</span>(n,target)) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        ll t = n;</span><br><span class="line">        ll ans = <span class="number">0</span>, p = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (!<span class="built_in">check</span>(n, target)) &#123;</span><br><span class="line">            ll num = t % <span class="number">10</span>;</span><br><span class="line">            t /= <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (num != <span class="number">0</span>)&#123;</span><br><span class="line">                n += ((<span class="number">10</span> - num) * p);</span><br><span class="line">                ans += p * (<span class="number">10</span> - num);</span><br><span class="line">            &#125;</span><br><span class="line">            p *= <span class="number">10</span>;</span><br><span class="line">            t = n / p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-
-                
-              </div>
-            
-            <hr/>
-            <div>
-              <div class="post-metas my-3">
-  
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E8%B4%AA%E5%BF%83/">#贪心</a>
-      
-        <a href="/tags/LeetCode-Contest/">#LeetCode Contest</a>
-      
-        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
-      
-        <a href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">#哈希表</a>
-      
-        <a href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">#广度优先搜索(BFS)</a>
-      
-        <a href="/tags/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/">#差分数组</a>
-      
-        <a href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">#拓扑排序</a>
-      
-    </div>
-  
-</div>
-
-
-              
-  
-
-  <div class="license-box my-3">
-    <div class="license-title">
-      <div>LeetCode Weekly Contest Album (307 - 317)</div>
-      <div>http://example.com/2022/08/20/LeetCode-Weekly-Contest-album1/</div>
-    </div>
-    <div class="license-meta">
-      
-        <div class="license-meta-item">
-          <div>作者</div>
-          <div>Haruko</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>发布于</div>
-          <div>2022年8月20日</div>
-        </div>
-      
-      
-        <div class="license-meta-item license-meta-date">
-          <div>更新于</div>
-          <div>2022年10月30日</div>
-        </div>
-      
-      <div class="license-meta-item">
-        <div>许可协议</div>
-        <div>
-          
-            
-            
-              <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
-              <span class="hint--top hint--rounded" aria-label="BY - 署名">
-                <i class="iconfont icon-by"></i>
-              </span>
-              </a>
-            
-          
-        </div>
-      </div>
-    </div>
-    <div class="license-icon iconfont"></div>
-  </div>
-
-
-
-              
-                <div class="post-prevnext my-3">
-                  <article class="post-prev col-6">
-                    
-                    
-                      <a href="/2022/08/20/Principles-of-computer-composition/" title="计算机组成原理">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">计算机组成原理</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
-                  </article>
-                  <article class="post-next col-6">
-                    
-                    
-                      <a href="/2022/08/18/AtCoder-Beginner-Contest-264/" title="freee Programming Contest 2022 (AtCoder Beginner Contest 264)">
-                        <span class="hidden-mobile">freee Programming Contest 2022 (AtCoder Beginner Contest 264)</span>
-                        <span class="visible-mobile">下一篇</span>
-                        <i class="iconfont icon-arrowright"></i>
-                      </a>
-                    
-                  </article>
-                </div>
-              
-            </div>
-
-            
-  <article id="comments" lazyload>
-    
-  <div id="waline"></div>
-  <script type="text/javascript">
-    Fluid.utils.loadComments('#waline', function() {
-      Fluid.utils.createCssLink('https://lib.baomitu.com/waline/2.5.1/waline.min.css')
-      Fluid.utils.createScript('https://lib.baomitu.com/waline/2.5.1/waline.min.js', function() {
-        var options = Object.assign(
-          {"serverURL":"https://noi-comments.vercel.app/","path":"window.location.pathname","meta":["nick","mail","link"],"requiredMeta":["nick"],"lang":"zh-CN","emoji":["https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo"],"dark":"html[data-user-color-scheme=\"dark\"]","wordLimit":0,"pageSize":10},
-          {
-            el: '#waline',
-            path: window.location.pathname
-          }
-        )
-        Waline.init(options);
-        Fluid.utils.waitElementVisible('#waline .vcontent', () => {
-          var imgSelector = '#waline .vcontent img:not(.vemoji)';
-          Fluid.plugins.imageCaption(imgSelector);
-          Fluid.plugins.fancyBox(imgSelector);
-        })
-      });
-    });
-  </script>
-  <noscript>Please enable JavaScript to view the comments</noscript>
-
-
-  </article>
-
-
-          </article>
-        </div>
-      </div>
-    </div>
-
-    <div class="side-col d-none d-lg-block col-lg-2">
-      
-  <aside class="sidebar" style="margin-left: -1rem">
-    <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
-</div>
-
-
-
-  </aside>
-
-
-    </div>
-  </div>
-</div>
-
-
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-
-  
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-    
-
-    
-      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
-        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-      </a>
-    
-
-    
-      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
-     aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
-        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body mx-3">
-        <div class="md-form mb-5">
-          <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
-        </div>
-        <div class="list-group" id="local-search-result"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-    
-
-    
-  </main>
-
-  <footer>
-    <div class="footer-inner">
-  
-    <div class="footer-content">
-       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-    </div>
-  
-  
-    <div class="statistics">
-  
-  
-
-  
-    
-      <span id="busuanzi_container_site_pv" style="display: none">
-        总访问量 
-        <span id="busuanzi_value_site_pv"></span>
-         次
-      </span>
-    
-    
-      <span id="busuanzi_container_site_uv" style="display: none">
-        总访客数 
-        <span id="busuanzi_value_site_uv"></span>
-         人
-      </span>
-    
-    
-  
-</div>
-
-  
-  
-  
-</div>
-
-  </footer>
-
-  <!-- Scripts -->
-  
-  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
-  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
-
-  <script>
-    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
-    NProgress.start()
-    window.addEventListener('load', function() {
-      NProgress.done();
-    })
-  </script>
-
-
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
-<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
-<script  src="/js/events.js" ></script>
-<script  src="/js/plugins.js" ></script>
-
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        typing(text);
-      
-    })(window, document);
-  </script>
-
-
-
-
-  
-    <script  src="/js/img-lazyload.js" ></script>
-  
-
-
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
-    var toc = jQuery('#toc');
-    if (toc.length === 0 || !window.tocbot) { return; }
-    var boardCtn = jQuery('#board-ctn');
-    var boardTop = boardCtn.offset().top;
-
-    window.tocbot.init({
-      tocSelector     : '#toc-body',
-      contentSelector : '.markdown-body',
-      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
-      linkClass       : 'tocbot-link',
-      activeLinkClass : 'tocbot-active-link',
-      listClass       : 'tocbot-list',
-      isCollapsedClass: 'tocbot-is-collapsed',
-      collapsibleClass: 'tocbot-is-collapsible',
-      collapseDepth   : CONFIG.toc.collapseDepth || 0,
-      scrollSmooth    : true,
-      headingsOffset  : -boardTop
-    });
-    if (toc.find('.toc-list-item').length > 0) {
-      toc.css('visibility', 'visible');
-    }
-  });
-</script>
-
-
-  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
-
-  <script>Fluid.plugins.codeWidget();</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
-    window.anchors.options = {
-      placement: CONFIG.anchorjs.placement,
-      visible  : CONFIG.anchorjs.visible
-    };
-    if (CONFIG.anchorjs.icon) {
-      window.anchors.options.icon = CONFIG.anchorjs.icon;
-    }
-    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
-    var res = [];
-    for (var item of el) {
-      res.push('.markdown-body > ' + item.trim());
-    }
-    if (CONFIG.anchorjs.placement === 'left') {
-      window.anchors.options.class = 'anchorjs-link-left';
-    }
-    window.anchors.add(res.join(', '));
-  });
-</script>
-
-
-  
-<script>
-  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
-    Fluid.plugins.fancyBox();
-  });
-</script>
-
-
-  <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.1/es5/tex-mml-chtml.js" ></script>
-
-  <script  src="/js/local-search.js" ></script>
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
-
-
-
-
-<!-- 主题的启动项，将它保持在最底部 -->
-<!-- the boot of the theme, keep it at the bottom -->
-<script  src="/js/boot.js" ></script>
-
-
-  
-
-  <noscript>
-    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
-  </noscript>
-</body>
-</html>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Haruko</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/08/20/LeetCode-Weekly-Contest-album1/">http://example.com/2022/08/20/LeetCode-Weekly-Contest-album1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">ちーのblog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B4%AA%E5%BF%83/">贪心</a><a class="post-meta__tags" href="/tags/%E5%93%88%E5%B8%8C%E8%A1%A8/">哈希表</a><a class="post-meta__tags" href="/tags/LeetCode-Contest/">LeetCode Contest</a><a class="post-meta__tags" href="/tags/%E6%A8%A1%E6%8B%9F/">模拟</a><a class="post-meta__tags" href="/tags/%E5%B7%AE%E5%88%86%E6%95%B0%E7%BB%84/">差分数组</a><a class="post-meta__tags" href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2-BFS/">广度优先搜索(BFS)</a><a class="post-meta__tags" href="/tags/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F/">拓扑排序</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/08/20/Principles-of-computer-composition/" title="计算机组成原理"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">计算机组成原理</div></div></a></div><div class="next-post pull-right"><a href="/2022/08/18/AtCoder-Beginner-Contest-264/" title="freee Programming Contest 2022 (AtCoder Beginner Contest 264)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">freee Programming Contest 2022 (AtCoder Beginner Contest 264)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/" title="Codeforces Round 835 (Div. 4)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-11-22</div><div class="title">Codeforces Round 835 (Div. 4)</div></div></a></div><div><a href="/2022/07/30/Codeforces%20Round%20811%20(Div.%203)/" title="Codeforces Round 811 (Div. 3)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-30</div><div class="title">Codeforces Round 811 (Div. 3)</div></div></a></div><div><a href="/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/" title="Codeforces Round 827 (Div. 4)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-14</div><div class="title">Codeforces Round 827 (Div. 4)</div></div></a></div><div><a href="/2022/09/16/CNUPC2022/" title="中国银联专场竞赛🏦"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-09-16</div><div class="title">中国银联专场竞赛🏦</div></div></a></div><div><a href="/2022/08/07/LeetCode-Weekly-Contest-305/" title="LeetCode Weekly Contest 305"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-07</div><div class="title">LeetCode Weekly Contest 305</div></div></a></div><div><a href="/2022/10/09/AtCoder-Bginner-Contest%20album1/" title="AtCoder Beginner Contest Album (272 - 282)"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-09</div><div class="title">AtCoder Beginner Contest Album (272 - 282)</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Haruko</div><div class="author-info__description">ようこそ</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">25</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#B85-T3-%E5%AD%97%E6%AF%8D%E7%A7%BB%E4%BD%8D-II"><span class="toc-number">1.</span> <span class="toc-text">B85 - T3 字母移位 II</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90"><span class="toc-number">1.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81"><span class="toc-number">1.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B85-T4-%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C%E5%90%8E%E7%9A%84%E6%9C%80%E5%A4%A7%E5%AD%90%E6%AE%B5%E5%92%8C"><span class="toc-number">2.</span> <span class="toc-text">B85 - T4 删除操作后的最大子段和</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-1"><span class="toc-number">2.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-1"><span class="toc-number">2.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W307-T2-%E6%9C%80%E5%A4%A7%E5%9B%9E%E6%96%87%E6%95%B0%E5%AD%97"><span class="toc-number">3.</span> <span class="toc-text">W307-T2 最大回文数字</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-2"><span class="toc-number">3.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-2"><span class="toc-number">3.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W307-T3-%E6%84%9F%E6%9F%93%E4%BA%8C%E5%8F%89%E6%A0%91%E9%9C%80%E8%A6%81%E7%9A%84%E6%80%BB%E6%97%B6%E9%97%B4"><span class="toc-number">4.</span> <span class="toc-text">W307 - T3 感染二叉树需要的总时间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-3"><span class="toc-number">4.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-3"><span class="toc-number">4.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W308-T3-%E6%94%B6%E9%9B%86%E5%9E%83%E5%9C%BE%E7%9A%84%E6%9C%80%E5%B0%91%E6%80%BB%E6%97%B6%E9%97%B4"><span class="toc-number">5.</span> <span class="toc-text">W308-T3 收集垃圾的最少总时间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-4"><span class="toc-number">5.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-4"><span class="toc-number">5.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W308-T4-%E7%BB%99%E5%AE%9A%E6%9D%A1%E4%BB%B6%E4%B8%8B%E6%9E%84%E9%80%A0%E7%9F%A9%E9%98%B5"><span class="toc-number">6.</span> <span class="toc-text">W308-T4 给定条件下构造矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-5"><span class="toc-number">6.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-5"><span class="toc-number">6.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B86-T3-%E8%A2%AB%E5%88%97%E8%A6%86%E7%9B%96%E7%9A%84%E6%9C%80%E5%A4%9A%E8%A1%8C%E6%95%B0"><span class="toc-number">7.</span> <span class="toc-text">B86-T3 被列覆盖的最多行数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-6"><span class="toc-number">7.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-6"><span class="toc-number">7.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B86-T4-%E9%A2%84%E7%AE%97%E5%86%85%E7%9A%84%E6%9C%80%E5%A4%9A%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%95%B0%E7%9B%AE"><span class="toc-number">8.</span> <span class="toc-text">B86-T4 预算内的最多机器人数目</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-7"><span class="toc-number">8.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-7"><span class="toc-number">8.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W309-T3-%E6%9C%80%E9%95%BF%E4%BC%98%E9%9B%85%E5%AD%90%E6%95%B0%E7%BB%84"><span class="toc-number">9.</span> <span class="toc-text">W309-T3 最长优雅子数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-8"><span class="toc-number">9.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-8"><span class="toc-number">9.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W310-T3-%E5%B0%86%E5%8C%BA%E9%97%B4%E5%88%86%E4%B8%BA%E6%9C%80%E5%B0%91%E7%BB%84%E6%95%B0"><span class="toc-number">10.</span> <span class="toc-text">W310-T3 将区间分为最少组数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-9"><span class="toc-number">10.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-9"><span class="toc-number">10.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B87-T3-%E6%8C%89%E4%BD%8D%E6%88%96%E6%9C%80%E5%A4%A7%E7%9A%84%E6%9C%80%E5%B0%8F%E5%AD%90%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6"><span class="toc-number">11.</span> <span class="toc-text">B87 - T3 按位或最大的最小子数组长度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-10"><span class="toc-number">11.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-10"><span class="toc-number">11.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W311-T4-%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%89%8D%E7%BC%80%E5%88%86%E6%95%B0%E5%92%8C"><span class="toc-number">12.</span> <span class="toc-text">W311 - T4 字符串的前缀分数和</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-11"><span class="toc-number">12.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-11"><span class="toc-number">12.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W314-T4-%E7%9F%A9%E9%98%B5%E4%B8%AD%E5%92%8C%E8%83%BD%E8%A2%AB-K-%E6%95%B4%E9%99%A4%E7%9A%84%E8%B7%AF%E5%BE%84"><span class="toc-number">13.</span> <span class="toc-text">W314 - T4 矩阵中和能被 K 整除的路径</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-12"><span class="toc-number">13.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-12"><span class="toc-number">13.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B90-T3-%E6%91%A7%E6%AF%81%E4%B8%80%E7%B3%BB%E5%88%97%E7%9B%AE%E6%A0%87"><span class="toc-number">14.</span> <span class="toc-text">B90 - T3 摧毁一系列目标</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-13"><span class="toc-number">14.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-13"><span class="toc-number">14.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#W317-T3-%E7%BE%8E%E4%B8%BD%E6%95%B4%E6%95%B0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%A2%9E%E9%87%8F"><span class="toc-number">15.</span> <span class="toc-text">W317 - T3 美丽整数的最小增量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A2%98%E6%84%8F%E5%88%86%E6%9E%90-14"><span class="toc-number">15.1.</span> <span class="toc-text">题意分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E4%BB%A3%E7%A0%81-14"><span class="toc-number">15.2.</span> <span class="toc-text">参考代码</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/" title="Codeforces Round 835 (Div. 4)">Codeforces Round 835 (Div. 4)</a><time datetime="2022-11-22T00:33:13.000Z" title="发表于 2022-11-22 08:33:13">2022-11-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/26/Moudle/" title="算竞模板">算竞模板</a><time datetime="2022-10-26T00:45:21.000Z" title="发表于 2022-10-26 08:45:21">2022-10-26</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/14/Codeforces%20Round%20827%20(Div.%204)/" title="Codeforces Round 827 (Div. 4)">Codeforces Round 827 (Div. 4)</a><time datetime="2022-10-14T00:58:15.000Z" title="发表于 2022-10-14 08:58:15">2022-10-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/10/09/AtCoder-Bginner-Contest%20album1/" title="AtCoder Beginner Contest Album (272 - 282)">AtCoder Beginner Contest Album (272 - 282)</a><time datetime="2022-10-09T08:22:57.000Z" title="发表于 2022-10-09 16:22:57">2022-10-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2022/09/19/cyberspace/" title="计算机网络">计算机网络</a><time datetime="2022-09-19T12:08:07.000Z" title="发表于 2022-09-19 20:08:07">2022-09-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Haruko</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
