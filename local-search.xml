@@ -4,6 +4,19 @@
   
   
   <entry>
+    <title>康托展开</title>
+    <link href="/2023/06/28/cantor/"/>
+    <url>/2023/06/28/cantor/</url>
+    
+    <content type="html"><![CDATA[<p>参考：<a href="https://zh.wikipedia.org/wiki/%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80">康拓展开_维基百科</a></p><p>康拓展开是一个全排列到一个自然数的双射，常用于构建hash表时的空间压缩。<br>康拓展开的实质是计算<strong>当前排列在所有由小到大全排列中的顺序</strong>，因此是可逆的。</p><h3 id="公式"><a href="#公式" class="headerlink" title="公式"></a>公式</h3><p>$X&#x3D;a_0(n-1)!+a_1(n-2)!+…+a_{n-1}.0!$</p><p>其中*a<del>i</del>*为整数，并且</p><p>$0≤a_i&lt;i,1≤i&lt;n$</p><p>*a<del>i</del>*的意义参见举例中的解释部分</p><h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>例如，<code>3 5 7 4 1 2 9 6 8</code> 展开为 <code>98884</code>。因为<code>X=2*8!+3*7!+4*6!+2*5!+0*4!+0*3!+2*2!+0*1!+0*0!=98884</code>。</p><p>解释：<br>排列的第一位是3，比3小的数有两个，以这样的数开始的排列有8!个，因此第一项为2<em>8!<br>排列的第二位是5，比5小的数有1、2、3、4，由于3已经出现，因此共有3个比5小的数，这样的排列有7!个，因此第二项为3</em>7!<br>以此类推，直至<em>0!</em></p><h3 id="参考模板"><a href="#参考模板" class="headerlink" title="参考模板"></a>参考模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * @brief 康拓展开</span><br><span class="hljs-comment"> * @param t 排列，这里设定排列的长度是9</span><br><span class="hljs-comment"> * @return Contar值</span><br><span class="hljs-comment"> * @author dianhsu</span><br><span class="hljs-comment"> **/</span><br><span class="hljs-type">int</span> radix[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">24</span>, <span class="hljs-number">120</span>, <span class="hljs-number">720</span>, <span class="hljs-number">5040</span>, <span class="hljs-number">40320</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-type">int</span> LEN</span>=<span class="hljs-number">9</span>&gt;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Contar</span><span class="hljs-params">(<span class="hljs-type">int</span>* t)</span></span>&#123;<br>    <span class="hljs-type">int</span> ret = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; LEN; ++i)&#123;<br>        <span class="hljs-type">int</span> tmp = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt; LEN; ++j)&#123;<br>            <span class="hljs-keyword">if</span>(t[i] &gt; t[j])&#123;<br>                ++tmp;<br>            &#125;<br>        &#125;<br>        ret += radix[LEN - <span class="hljs-number">1</span> - i] * tmp;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;CPP<br></code></pre></td></tr></table></figure><p>既然康托展开是一个双射，那么一定可以通过康托展开值求出原排列，即可以求出 <strong>n</strong> 的全排列中第 <strong>x</strong> 大排列。</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * @brief 康拓展开的逆运算</span><br><span class="hljs-comment"> * @param contar_val Contar 值</span><br><span class="hljs-comment"> * @param t 返回的Contar序列</span><br><span class="hljs-comment"> * @author dianhsu</span><br><span class="hljs-comment"> * */</span><br><span class="hljs-type">int</span> radix[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">24</span>, <span class="hljs-number">120</span>, <span class="hljs-number">720</span>, <span class="hljs-number">5040</span>, <span class="hljs-number">40320</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-type">int</span> LEN</span>=<span class="hljs-number">9</span>&gt;<br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">ReverseContar</span><span class="hljs-params">(<span class="hljs-type">int</span> contar_val, <span class="hljs-type">int</span>* t)</span></span>&#123;<br>    <span class="hljs-type">int</span> vis[LEN];<br>    <span class="hljs-built_in">memset</span>(vis, <span class="hljs-number">0</span>, <span class="hljs-keyword">sizeof</span> vis);<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; LEN; ++i)&#123;<br>        <span class="hljs-type">int</span> idx = contar_val / radix[LEN - <span class="hljs-number">1</span> - i];<br>        contar_val = contar_val % radix[LEN - <span class="hljs-number">1</span> - i];<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; LEN; ++j)&#123;<br>            <span class="hljs-keyword">if</span>(vis[j] == <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">if</span>(idx == <span class="hljs-number">0</span>)&#123;<br>                    vis[j] = <span class="hljs-number">1</span>;<br>                    t[i] = j;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    --idx;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Codeforces Round 835 (Div. 4)</title>
     <link href="/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/"/>
     <url>/2022/11/22/Codeforces%20Round%20835%20(Div.%204)/</url>
@@ -20,8 +33,6 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>模拟</tag>
       
       <tag>二分查找</tag>
@@ -29,6 +40,8 @@
       <tag>CodeForces Contest</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>排序</tag>
       
@@ -80,8 +93,6 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>二分查找</tag>
       
       <tag>CodeForces Contest</tag>
@@ -89,6 +100,8 @@
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>离散化</tag>
       
@@ -109,11 +122,11 @@
     
     <tags>
       
+      <tag>贪心</tag>
+      
       <tag>AtCoder</tag>
       
       <tag>广度优先搜索</tag>
-      
-      <tag>贪心</tag>
       
     </tags>
     
@@ -246,17 +259,17 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>LeetCode Contest</tag>
       
       <tag>模拟</tag>
       
       <tag>哈希表</tag>
       
-      <tag>广度优先搜索(BFS)</tag>
+      <tag>贪心</tag>
       
       <tag>差分数组</tag>
+      
+      <tag>广度优先搜索(BFS)</tag>
       
       <tag>拓扑排序</tag>
       
@@ -310,9 +323,9 @@
       
       <tag>LeetCode Contest</tag>
       
-      <tag>枚举</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
+      
+      <tag>枚举</tag>
       
       <tag>动态规划</tag>
       
@@ -339,13 +352,13 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>数学</tag>
       
