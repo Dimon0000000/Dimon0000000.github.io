@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/06/28/XjTFgYRwmPiqBDN.jpg">
 <meta property="article:published_time" content="2023-06-28T08:52:02.000Z">
-<meta property="article:modified_time" content="2023-06-28T09:16:18.604Z">
+<meta property="article:modified_time" content="2023-06-29T06:49:06.425Z">
 <meta property="article:author" content="Haruko">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2023/06/28/XjTFgYRwmPiqBDN.jpg">
@@ -260,7 +260,7 @@
         
         
         
-          11 分钟
+          12 分钟
         
       </span>
     
@@ -311,7 +311,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2023年6月28日 下午
+                    本文最后更新于：2023年6月29日 下午
                   
                 
               </p>
@@ -326,7 +326,7 @@
 <p>$0≤a_i&lt;i,1≤i&lt;n$</p>
 <p>*a<del>i</del>*的意义参见举例中的解释部分</p>
 <h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>例如，<code>3 5 7 4 1 2 9 6 8</code> 展开为 <code>98884</code>。因为<code>X=2*8!+3*7!+4*6!+2*5!+0*4!+0*3!+2*2!+0*1!+0*0!=98884</code>。</p>
-<p>解释：<br>排列的第一位是3，比3小的数有两个，以这样的数开始的排列有8!个，因此第一项为2<em>8!<br>排列的第二位是5，比5小的数有1、2、3、4，由于3已经出现，因此共有3个比5小的数，这样的排列有7!个，因此第二项为3</em>7!<br>以此类推，直至<em>0!</em></p>
+<p>解释：<br>排列的第一位是3，比3小的数有两个，以这样的数开始的排列有8!个，因此第一项为$2<em>8!$<br>排列的第二位是5，比5小的数有1、2、3、4，由于3已经出现，因此共有3个比5小的数，这样的排列有7!个，因此第二项为$3</em>7!$<br>以此类推，直至$0!$</p>
 <h3 id="参考模板"><a href="#参考模板" class="headerlink" title="参考模板"></a>参考模板</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * @brief 康拓展开</span><br><span class="hljs-comment"> * @param t 排列，这里设定排列的长度是9</span><br><span class="hljs-comment"> * @return Contar值</span><br><span class="hljs-comment"> * @author dianhsu</span><br><span class="hljs-comment"> **/</span><br><span class="hljs-type">int</span> radix[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-number">24</span>, <span class="hljs-number">120</span>, <span class="hljs-number">720</span>, <span class="hljs-number">5040</span>, <span class="hljs-number">40320</span>&#125;;<br><span class="hljs-function"><span class="hljs-keyword">template</span>&lt;<span class="hljs-type">int</span> LEN</span>=<span class="hljs-number">9</span>&gt;<br><span class="hljs-function"><span class="hljs-type">int</span> <span class="hljs-title">Contar</span><span class="hljs-params">(<span class="hljs-type">int</span>* t)</span></span>&#123;<br>    <span class="hljs-type">int</span> ret = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; LEN; ++i)&#123;<br>        <span class="hljs-type">int</span> tmp = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>; j &lt; LEN; ++j)&#123;<br>            <span class="hljs-keyword">if</span>(t[i] &gt; t[j])&#123;<br>                ++tmp;<br>            &#125;<br>        &#125;<br>        ret += radix[LEN - <span class="hljs-number">1</span> - i] * tmp;<br>    &#125;<br>    <span class="hljs-keyword">return</span> ret;<br>&#125;CPP<br></code></pre></td></tr></table></figure>
 
 <p>既然康托展开是一个双射，那么一定可以通过康托展开值求出原排列，即可以求出 <strong>n</strong> 的全排列中第 <strong>x</strong> 大排列。</p>
@@ -367,7 +367,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2023年6月28日</div>
+          <div>2023年6月29日</div>
         </div>
       
       <div class="license-meta-item">
@@ -395,6 +395,12 @@
                 <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2023/06/29/KMP/" title="KMP算法">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">KMP算法</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
