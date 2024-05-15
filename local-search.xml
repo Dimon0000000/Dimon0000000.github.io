@@ -47,13 +47,13 @@
       
       <tag>模拟</tag>
       
-      <tag>CodeForces Contest</tag>
-      
-      <tag>贪心</tag>
-      
       <tag>二分查找</tag>
       
+      <tag>CodeForces Contest</tag>
+      
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>排序</tag>
       
@@ -105,15 +105,15 @@
     
     <tags>
       
-      <tag>CodeForces Contest</tag>
-      
-      <tag>贪心</tag>
-      
       <tag>二分查找</tag>
+      
+      <tag>CodeForces Contest</tag>
       
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>离散化</tag>
       
@@ -273,17 +273,17 @@
       
       <tag>模拟</tag>
       
-      <tag>贪心</tag>
-      
       <tag>LeetCode Contest</tag>
       
       <tag>哈希表</tag>
       
+      <tag>贪心</tag>
+      
+      <tag>差分数组</tag>
+      
       <tag>广度优先搜索(BFS)</tag>
       
       <tag>拓扑排序</tag>
-      
-      <tag>差分数组</tag>
       
     </tags>
     
@@ -370,13 +370,13 @@
       
       <tag>哈希表</tag>
       
-      <tag>堆(优先队列)</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
       
-      <tag>深度优先搜索(DFS)</tag>
-      
       <tag>拓扑排序</tag>
+      
+      <tag>堆(优先队列)</tag>
+      
+      <tag>深度优先搜索(DFS)</tag>
       
     </tags>
     
@@ -403,11 +403,11 @@
       
       <tag>CodeForces Contest</tag>
       
-      <tag>贪心</tag>
-      
       <tag>脑筋急转弯</tag>
       
       <tag>哈希表</tag>
+      
+      <tag>贪心</tag>
       
       <tag>数学</tag>
       
