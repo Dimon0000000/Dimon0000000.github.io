@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>综合示例页面</title>
+<style>
+  .container { 
+    display: flex; 
+    justify-content: space-between;
+  }
+  .carousel-container {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+  }
+  .slide {
+    display: none;
+    width: 100%;
+  }
+  .slide.active { display: block; }
+  .carousel-indicators {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .indicator {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .indicator.active { background-color: #333; }
+  .side-features {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 30px;
+  }
+  .feature {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="carousel-container">
+    <div class="carousel-slides">
+      <div class="slide active">
+        <img src="/about.png" alt="Slide 1">
+      </div>
+      <div class="slide">
+        <img src="/link.jpg" alt="Slide 2">
+      </div>
+      <!-- 更多幻灯片... -->
+    </div>
+    <div class="carousel-indicators">
+      <span class="indicator active"></span>
+      <span class="indicator"></span>
+      <!-- 更多指示器... -->
+    </div>
+  </div>
+  <div class="side-features">
+    <div class="feature hitokoto">
+      <h3>名人名言</h3>
+      <p id="hitokoto-content">这里将显示随机名言内容</p>
+    </div>
+    <div class="feature website-list">
+      <h3>常用网站</h3>
+      <ul>
+        <li><a href="#">网站1</a></li>
+        <li><a href="#">网站2</a></li>
+        <li><a href="#">网站3</a></li>
+        <li><a href="#">网站4</a></li>
+      </ul>
+    </div>
+    <div class="feature clock">
+      <h3>当前时间</h3>
+      <p id="current-time">这里将显示当前时间</p>
+    </div>
+  </div>
+</div>
+<div class="feature hitokoto">
+  <h3>名人名言</h3>
+  <p id="hitokoto-content">加载中...</p>
+</div>
+<script>
+async function fetchRandomQuote() {
+    try {
+      const response = await fetch('https://v1.hitokoto.cn');
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      document.getElementById('hitokoto-content').innerText = data.hitokoto;
+    } catch (error) {
+      console.error('获取名人名言时出错:', error);
+      document.getElementById('hitokoto-content').innerText = '获取名言失败，请稍后重试。';
+    }
+  }
+
+  // 页面加载完成后执行
+  document.addEventListener('DOMContentLoaded', () => {
+    fetchRandomQuote();
+  });
+  // 获取随机名言接口地址
+const hitokotoApi = 'https://v1.hitokoto.cn';
+
+// 获取随机名言
+fetch(hitokotoApi)
+  .then(response => response.json())
+  .then(data => {
+    // 更新名言内容
+    document.getElementById('hitokoto-content').innerText = data.hitokoto;
+  })
+  .catch(error => console.error('Error:', error));
+
+  // 实现时钟显示
+  function updateTime() {
+    let now = new Date();
+    let timeString = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
+    document.getElementById('current-time').innerText = timeString;
+  }
+  setInterval(updateTime, 1000);
+</script>
+
+</body>
+</html>
