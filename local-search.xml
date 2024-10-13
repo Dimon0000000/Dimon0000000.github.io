@@ -32,16 +32,10 @@
     
     <categories>
       
-      <category>Q&amp;A</category>
+      <category>Diary</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Quention &amp; Answer</tag>
-      
-    </tags>
     
   </entry>
   
@@ -57,16 +51,10 @@
     
     <categories>
       
-      <category>Q&amp;A</category>
+      <category>Diary</category>
       
     </categories>
     
-    
-    <tags>
-      
-      <tag>Quention &amp; Answer</tag>
-      
-    </tags>
     
   </entry>
   
@@ -89,9 +77,9 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>模拟</tag>
+      
+      <tag>贪心</tag>
       
       <tag>二分查找</tag>
       
@@ -315,9 +303,9 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>模拟</tag>
+      
+      <tag>贪心</tag>
       
       <tag>LeetCode Contest</tag>
       
@@ -381,9 +369,9 @@
       
       <tag>LeetCode Contest</tag>
       
-      <tag>广度优先搜索(BFS)</tag>
-      
       <tag>枚举</tag>
+      
+      <tag>广度优先搜索(BFS)</tag>
       
     </tags>
     
@@ -414,9 +402,9 @@
       
       <tag>哈希表</tag>
       
-      <tag>堆(优先队列)</tag>
-      
       <tag>广度优先搜索(BFS)</tag>
+      
+      <tag>堆(优先队列)</tag>
       
       <tag>深度优先搜索(DFS)</tag>
       
@@ -598,9 +586,9 @@
     
     <tags>
       
-      <tag>贪心</tag>
-      
       <tag>模拟</tag>
+      
+      <tag>贪心</tag>
       
       <tag>CodeForces Contest</tag>
       
@@ -611,11 +599,11 @@
   
   
   <entry>
-    <title>Welcome to Noiのblog</title>
+    <title>『Top📌』Welcome to Relllのblog</title>
     <link href="/2022/06/21/Q&amp;A/"/>
     <url>/2022/06/21/Q&amp;A/</url>
     
-    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>这里主要会发布一些竞赛题题解<br>以及一些学习经验，资源</p><hr><h3 id="这个博客会定期更新吗"><a href="#这个博客会定期更新吗" class="headerlink" title="这个博客会定期更新吗"></a>这个博客会定期更新吗</h3><p>不会</p><hr><h3 id="如何联系你"><a href="#如何联系你" class="headerlink" title="如何联系你"></a>如何联系你</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>质量大于数量</p><hr><h3 id="你主打哪些比赛"><a href="#你主打哪些比赛" class="headerlink" title="你主打哪些比赛"></a>你主打哪些比赛</h3><p>LeetCode, AtCoder, CodeForces,AcWing,CodeChef,Yukicoder</p><hr><h3 id="你主要使用的语言"><a href="#你主要使用的语言" class="headerlink" title="你主要使用的语言"></a>你主要使用的语言</h3><p>C++, Python3, Java</p><p>频率从前向后递减</p><hr><h3 id="你是OIer或是是ACMer吗"><a href="#你是OIer或是是ACMer吗" class="headerlink" title="你是OIer或是是ACMer吗"></a>你是OIer或是是ACMer吗</h3><p>不是，算法竞赛纯粹是爱好</p><p>从开始学习到现在为止没有任何的外界帮助</p><p>纯靠自己领悟，因此水平不是很高，属于是又菜又爱玩</p><hr>]]></content>
+    <content type="html"><![CDATA[<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><h3 id="这个博客会发布哪些内容？"><a href="#这个博客会发布哪些内容？" class="headerlink" title="这个博客会发布哪些内容？"></a>这个博客会发布哪些内容？</h3><p>在2024年6月，也就是我本科毕业前更新的都是技术向的内容，现在读研阶段主要更一些自己的日记，还请您看个乐子就好。</p><h3 id="你什么成分？"><a href="#你什么成分？" class="headerlink" title="你什么成分？"></a>你什么成分？</h3><p>就一计科硕士，方向是最没用的、最没前途的CV方向。</p><hr><blockquote><p>❗ 以下内容均为2022年6月21日之前所写，不再更新</p></blockquote><h3 id="如何联系你？"><a href="#如何联系你？" class="headerlink" title="如何联系你？"></a>如何联系你？</h3><p>个人界面有详细的联系方式</p><hr><h3 id="为什么不发单场周赛的题解了"><a href="#为什么不发单场周赛的题解了" class="headerlink" title="为什么不发单场周赛的题解了"></a>为什么不发单场周赛的题解了</h3><p>质量大于数量</p><hr><h3 id="你主打哪些比赛？"><a href="#你主打哪些比赛？" class="headerlink" title="你主打哪些比赛？"></a>你主打哪些比赛？</h3><p>LeetCode, AtCoder, CodeForces,AcWing,CodeChef,Yukicoder</p><hr><h3 id="你主要使用的语言？"><a href="#你主要使用的语言？" class="headerlink" title="你主要使用的语言？"></a>你主要使用的语言？</h3><p>C++, Python3, Java</p><p>频率从前向后递减</p><hr><h3 id="你是OIer或是是ACMer吗？"><a href="#你是OIer或是是ACMer吗？" class="headerlink" title="你是OIer或是是ACMer吗？"></a>你是OIer或是是ACMer吗？</h3><p>不是，算法竞赛纯粹是爱好</p><p>从开始学习到现在为止没有任何的外界帮助</p><p>纯靠自己领悟，因此水平不是很高，属于是又菜又爱玩</p><hr>]]></content>
     
     
     <categories>
