@@ -16,28 +16,26 @@
   <meta name="author" content="Haruko">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言外国数字的读法和国内不同，其分割方式为  2,234,911,679即每三个数为一组，从后向前分别视作 679 911个千 234个万 2个亿  递归模拟思路分析 有了以上对数字的分析，我们就会发现，把数字转变为英文写法，无非就是分组后的数字读法 + 数量级(千，万) 对于数字数量级分组，可以采用除法 + 整除的形式； 在数字读法方面，还需要有更细致的讨论：  众所周知，英文中100一下的数字">
+    <meta name="description" content="2024.10.16卷积神经网络CNN 卷积神经网络的运行过程主要通过以下步骤：  输入层主要负责图像的输入。 再通过卷积层，对图像的特征进行提取；卷积层通过使用卷积核(Filter&#x2F;Kernel)对数据进行卷积操作，再通过滑动操作对整个图像进行特征提取后生成相应的**特征图(Feature Map)**。 通过最大池化(Max Pooling)或平均池化(Avg Pooling)，来进">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LC.273 Integer to English Words">
-<meta property="og:url" content="http://example.com/2022/06/30/LC273-Integer-to-English-Words/index.html">
+<meta property="og:title" content="Study">
+<meta property="og:url" content="http://example.com/2024/10/17/Study/index.html">
 <meta property="og:site_name" content="Relllのblog">
-<meta property="og:description" content="前言外国数字的读法和国内不同，其分割方式为  2,234,911,679即每三个数为一组，从后向前分别视作 679 911个千 234个万 2个亿  递归模拟思路分析 有了以上对数字的分析，我们就会发现，把数字转变为英文写法，无非就是分组后的数字读法 + 数量级(千，万) 对于数字数量级分组，可以采用除法 + 整除的形式； 在数字读法方面，还需要有更细致的讨论：  众所周知，英文中100一下的数字">
+<meta property="og:description" content="2024.10.16卷积神经网络CNN 卷积神经网络的运行过程主要通过以下步骤：  输入层主要负责图像的输入。 再通过卷积层，对图像的特征进行提取；卷积层通过使用卷积核(Filter&#x2F;Kernel)对数据进行卷积操作，再通过滑动操作对整个图像进行特征提取后生成相应的**特征图(Feature Map)**。 通过最大池化(Max Pooling)或平均池化(Avg Pooling)，来进">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://smms.app/image/ICZ1sY78XzAltpN">
-<meta property="article:published_time" content="2022-06-30T08:36:11.000Z">
-<meta property="article:modified_time" content="2024-02-29T01:28:09.901Z">
+<meta property="og:image" content="https://s2.loli.net/2024/10/17/BQ6SitrdcpzjCYa.jpg">
+<meta property="article:published_time" content="2024-10-17T02:38:45.000Z">
+<meta property="article:modified_time" content="2024-10-17T02:42:34.370Z">
 <meta property="article:author" content="Haruko">
-<meta property="article:tag" content="模拟">
-<meta property="article:tag" content="Daily algorithm problem solving">
-<meta property="article:tag" content="递归">
+<meta property="article:tag" content="Study">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://smms.app/image/ICZ1sY78XzAltpN">
+<meta name="twitter:image" content="https://s2.loli.net/2024/10/17/BQ6SitrdcpzjCYa.jpg">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>LC.273 Integer to English Words - Relllのblog</title>
+  <title>Study - Relllのblog</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -229,7 +227,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="LC.273 Integer to English Words"></span>
+            <span id="subtitle" data-typed-text="Study"></span>
           
         </div>
 
@@ -240,8 +238,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-06-30 16:36" pubdate>
-          2022年6月30日 下午
+        <time datetime="2024-10-17 10:38" pubdate>
+          2024年10月17日 上午
         </time>
       </span>
     
@@ -252,7 +250,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.2k 字
         
       </span>
     
@@ -309,12 +307,12 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">LC.273 Integer to English Words</h1>
+            <h1 style="display: none">Study</h1>
             
               <p class="note note-info">
                 
                   
-                    本文最后更新于：8 个月前
+                    本文最后更新于：1 分钟前
                   
                 
               </p>
@@ -322,39 +320,51 @@
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>外国数字的读法和国内不同，其分割方式为</p>
-<blockquote>
-<p>2,234,911,679<br>即每三个数为一组，从后向前分别视作</p>
-<p>679</p>
-<p>911个千</p>
-<p>234个万</p>
-<p>2个亿</p>
-</blockquote>
-<h3 id="递归模拟"><a href="#递归模拟" class="headerlink" title="递归模拟"></a>递归模拟</h3><h4 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h4><hr>
-<p>有了以上对数字的分析，我们就会发现，把数字转变为英文写法，无非就是分组后的<strong>数字读法 + 数量级(千，万)</strong></p>
-<p>对于数字数量级分组，可以采用<strong>除法 + 整除</strong>的形式；</p>
-<p>在数字读法方面，还需要有更细致的讨论：</p>
+                <h3 id="2024-10-16"><a href="#2024-10-16" class="headerlink" title="2024.10.16"></a>2024.10.16</h3><h4 id="卷积神经网络CNN"><a href="#卷积神经网络CNN" class="headerlink" title="卷积神经网络CNN"></a>卷积神经网络CNN</h4><p><img src="https://s2.loli.net/2024/10/16/dBqNVFrtYPIi9Zo.png" srcset="/img/loading.gif" lazyload alt="image-20241016211140075"></p>
+<p>卷积神经网络的运行过程主要通过以下步骤：</p>
+<ol>
+<li>输入层主要负责图像的输入。</li>
+<li>再通过<strong>卷积层</strong>，对图像的特征进行提取；卷积层通过使用卷积核(Filter&#x2F;Kernel)对数据进行<strong>卷积操作</strong>，再通过<strong>滑动操作</strong>对整个图像进行特征提取后生成相应的**特征图(Feature Map)**。</li>
+<li>通过<strong>最大池化(Max Pooling)<strong>或</strong>平均池化(Avg Pooling)<strong>，来进行</strong>降采样</strong>，在减少特征图尺寸的同时保留其显著特征。</li>
+<li>池化后的特征图传入神经网络(<strong>Neural Network</strong>)中，由神经网络对图像内容进行预测。</li>
+</ol>
+<h4 id="循环神经网络-RNN"><a href="#循环神经网络-RNN" class="headerlink" title="循环神经网络 RNN"></a>循环神经网络 RNN</h4><p><img src="https://s2.loli.net/2024/10/16/tfUM7uhIyTVRolH.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><strong>循环神经网络</strong>的主要特征是具备了处理时间序列或顺序数据依赖的能力；由于其的循环连接和展开，使得每一个输出都不仅仅依赖于当前的输入，还依赖于上一个时间步的隐藏状态。</p>
+<p>但当需要处理的数据序列较长时，由于展开的特性，会出现<strong>梯度爆炸&#x2F;消失</strong>问题。如上图，当存在50个前置数据时，经过多次与w<sub>2</sub>相乘，导致梯度会下降到2<sup>-50</sup>，也就是所谓的梯度消失问题；同理，当w<sub>2</sub>大于1时，则为梯度爆炸。</p>
+<h4 id="长短期记忆神经网络-LSTM"><a href="#长短期记忆神经网络-LSTM" class="headerlink" title="长短期记忆神经网络 LSTM"></a>长短期记忆神经网络 LSTM</h4><p><img src="https://s2.loli.net/2024/10/16/T7uQYcbOnAk1UF8.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p><strong>长短期记忆LSTM</strong>有效解决了<strong>RNN</strong>中的梯度爆炸&#x2F;消失问题。框架图如上图。</p>
 <ul>
-<li>众所周知，英文中100一下的数字分为三个部分<ul>
-<li>[0 - 10)</li>
-<li>[10 - 20]</li>
-<li>(20 - 99]</li>
+<li>最上方的绿色线条表示<strong>长期记忆<em>L</em></strong>也称作<strong>细胞状态</strong>，用于<strong>保存</strong>先前输入的数据</li>
+<li>蓝色部分为<strong>遗忘门</strong>，通过本次输入，再经过<strong>Sigmod函数</strong>生成相应的<strong>遗忘率</strong>，与<strong>长期记忆<em>L</em></strong>相乘表示“记住”多少内容。<ul>
+<li>假设计算后为<code>97%</code>，则本次L遗忘内容较少</li>
+<li>假设计算后为<code>5%</code>，则长期记忆就将遗忘大部分内容</li>
 </ul>
 </li>
-<li>对于[0 - 10)或[10 - 20]内的数字，可以直接返回读法</li>
-<li>对于(20, 99]的数字读法为(这里用45举例)：<ul>
-<li>“Forty Five”</li>
-<li>即<strong>40</strong>的读法 + <strong>5</strong>的读法</li>
+<li>绿色和黄色部分为<strong>输入门</strong>，黄色部分计算<em><em>潜在的长期记忆(Potential Long-Term Memory)<strong>，用于生成</strong></em>L</em><strong>需要记住的内容；绿色部分用于计算</strong>潜在长期记忆需要记住多少(% Potential Memory To Remember)<strong>。相乘后添加到</strong>长期记忆<em>L</em>**中。</li>
+<li>紫色和粉色部分为<strong>输出门</strong>，首先对输入和短期记忆进行计算，计算**短期记忆需要记住多少(% Potential Memory To Remember)**，再同上方的长期记忆进行运算，最终生成预测值。</li>
 </ul>
-</li>
-<li>基于此，我们事先打表一套<strong>英文数字读法表</strong>，按需求往<code>ans</code>中添加即可</li>
+<h4 id="Word-Embedding-and-Word2Vec"><a href="#Word-Embedding-and-Word2Vec" class="headerlink" title="Word Embedding and Word2Vec"></a>Word Embedding and Word2Vec</h4><p>为了将单词转换为相应的向量，以便于输入计算机进行处理，引入了Word2Vec方法。</p>
+<p><img src="https://s2.loli.net/2024/10/17/DI7lpKe6Hoy4RsX.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>其本质上仍然是一个神经网络模型，初始状态的权重为随机，通过<strong>反向传播</strong>进行训练，最终得到的权重w即为所谓的<strong>Word Embedding</strong>。除了顺序预测之外，还有**连续词袋(Continuous Bag of Words)<strong>，通过间隔的单词来预测中间的单词；或是</strong>跳跃词袋(Skip Gram)**，通过中间单词来主动预测两边的单词。</p>
+<p>总的来说，<strong>Word2Vec</strong>就是将单词转换为计算机可理解的向量。</p>
+<p><strong>Word2Vec</strong> 通过训练模型，生成低维的、密集的向量表示，其中：</p>
+<ul>
+<li><strong>相似的单词</strong>（例如，”king” 和 “queen”）在向量空间中距离较近。</li>
+<li>单词的<strong>语义关系</strong>可以通过向量的算术运算表示（如 “king” - “man” + “woman” ≈ “queen”）。</li>
 </ul>
-<p>细节方面，需要注意空格问题；参考代码中，数量级后加空格而前不加空格，计算数字读法时对每一位后都加空格；由此最后还需要弹出位于末尾的无用空格</p>
-<h4 id="参考代码"><a href="#参考代码" class="headerlink" title="参考代码"></a>参考代码</h4><hr>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br><span class="hljs-keyword">private</span>:<br>    vector&lt;string&gt; singles = &#123;<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;One&quot;</span>, <span class="hljs-string">&quot;Two&quot;</span>, <span class="hljs-string">&quot;Three&quot;</span>, <span class="hljs-string">&quot;Four&quot;</span>, <span class="hljs-string">&quot;Five&quot;</span>, <span class="hljs-string">&quot;Six&quot;</span>, <span class="hljs-string">&quot;Seven&quot;</span>, <span class="hljs-string">&quot;Eight&quot;</span>, <span class="hljs-string">&quot;Nine&quot;</span>&#125;;<br>    vector&lt;string&gt; ten2Twenty = &#123;<span class="hljs-string">&quot;Ten&quot;</span>, <span class="hljs-string">&quot;Eleven&quot;</span>, <span class="hljs-string">&quot;Twelve&quot;</span>, <span class="hljs-string">&quot;Thirteen&quot;</span>, <span class="hljs-string">&quot;Fourteen&quot;</span>, <span class="hljs-string">&quot;Fifteen&quot;</span>, <span class="hljs-string">&quot;Sixteen&quot;</span>, <span class="hljs-string">&quot;Seventeen&quot;</span>,<br>                            <span class="hljs-string">&quot;Eighteen&quot;</span>, <span class="hljs-string">&quot;Nineteen&quot;</span>&#125;;<br>    vector&lt;string&gt; tens = &#123;<span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;Ten&quot;</span>, <span class="hljs-string">&quot;Twenty&quot;</span>, <span class="hljs-string">&quot;Thirty&quot;</span>, <span class="hljs-string">&quot;Forty&quot;</span>, <span class="hljs-string">&quot;Fifty&quot;</span>, <span class="hljs-string">&quot;Sixty&quot;</span>, <span class="hljs-string">&quot;Seventy&quot;</span>, <span class="hljs-string">&quot;Eighty&quot;</span>, <span class="hljs-string">&quot;Ninety&quot;</span>&#125;;<br><br><span class="hljs-keyword">public</span>:<br>    <span class="hljs-function">string <span class="hljs-title">underHundred</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        string ans;<br>        <span class="hljs-type">int</span> hundred = n / <span class="hljs-number">100</span>;<br>        <span class="hljs-keyword">if</span> (hundred) &#123;<br>            ans += singles[hundred] + <span class="hljs-string">&quot; Hundred &quot;</span>;<br>        &#125;<br>        n %= <span class="hljs-number">100</span>;<br>        <span class="hljs-keyword">if</span> (n &lt; <span class="hljs-number">20</span> &amp;&amp; n &gt;= <span class="hljs-number">10</span>) &#123;<br>            ans += ten2Twenty[n % <span class="hljs-number">10</span>] + <span class="hljs-string">&quot; &quot;</span>;<br>            <span class="hljs-keyword">return</span> ans;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (n &gt;= <span class="hljs-number">20</span>) &#123;<br>            ans += tens[n / <span class="hljs-number">10</span>] + <span class="hljs-string">&quot; &quot;</span>;<br>        &#125;<br>        n %= <span class="hljs-number">10</span>;<br>        <span class="hljs-keyword">if</span> (n == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> ans;<br>        ans += singles[n % <span class="hljs-number">10</span>] + <span class="hljs-string">&quot; &quot;</span>;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br><br>    <span class="hljs-function">string <span class="hljs-title">recur</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span> </span>&#123;<br>        string ans;<br><br>        <span class="hljs-type">int</span> billion = n / <span class="hljs-number">1000000000</span>;<br>        n %= <span class="hljs-number">1000000000</span>;<br>        <span class="hljs-type">int</span> million = n / <span class="hljs-number">1000000</span>;<br>        n %= <span class="hljs-number">1000000</span>;<br>        <span class="hljs-type">int</span> thousand = n / <span class="hljs-number">1000</span>;<br>        n %= <span class="hljs-number">1000</span>;<br><br>        <span class="hljs-keyword">if</span> (billion) &#123;<br>            ans += <span class="hljs-built_in">recur</span>(billion) + <span class="hljs-string">&quot;Billion &quot;</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (million) &#123;<br>            ans += <span class="hljs-built_in">recur</span>(million) + <span class="hljs-string">&quot;Million &quot;</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (thousand) &#123;<br>            ans += <span class="hljs-built_in">recur</span>(thousand) + <span class="hljs-string">&quot;Thousand &quot;</span>;<br>        &#125;<br><br>        ans += <span class="hljs-built_in">underHundred</span>(n);<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br><br>    <span class="hljs-function">string <span class="hljs-title">numberToWords</span><span class="hljs-params">(<span class="hljs-type">int</span> num)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (num == <span class="hljs-number">0</span>) <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Zero&quot;</span>;<br>        string ans = <span class="hljs-built_in">recur</span>(num);<br>        ans.<span class="hljs-built_in">pop_back</span>();<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;;<br></code></pre></td></tr></table></figure>
-
-<h4 id="文章参考"><a href="#文章参考" class="headerlink" title="文章参考"></a>文章参考</h4><hr>
-<p><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/integer-to-english-words/solution/wei-rao-li-lun-mo-ni-ti-ying-wen-shu-zi-1sc7b/">【微扰理论】模拟题 英文数字三位一组 (微软面试题原题)</a></p>
+<h4 id="Seq2Seq"><a href="#Seq2Seq" class="headerlink" title="Seq2Seq"></a>Seq2Seq</h4><p>Seq2Seq的本质实际上是编码器-解码器。它通过将某一序列经过编码后(如<strong>Word2Vec</strong>)输入进<strong>编码器</strong>神经网络中进行处理；需要注意，这里的神经网络可以是RNN、LSTM或GRU，且会是多层，同层次共享相同的<strong>权重</strong>和<strong>偏移</strong>。再将产生的<strong>上下文向量(Context Vector)<strong>传递给</strong>解码器</strong>部分，由解码器输入再次进行解码，传入<strong>全连接层</strong>(也是一种神经网络)，最终产生相应的预测输出传递给下一次的解码器的输入。</p>
+<blockquote>
+<p>注意：训练过程中，解码器会使用训练的Token而不是全连接层的输出作为输入。</p>
+</blockquote>
+<p><img src="https://s2.loli.net/2024/10/17/5DH7uQF9RW3OGgd.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<h4 id="Attention"><a href="#Attention" class="headerlink" title="Attention"></a>Attention</h4><p><strong>RNN</strong>的主要缺陷，是由于其使用单一路径来处理<strong>长期记忆和短期记忆</strong>，导致<strong>梯度爆炸&#x2F;消失</strong>。<strong>LSTM</strong>会在输入大量数据时，或多或少的遗忘较长时间之前的记忆。由此提出了<strong>Attention</strong>机制，它的核心思想是对每一个输入，都有一条直接路径连接解码器，这样解码器每一步解码都可以直接访问输入值。</p>
+<p><img src="https://s2.loli.net/2024/10/17/HEJgkDXunMjLpPr.png" srcset="/img/loading.gif" lazyload alt="image.png"></p>
+<p>将<code>Let&#39;s</code>以及<code>go</code>同解码器的第一个输入<code>&lt;EOS&gt;</code>进行点积运算后，生成相应得相似度值，计算公式如下：<br>$$<br>Cosine Similarity &#x3D; (\frac{\sum_{i&#x3D;1}^{n} A_i B_i}{\sqrt{\sum_{i&#x3D;1}^{n} A_i^2} \sqrt{\sum_{i&#x3D;1}^{n} B_i^2}})<br>$$</p>
+<blockquote>
+<p>注意，公式的分母部分主要用于将输出的值<strong>缩放</strong>到(-1, 1)之间，使其比较时相对简单，在实际使用时可以仅使用分子部分**(点乘Dot Product)**进行比较。</p>
+</blockquote>
+<p>将计算出的相似度值进行<strong>SoftMax</strong>运算后，得出的结果表示该相似度在解码时，我们使用该编码的单词的百分比。将加权后的值相加（即<code>Let&#39;s</code>和<code>go</code>对于<code>&lt;EOS&gt;</code>的相似度的值）后得出的值为二者对<code>&lt;EOS&gt;</code>的相似度，也就是<code>&lt;EOS&gt;</code>的<strong>注意力值</strong>。</p>
+<p>再将<code>Let&#39;s</code>和<code>go</code>的相似度值，同<code>&lt;EOS&gt;</code>的编码值一同输入进全连接层，运算后使用<strong>SoftMax</strong>决定下一个输出的单词；然后将产生的输出作为解码器的新输入，重复上述过程，最终得到最后的输出<code>&lt;EOS&gt;</code></p>
 
                 
               </div>
@@ -363,36 +373,11 @@
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/LeetCode/" class="category-chain-item">LeetCode</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E6%A8%A1%E6%8B%9F/">#模拟</a>
-      
-        <a href="/tags/Daily-algorithm-problem-solving/">#Daily algorithm problem solving</a>
-      
-        <a href="/tags/%E9%80%92%E5%BD%92/">#递归</a>
+        <a href="/tags/Study/">#Study</a>
       
     </div>
   
@@ -404,8 +389,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>LC.273 Integer to English Words</div>
-      <div>http://example.com/2022/06/30/LC273-Integer-to-English-Words/</div>
+      <div>Study</div>
+      <div>http://example.com/2024/10/17/Study/</div>
     </div>
     <div class="license-meta">
       
@@ -417,13 +402,13 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年6月30日</div>
+          <div>2024年10月17日</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>更新于</div>
-          <div>2024年2月29日</div>
+          <div>2024年10月17日</div>
         </div>
       
       <div class="license-meta-item">
@@ -452,18 +437,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/07/01/LC204-Count-Primes/" title="LC.204 Count-Primes">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LC.204 Count-Primes</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/06/29/LC460-LFU-Cache/" title="LC.460 LFU-Cache">
-                        <span class="hidden-mobile">LC.460 LFU-Cache</span>
+                      <a href="/2024/10/01/diary2/" title="我想要的不是爱情，而是和你在一起的时光">
+                        <span class="hidden-mobile">我想要的不是爱情，而是和你在一起的时光</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
